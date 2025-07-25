@@ -28,7 +28,7 @@ import Sitehealth from './Sitehealth'
 import ExportPersonalData from './ExportPersonalData'
 import ErasePersonalData from './ErasePersonalData'
 import NewMedia from './NewMedia'
-import Imports from './Imports.jsx'
+import Imports from './Imports'
 import ProductHeader from './Bueatyproduct/Productheader.jsx'
 import HOME from './Bueatyproduct/HOME.jsx'
 
