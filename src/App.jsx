@@ -38,8 +38,8 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<HOME/>} />
-        <Route path="/Dashbord" element={<Dashboard />} />
+        <Route path="/HOME" element={<HOME/>} />
+        <Route path="/" element={<Dashboard />} />
         <Route path="/Home" element={< Dashboard />} />
         <Route path="/GeneralSettings" element={<GeneralSettings />} />
         <Route path="/WritingSettings" element={<WritingSettings />} /> 
