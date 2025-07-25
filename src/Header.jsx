@@ -42,7 +42,7 @@ const Header = () => {
         <nav className="mt-2 sm:mt-0 flex items-center">
           <span className="font-semibold text-gray-200 flex items-center gap-2">
             Howdy, <span className="font-bold">root</span>
-            <i className="fa-solid fa-user" aria-hidden="true"></i>
+          <Link to="/Profile" className="text-white no-underline font-medium flex items-center gap-1">  <i className="fa-solid fa-user" aria-hidden="true"></i></Link>
           </span>
         </nav>
       </div>
