@@ -71,6 +71,7 @@ function App() {
         <Route path="/ErasePersonalData" element={<ErasePersonalData />} />
         <Route path="/NewMedia" element={<NewMedia />} />
         <Route path="/Bueatyproduct/Productheader" element={< ProductHeader/>} />
+       
       
         {/* Add more routes as needed */}
         </Routes>

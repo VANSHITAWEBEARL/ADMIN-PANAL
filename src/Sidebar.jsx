@@ -196,6 +196,20 @@ const Sidebar = () => {
                 <div
                   ref={(el) => (tooltipRefs.current[idx] = el)}
                   onClick={() => handleMenuClick(item, idx)}
+                  onMouseEnter={() => {
+                    tooltipInstances.current.forEach((instance, i) => {
+                      if (instance) {
+                        if (i === idx) {
+                          instance.show();
+                        } else {
+                          instance.hide();
+                        }
+                      }
+                    });
+                  }}
+                  onMouseLeave={() => {
+                    // Do nothing, so tooltip stays until another is hovered
+                  }}
                   className={`flex items-center gap-2 py-2 px-2 rounded cursor-pointer ${openDropdown === idx ? 'bg-[#2a6caf]' : 'hover:bg-[#2a6caf]'}`}
                 >
                   <span>{item.icon}</span>
@@ -236,6 +250,20 @@ const Sidebar = () => {
               <div
                 ref={(el) => (tooltipRefs.current[idx] = el)}
                 onClick={() => handleMenuClick(item, idx)}
+                onMouseEnter={() => {
+                  tooltipInstances.current.forEach((instance, i) => {
+                    if (instance) {
+                      if (i === idx) {
+                        instance.show();
+                      } else {
+                        instance.hide();
+                      }
+                    }
+                  });
+                }}
+                onMouseLeave={() => {
+                  // Do nothing, so tooltip stays until another is hovered
+                }}
                 className={`flex items-center gap-2 py-2 px-2 cursor-pointer ${openDropdown === idx ? 'bg-[#2a6caf]' : 'hover:bg-[#2a6caf]'} ${isCollapsed ? 'justify-center' : ''}`}
               >
                 <span>{item.icon}</span>
