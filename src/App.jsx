@@ -30,7 +30,7 @@ import ErasePersonalData from './ErasePersonalData'
 import NewMedia from './NewMedia'
 import Imports from './Imports.jsx'
 import ProductHeader from './Bueatyproduct/Productheader.jsx'
-import HOME from './bueatyproduct/home.jsx'
+import HOME from './Bueatyproduct/HOME.jsx'
 
 
 
