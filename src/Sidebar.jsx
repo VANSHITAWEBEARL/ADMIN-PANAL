@@ -236,7 +236,7 @@ const Sidebar = () => {
       </div>
 
       {/* Desktop Sidebar */}
-      <aside className={`bg-[#23282d] text-white fixed top-10 py-4 left-0 hidden lg:flex flex-col transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-46'}`} style={{ height: 'calc(100vh - 2rem)' }}>
+      <aside className={`bg-[#23282d] text-white fixed top-8 py-4 left-0 hidden lg:flex flex-col transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-46'}`} style={{ height: 'calc(100vh - 2rem)' }}>
         <ul className="flex flex-col gap-1 mt-1 px-2">
           {menuItems.map((item, idx) => (
             <li key={item.label} className="text-sm flex flex-col gap-1 relative">
