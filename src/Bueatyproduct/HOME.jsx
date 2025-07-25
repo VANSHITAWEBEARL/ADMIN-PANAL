@@ -7,7 +7,7 @@ import concealerImage from '../assets/cate1.jpg';
 import creamImage from '../assets/cate2-1.jpg';
 import bg2 from '../assets/bg1-h9.jpg';
 import cart1 from '../assets/17.jpg'; // Ensure the image path is correct
-import cart2 from '../assets/171.JPG';
+import cart2 from '../assets/171.jpg';
 import cart3 from '../assets/18.JPG';
 import cart4 from '../assets/9.jpg'; // Ensure the image path is correct
 
