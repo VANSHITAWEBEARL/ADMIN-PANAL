@@ -58,14 +58,7 @@ const Sidebar = () => {
         { label: 'Editor', to: '/Editor' }
       ]
     },
-    {
-      label: 'Plugins',
-      icon: <i className="fa-solid fa-plug"></i>,
-      dropdown: [
-        { label: 'Installed Plugins', to: '/Installpligins' },
-        { label: 'Add Plugins', to: '/Addplugins' }
-      ]
-    },
+   
     {
       label: 'Users',
       icon: <i className="fa-solid fa-user"></i>,
