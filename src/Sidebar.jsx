@@ -15,7 +15,7 @@ const Sidebar = () => {
       label: 'Dashboard',
       icon: <i className="fa-solid fa-gauge"></i>,
       dropdown: [
-        { label: 'Home', to: '/Dashboard' },
+        { label: 'Home', to: '/Dashboardhome' },
         { label: 'Updates', to: '/Dashbordupdated' }
       ]
     },

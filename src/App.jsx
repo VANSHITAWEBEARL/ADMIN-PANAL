@@ -31,6 +31,7 @@ import NewMedia from './NewMedia'
 import Imports from './Imports'
 import ProductHeader from './Bueatyproduct/Productheader.jsx'
 import HOME from './Bueatyproduct/HOME.jsx'
+import Dashboardhome from './Dashboardhome.jsx'
 
 
 
@@ -39,6 +40,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path='/Dashboardhome' element={<Dashboardhome/>} />
         <Route path="/Bueatyproduct/HOME" element={<HOME/>} />
         <Route path="/GeneralSettings" element={<GeneralSettings />} />
         <Route path="/WritingSettings" element={<WritingSettings />} /> 
