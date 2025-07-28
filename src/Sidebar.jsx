@@ -172,12 +172,7 @@ const Sidebar = () => {
 
   const handleMenuClick = (item, index) => {
     if (item.dropdown) {
-      if (openDropdown === index) {
-        setOpenDropdown(null);
-      } else {
-        if (item.dropdown[0]?.to) navigate(item.dropdown[0].to);
-        setOpenDropdown(index);
-      }
+      setOpenDropdown(openDropdown === index ? null : index);
     } else if (item.to) {
       navigate(item.to);
       setOpenDropdown(null);
