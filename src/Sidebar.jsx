@@ -269,7 +269,7 @@ const Sidebar = () => {
                         
                       ))}
                     </ul>
-                    <span className="absolute left-[-6px] top-2   w-20 h-20 border-t-8 border-b-8 border-r-8 border-t-transparent border-b-transparent border-r-[#34383d]"></span>
+                    <span className="absolute left-[-6px] top-2   w-0 h-0 border-t-8 border-b-8 border-r-8 border-t-transparent border-b-transparent border-r-[#34383d]"></span>
                   </div>
                 )}
               </div>
