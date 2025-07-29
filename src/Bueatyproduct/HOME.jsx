@@ -6,12 +6,46 @@ import Productheader from './Productheader';
 import concealerImage from '../assets/cate1.jpg';
 import creamImage from '../assets/cate2-1.jpg';
 import bg2 from '../assets/bg1-h9.jpg';
-import cart1 from '../assets/17.jpg'; // Ensure the image path is correct
-import cart2 from '../assets/171.jpg';
+import cart1 from '../assets/10.jpg'; // Ensure the image path is correct
+import cart01 from '../assets/7-1.jpg'; // Ensure the image path is correct
+import cart2 from '../assets/17.jpg';
 import cart3 from '../assets/18.jpg';
 import cart4 from '../assets/9.jpg'; // Ensure the image path is correct
+import Footer1 from './Footer1';
+import rosecreamImage from '../assets/cate3.jpg';
+import skinImage from '../assets/cate4.jpg';
+import flower from '../assets/bgspan-h9.png'; // Ensure the image path is correct
+import flower2 from '../assets/bgspan2-h9.png'; 
+import bg3 from '../assets/back2.jpg'; // Ensure the image path is correct
+import test1 from '../assets/test1.png'; 
+import test2 from '../assets/test2.png'; 
+import test3 from '../assets/test3.png';
 
 const HOME = () => {
+  // Testimonial carousel state and data
+  const testimonials = [
+    {
+      img: test3,
+      text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse ",
+      name: "Ms. Lily",
+      title: "Designer",
+    },
+    {
+      img: test2,
+      text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse",
+      name: "Ms. Olwen",
+      title: "	CEO & Co-Founder	",
+    },
+    {
+      img: test1,
+      text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse",
+      name: "	Ms. Kiera",
+      title: "	Ceo Of ThemeFTC	",
+    },
+  ];
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const prevTestimonial = () => setTestimonialIndex((testimonialIndex - 1 + testimonials.length) % testimonials.length);
+  const nextTestimonial = () => setTestimonialIndex((testimonialIndex + 1) % testimonials.length);
   const slides = [slide1, slide2, slide3];
   const [current, setCurrent] = useState(0);
 
@@ -151,15 +185,15 @@ const HOME = () => {
           <img
             src={concealerImage}
             alt="Coverage Concealer"
-            className="w-full h-50 mb-6 object-contain transition-all duration-[2600ms] ease-in-out hover:scale-105"
+            className=" h-90 mb-6 object-contain transition-all duration-[2600ms] ease-in-out hover:scale-105"
           />
           <div className="relative pl-10 -left-70 flex flex-col items-start">
-            <h4
-              className="text-2xl !font-black italic text-gray-900"
+            <p
+              className="text-2xl !font-black italic text-gray-900 hover:text-[#f78da7] cursor-pointer"
               style={{ fontFamily: 'Playfair Display' }}
             >
               Coverage Concealer
-            </h4>
+            </p>
             <p className="text-sm text-gray-500 italic mt-2">Cosmetics.</p>
           </div>
         </div>
@@ -168,15 +202,15 @@ const HOME = () => {
           <img
             src={creamImage}
             alt="Face Cream"
-            className="h-50 mb-6 object-contain transition-all duration-[2600ms] ease-in-out hover:scale-105"
+            className="h-90 mb-6  object-contain transition-all duration-[2600ms] ease-in-out hover:scale-105"
           />
           <div className="relative pl-10 -left-70 flex flex-col items-start">
-            <h4
-              className="text-2xl !font-black italic text-gray-900"
+            <p
+              className="text-2xl !font-black italic text-gray-900 hover:text-[#f78da7] cursor-pointer"
               style={{ fontFamily: 'Playfair Display' }}
             >
               Face Cream
-            </h4>
+            </p>
             <p className="text-sm text-gray-500 italic mt-2">Cosmetics.</p>
           </div>
         </div>
@@ -184,7 +218,7 @@ const HOME = () => {
 
 
       <div
-        className="relative items-center flex  py-20 px-6 text-center"
+        className="relative items-center flex justify-center py-20 px-6 text-center"
         style={{
           backgroundImage: `url(${bg2})`,
           backgroundSize: "cover",
@@ -192,33 +226,56 @@ const HOME = () => {
           backgroundPosition: "center",
         }}
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-[#fceaea]/80 z-0"></div>
-
         {/* Content */}
-        <div className="relative z-10">
-          <p
-            className="text-gray-600 italic mb-2"
-            style={{ fontFamily: "Playfair Display, serif" }}
-          >
-            Beauty Natural Cosmetics
-          </p>
-          <h2
+        <div className="relative z-10"
+         >
+          <div className="relative flex flex-col items-center justify-center mb-4" style={{height: '70px'}}>
+            <img src={flower} alt="background flower" className="absolute left-1/2 top-1/2 w-48 h-20 -translate-x-1/2 -translate-y-1/2 opacity-90 pointer-events-none select-none" style={{zIndex: 0}} />
+            <p
+              className="text-gray-600 italic mb-2 relative"
+              style={{ fontFamily: "Playfair Display, serif", zIndex: 1 }}
+            >
+              Beauty Natural Cosmetics
+            </p>
+             <h2
             className="text-4xl md:text-5xl font-bold mb-12"
             style={{ fontFamily: "Playfair Display, serif" }}
           >
             New Arrivals
           </h2>
+          </div>
+         
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 justify-center items-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 justify-center items-center place-items-center mx-auto">
             {/* Product Card 1 */}
             <div>
               <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-pink-100 p-6 rounded-t-xl transition-all duration-300 ease-in-out hover:shadow-md hover:border-pink-300">
-                <img
-                  src={cart1}
-                  alt="Porttitor Imperdiet"
-                  className="h-48 mx-auto object-contain"
-                />
+                <span className="relative block w-full h-48 group">
+                  <img
+                    src={cart1}
+                    alt="Porttitor Imperdiet"
+                    className="h-48 mx-auto object-contain absolute inset-0 transition-opacity duration-300 z-0 group-hover:opacity-0"
+                  />
+                  <img
+                    src={cart01}
+                    alt="Porttitor Imperdiet Hover"
+                    className="h-48 mx-auto object-contain absolute inset-0  duration-300 opacity-0 group-hover:opacity-90 z-10"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                    <button className="bg-white rounded-full w-12 h-12 flex items-center justify-center shadow hover:bg-pink-100 transition">
+                      <i className="fa fa-shopping-bag text-gray-700 text-xl"></i>
+                    </button>
+                    <button className="bg-white rounded-full w-12 h-12 flex items-center justify-center shadow hover:bg-pink-100 transition">
+                      <i className="fa fa-heart text-gray-700 text-xl"></i>
+                    </button>
+                    <button className="bg-white rounded-full w-12 h-12 flex items-center justify-center shadow hover:bg-pink-100 transition">
+                      <i className="fa fa-refresh text-gray-700 text-xl"></i>
+                    </button>
+                    <button className="bg-white rounded-full w-12 h-12 flex items-center justify-center shadow hover:bg-pink-100 transition">
+                      <i className="fa fa-eye text-gray-700 text-xl"></i>
+                    </button>
+                  </div>
+                </span>
               </div>
 
               <div className="text-center px-4 py-6">
@@ -258,9 +315,9 @@ const HOME = () => {
                 />
               </div>
               <div className="text-center px-4 py-6">
-                <h4 className="text-gray-700 text-base font-semibold" style={{ fontFamily: "Playfair Display, serif" }}>
+                <p className="text-gray-700 text-base font-semibold" style={{ fontFamily: "Playfair Display, serif" }}>
                   Lanige Cream
-                </h4>
+                </p>
                 <div className="text-[#fe9995] my-2 text-sm">★★★★★</div>
                 <p className="text-md italic font-semibold text-gray-800">$157.00</p>
               </div>
@@ -276,9 +333,9 @@ const HOME = () => {
                 />
               </div>
               <div className="text-center px-4 py-6">
-                <h4 className="text-gray-700 text-base font-semibold" style={{ fontFamily: "Playfair Display, serif" }}>
+                <p className="text-gray-700 text-base font-semibold" style={{ fontFamily: "Playfair Display, serif" }}>
                   Acongue Pellentesque
-                </h4>
+                </p>
                 <div className="text-[#fe9995] my-2 text-sm">★★★★★</div>
                 <p className="text-md italic font-semibold text-gray-800">$122.00</p>
               </div>
@@ -287,9 +344,151 @@ const HOME = () => {
         </div>
       </div>
 
+      <div className="w-auto bg-white px-6 md:p-0 grid grid-cols-1 md:grid-cols-2">
+        <div className="flex flex-col text-left transition-all duration-[2600ms] ease-in-out hover:shadow-lg items-center justify-center">
+          <img
+            src={rosecreamImage}
+            alt="Coverage Concealer"
+            className=" h-90 mb-6 object-contain transition-all duration-[2600ms] ease-in-out hover:scale-105"
+          />
+          <div className="relative pl-10 -left-70 flex flex-col items-start">
+            <p
+              className="text-2xl !font-black italic text-gray-900 hover:text-[#f78da7] cursor-pointer"
+              style={{ fontFamily: 'Playfair Display' }}
+            >
+              Rose Mineral Cream
+            </p>
+            <p className="text-sm text-gray-500 italic mt-2">Cosmetics.</p>
+          </div>
+        </div>
 
+        <div className="flex bg-gray-50  flex-col text-left items-center justify-center">
+          <img
+            src={skinImage}
+            alt="Face Cream"
+            className="h-90 mb-6  object-contain cover transition-all duration-[2600ms] ease-in-out hover:scale-105"
+          />
+          <div className="relative pl-10 -left-70 flex flex-col items-start">
+            <p
+              className="text-2xl !font-black italic text-gray-900 hover:text-[#f78da7] cursor-pointer"
+              style={{ fontFamily: 'Playfair Display' }}
+            >
+            Skin Perfector
+            </p>
+            <p className="text-sm text-gray-500 italic mt-2">Cosmetics.</p>
+          </div>
+        </div>
+      </div>
 
+      <div
+  className="relative flex flex-col items-center justify-center py-18 px-16 text-center"
+  style={{
+    backgroundImage: `url(${bg3})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'left center',
+  }}
+>
+  <div className="relative flex flex-col items-center justify-center p-10 mb-4" style={{ height: "70px" }}>
+    <img
+      src={flower2}
+      alt="background flower"
+      className="absolute left-1/2 top-1/2 w-48 h-20 -translate-x-1/2 -translate-y-1/2 opacity-80 pointer-events-none select-none"
+      style={{ zIndex: 0 }}
+    />
+    <p
+      className="text-gray-600 italic mb-2 relative"
+      style={{ fontFamily: "Playfair Display, serif", zIndex: 1 }}
+    >
+      Beauty Natural Cosmetics
+    </p>
+    <h2
+      className="text-4xl md:text-5xl font-bold mb-8 relative"
+      style={{ fontFamily: "Playfair Display, serif", zIndex: 1 }}
+    >
+      What's client say ?
+    </h2>
+  </div>
 
+  <div className="flex items-center justify-center gap-8  max-w-2xl mx-auto">
+    <div className="flex flex-col items-center justify-center w-full">
+      <div className="flex items-center gap-15 justify-center w-full mb-6">
+        <button
+          className="bg-white bg-opacity-80 !rounded-full w-10 h-10 flex items-center justify-center shadow transition duration-200 hover:bg-opacity-100 mr-8"
+          onClick={prevTestimonial}
+          aria-label="Previous"
+          style={{ border: 'none' }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <div className="w-36 h-36 rounded-full border-4 border-white overflow-hidden shadow-xl bg-white flex items-center justify-center">
+          <img
+            src={testimonials[testimonialIndex].img}
+            alt="Client"
+            className="w-full h-full object-fill"
+          />
+        </div>
+        <button
+          className="bg-white bg-opacity-80 !rounded-full w-10 h-10 flex items-center justify-center shadow transition duration-200 hover:bg-opacity-100 ml-8"
+          onClick={nextTestimonial}
+          aria-label="Next"
+          style={{ border: 'none' }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+      <p className="text-gray-500 text-sm mb-6 w-140 font-medium ">
+        {testimonials[testimonialIndex].text}
+      </p>
+      <p className="text-2xl font-medium text-gray-900 mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
+        {testimonials[testimonialIndex].name}
+      </p>
+      <p className="italic text-gray-500 text-sm mb-2" style={{ fontFamily: 'Playfair Display  , italic' }}>
+        {testimonials[testimonialIndex].title}
+      </p>
+    </div>
+  </div>
+</div>
+
+      <div className="w-auto bg-white px-6 md:p-0 grid grid-cols-1 md:grid-cols-2">
+        <div className="flex flex-col text-left transition-all duration-[2600ms] ease-in-out hover:shadow-lg items-center justify-center">
+          <img
+            src={rosecreamImage}
+            alt="Coverage Concealer"
+            className=" h-90 mb-6 object-contain transition-all duration-[2600ms] ease-in-out hover:scale-105"
+          />
+          <div className="relative pl-10 -left-70 flex flex-col items-start">
+            <p
+              className="text-2xl !font-black italic text-gray-900 hover:text-[#f78da7] cursor-pointer"
+              style={{ fontFamily: 'Playfair Display' }}
+            >
+Cream Contour            </p>
+            <p className="text-sm text-gray-500 italic mt-2">Cosmetics.</p>
+          </div>
+        </div>
+
+        <div className="flex bg-gray-50  flex-col text-left items-center justify-center">
+          <img
+            src={skinImage}
+            alt="Face Cream"
+            className="h-90 mb-6  object-contain cover transition-all duration-[2600ms] ease-in-out hover:scale-105"
+          />
+          <div className="relative pl-10 -left-70 flex flex-col items-start">
+            <p
+              className="text-2xl !font-black italic text-gray-900 hover:text-[#f78da7] cursor-pointer"
+              style={{ fontFamily: 'Playfair Display' }}
+            >
+BB Cream            </p>
+            <p className="text-sm text-gray-500 italic mt-2">Cosmetics.</p>
+          </div>
+        </div>
+      </div>
+
+      <Footer1 />
 
     </div>
   );

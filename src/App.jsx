@@ -29,9 +29,10 @@ import ExportPersonalData from './ExportPersonalData'
 import ErasePersonalData from './ErasePersonalData'
 import NewMedia from './NewMedia'
 import Imports from './Imports'
-import ProductHeader from './Bueatyproduct/Productheader.jsx'
-import HOME from './Bueatyproduct/HOME.jsx'
 import Dashboardhome from './Dashboardhome.jsx'
+
+import HOME from './bueatyproduct/home.jsx'
+import ProductHeader from './bueatyproduct/Productheader'
 
 
 
@@ -39,9 +40,10 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+      
+        <Route path="/" element={<HOME/>} />
+        <Route path="/Dashboard" element={<Dashboard />} />
         <Route path='/Dashboardhome' element={<Dashboardhome/>} />
-        <Route path="/Bueatyproduct/HOME" element={<HOME/>} />
         <Route path="/GeneralSettings" element={<GeneralSettings />} />
         <Route path="/WritingSettings" element={<WritingSettings />} /> 
         <Route path="/ReadingSettings" element={<ReadingSettings />} />
