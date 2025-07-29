@@ -64,23 +64,23 @@ export default function Themes() {
               />
             </div>
             {/* Themes grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
               {filteredThemes.map((theme) => (
                 <div
                   key={theme.id}
-                  className="relative bg-white  border rounded shadow flex flex-col overflow-hidden group"
+                  className="relative  bg-white  border rounded  flex flex-col overflow-hidden "
                   onMouseEnter={() => setHovered(theme.id)}
                   onMouseLeave={() => setHovered(null)}
                 >
                   {/* Screenshot */}
                   {theme.screenshot ? (
-                    <img src={theme.screenshot} alt={theme.name} className="w-full h-64 object-cover" />
+                    <img src={theme.screenshot} alt={theme.name} className="w-full h-64 " />
                   ) : (
                     <div className="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-400">No screenshot</div>
                   )}
                   {/* Active theme banner */}
                   {theme.active ? (
-                    <div className="absolute bottom-0 left-0 w-full bg-gray-900 text-white flex items-center justify-between px-4 py-3">
+                    <div className="absolute bottom-0 left-0 w-full bg-gray-900  text-white flex items-center justify-between px-4 py-3">
                       <span className="font-semibold text-base">Active: <span className="font-normal">{theme.name}</span></span>
                       <button className="bg-blue-600 text-white px-4 py-2 rounded font-semibold hover:bg-blue-700 ml-4">Customize</button>
                     </div>
