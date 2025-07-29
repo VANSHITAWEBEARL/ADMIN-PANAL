@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Tooltip } from 'bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [tooltip, setTooltip] = useState({ show: false, item: null, x: 0, y: 0 });
+  const [tooltip, setTooltip] = useState({ show: false, idx: null });
   const tooltipRefs = useRef([]);
-  const tooltipInstances = useRef([]);
   const sidebarRef = useRef(null);
   const navigate = useNavigate();
 
@@ -100,62 +98,6 @@ const Sidebar = () => {
   ];
 
   useEffect(() => {
-    const style = document.createElement('style');
-    style.innerHTML = `
-      .tooltip-inner {
-        background-color: rgb(36, 42, 49);
-        color: #f0f0f1;
-        border-radius: 4px;
-        text-align: left;
-        max-width: 300px;
-      }
-      .bs-tooltip-end .tooltip-arrow::before {
-        border-right-color: rgb(37, 46, 53);
-      }
-      .tooltip-list {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-      }
-      .tooltip-list li {
-        padding: 0;
-        white-space: wrap;
-      }
-    `;
-    document.head.appendChild(style);
-
-    tooltipInstances.current = tooltipRefs.current.map((el, idx) => {
-      if (el) {
-        const item = menuItems[idx];
-        if (item.dropdown) {
-          el.setAttribute('data-bs-html', 'true');
-          el.setAttribute(
-            'title',
-            `<ul class="tooltip-list">${item.dropdown
-              .map((subItem) => `<li>${subItem.label}</li>`)
-              .join('')}</ul>`
-          );
-        }
-        return new Tooltip(el, {
-          trigger: 'hover',
-          placement: 'right'
-        });
-      }
-      return null;
-    });
-
-    return () => {
-      tooltipInstances.current.forEach((instance) => {
-        if (instance && instance._element) instance.dispose();
-      });
-      document.head.removeChild(style);
-    };
-  }, []);
-
-  useEffect(() => {
     function handleClickOutside(event) {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
         setOpenDropdown(null);
@@ -179,20 +121,8 @@ const Sidebar = () => {
     }
   };
 
-  const showTooltip = (item, event) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    console.log('Showing tooltip for:', item.label, 'at position:', rect.right + 10, rect.top + rect.height / 2);
-    setTooltip({
-      show: true,
-      item,
-      x: rect.right + 10,
-      y: rect.top + rect.height / 2
-    });
-  };
-
-  const hideTooltip = () => {
-    setTooltip({ show: false, item: null, x: 0, y: 0 });
-  };
+  const showTooltip = (idx) => setTooltip({ show: true, idx });
+  const hideTooltip = () => setTooltip({ show: false, idx: null });
 
   return (
     <>
@@ -219,12 +149,12 @@ const Sidebar = () => {
                   ref={(el) => (tooltipRefs.current[idx] = el)}
                   onClick={() => handleMenuClick(item, idx)}
                   onMouseEnter={() => {
-                    tooltipInstances.current.forEach((instance, i) => {
-                      if (instance) {
+                    tooltipRefs.current.forEach((el, i) => {
+                      if (el) {
                         if (i === idx) {
-                          instance.show();
+                          el.classList.add('bg-[#2a6caf]');
                         } else {
-                          instance.hide();
+                          el.classList.remove('bg-[#2a6caf]');
                         }
                       }
                     });
@@ -270,6 +200,7 @@ const Sidebar = () => {
         className={`bg-[#23282d] text-white fixed top-8 py-4 left-0 hidden lg:flex flex-col transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-46'}`} 
         style={{ height: 'calc(100vh - 2rem)' }}
       >
+        
         <ul className="flex flex-col gap-1 mt-1 px-2">
           {menuItems.map((item, idx) => (
             <li key={item.label} className="text-sm flex flex-col gap-1 relative">
@@ -282,27 +213,35 @@ const Sidebar = () => {
                     hideTooltip();
                   }
                 }}
-                data-tooltip-target={`tooltip-${idx}`}
-                data-tooltip-trigger="hover"
-                onMouseEnter={(e) => {
-                  tooltipInstances.current.forEach((instance, i) => {
-                    if (instance) {
-                      if (i === idx) {
-                        instance.show();
-                      } else {
-                        instance.hide();
-                      }
-                    }
-                  });
-                  showTooltip(item, e);
-                }}
-                onMouseLeave={() => {
-                  // Do nothing - tooltip stays open until another action
-                }}
-                className={`flex items-center gap-2 py-2 px-2 cursor-pointer transition-colors duration-200 ${openDropdown === idx ? 'bg-[#2a6caf]' : 'hover:bg-[#2a6caf]'} ${isCollapsed ? 'justify-center' : ''}`}
+                onMouseEnter={() => showTooltip(idx)}
+                onMouseLeave={hideTooltip}
+                className={`flex items-center gap-2 py-2 px-2  cursor-pointer transition-colors duration-200 ${openDropdown === idx ? 'bg-[#2a6caf]' : 'hover:bg-[#2a6caf]'} ${isCollapsed ? 'justify-center' : ''}`}
               >
                 <span>{item.icon}</span>
                 {!isCollapsed && <span>{item.label}</span>}
+                {/* Tailwind Tooltip */}
+                {item.dropdown && tooltip.show && tooltip.idx === idx && (
+                  <div className="absolute left-full top-1/2 ml-1 -translate-y-1/2 min-w-[180px] bg-[#34383d] text-white  shadow-lg ">
+                    <ul className="wp-submenu wp-submenu-wrap flex flex-col gap-0 px-0 pb-2 pt-0" style={{background: 'none', boxShadow: 'none', margin: 0, padding: '8px 0 8px 0'}}>
+                      {item.dropdown.map((subItem, index) => (
+                          <Link
+                            to={subItem.to}
+                            onClick={() => {
+                              setOpenDropdown(null);
+                              hideTooltip();
+                              navigate(subItem.to);
+                            }}
+                            className={`block !text-gray-300 hover:text-white hover:bg-[#23282d] !no-underline px-4 py-1 rounded transition-colors duration-150 text-sm ${index === 0 ? 'wp-first-item' : ''}`}
+                            style={{textDecoration: 'none', cursor: 'pointer'}}
+                          >
+                            {subItem.label}
+                          </Link>
+                        
+                      ))}
+                    </ul>
+                    <span className="absolute left-[-8px] top-8 w-0 h-0 border-t-8 border-b-8 border-r-8 border-t-transparent border-b-transparent border-r-[#34383d]"></span>
+                  </div>
+                )}
               </div>
               {!isCollapsed && openDropdown === idx && item.dropdown && (
                 <ul className="mt-1 mb-2 p-0 !no-underline bg-[#34383d0] ">
@@ -338,60 +277,6 @@ const Sidebar = () => {
           </li>
         </ul>
       </aside>
-
-      {/* Custom Tooltips */}
-      {menuItems.map((item, idx) => (
-        <div
-          key={idx}
-          id={`tooltip-${idx}`}
-          role="tooltip"
-          className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700 min-w-[200px] cursor-pointer"
-          style={{
-            left: tooltip.show && tooltip.item === item ? tooltip.x : '0px',
-            top: tooltip.show && tooltip.item === item ? tooltip.y : '0px',
-            transform: tooltip.show && tooltip.item === item ? 'translateY(-50%)' : 'none',
-            opacity: tooltip.show && tooltip.item === item ? '1' : '0',
-            visibility: tooltip.show && tooltip.item === item ? 'visible' : 'visible'
-          }}
-        >
-          <div className="font-semibold text-white mb-2">{item.label}</div>
-          {item.dropdown && (
-            <div className="space-y-1">
-              {item.dropdown.map((subItem, index) => (
-                <Link
-                  key={index}
-                  to={subItem.to}
-                  onClick={() => {
-                    setOpenDropdown(null);
-                    hideTooltip();
-                  }}
-                  className="block text-gray-300 hover:text-white hover:bg-[#2a6caf] px-2 py-1 rounded cursor-pointer transition-colors duration-200 text-sm"
-                >
-                  {subItem.label}
-                </Link>
-              ))}
-            </div>
-          )}
-          <div className="tooltip-arrow" data-popper-arrow></div>
-        </div>
-      ))}
-      
-      {/* Collapse Menu Tooltip */}
-      <div
-        id="tooltip-collapse"
-        role="tooltip"
-        className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700 cursor-pointer"
-        style={{
-          left: tooltip.show && tooltip.item?.label === 'Collapse Menu' ? tooltip.x : '0px',
-          top: tooltip.show && tooltip.item?.label === 'Collapse Menu' ? tooltip.y : '3px',
-          transform: tooltip.show && tooltip.item?.label === 'Collapse Menu' ? 'translateY(-70%)' : '',
-          opacity: tooltip.show && tooltip.item?.label === 'Collapse Menu' ? '5' : '1',
-          visibility: tooltip.show && tooltip.item?.label === 'Collapse Menu' ? 'visible' : 'visible'
-        }}
-      >
-        Collapse Menu
-        <div className="tooltip-arrow" data-popper-arrow></div>
-      </div>
     </>
   );
 };
