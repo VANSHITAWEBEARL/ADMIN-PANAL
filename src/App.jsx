@@ -33,6 +33,7 @@ import Dashboardhome from './Dashboardhome.jsx'
 
 import HOME from './bueatyproduct/home.jsx'
 import ProductHeader from './bueatyproduct/Productheader'
+import Mobileheader from './bueatyproduct/Mobailheader'
 
 
 
@@ -72,7 +73,8 @@ function App() {
         <Route path="/ExportPersonalData" element={<ExportPersonalData />} />
         <Route path="/ErasePersonalData" element={<ErasePersonalData />} />
         <Route path="/NewMedia" element={<NewMedia />} />
-        <Route path="/Bueatyproduct/Productheader" element={< ProductHeader/>} />
+        <Route path="/bueatyproduct/Productheader" element={< ProductHeader/>} />
+        <Route path='/Mobileheader' element={<Mobileheader />} />
        
       
         {/* Add more routes as needed */}

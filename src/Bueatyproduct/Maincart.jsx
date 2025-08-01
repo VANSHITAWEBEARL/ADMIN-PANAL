@@ -19,8 +19,8 @@ const Maincart = () => {
           {/* Close Button positioned on image */}
           <button
             onClick={() => setShowModal(false)}
-            className="absolute top-4 right-4 !text-5xl  text-white hover:text-gray-300 focus:outline-none"
-            style={{ zIndex: 2 }}
+            className="absolute top-4 right-4 !text-5xl !font-black text-white focus:outline-none"
+            style={{ zIndex: 2  }}
           >
             &times;
           </button>

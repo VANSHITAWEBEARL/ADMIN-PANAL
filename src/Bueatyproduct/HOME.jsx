@@ -20,6 +20,8 @@ import bg3 from '../assets/back2.jpg'; // Ensure the image path is correct
 import test1 from '../assets/test1.png'; 
 import test2 from '../assets/test2.png'; 
 import test3 from '../assets/test3.png';
+import Mobileheader from './Mobailheader';
+
 
 const HOME = () => {
   // Testimonial carousel state and data
@@ -67,6 +69,7 @@ const HOME = () => {
   return (
     <div>
       <div className="relative w-full min-h-[120vh] overflow-hidden">
+        
         <div
           className="absolute inset-0 bg-auto transition-all duration-700 ease-in-out z-0"
           style={{
@@ -77,27 +80,28 @@ const HOME = () => {
           }}
         />
 
-        <div className="absolute inset-0 bg-black bg-opacity-10 z-10" />
-
         <div className="absolute top-6 left-0 w-full z-30 px-4 sm:px-10">
           <Productheader />
+          <Mobileheader/>
+  
         </div>
 
-        <div className="absolute text-center left-124 flex flex-col top-120 items-center justify-center transform -translate-y-1/2 z-20 text-left text-black">
+        <div className="absolute left-1/2 lg:top-120  top-60 md:top-40 lg:-left-10 transform -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 z-20 flex flex-col items-center lg:items-center justify-center text-center lg:text-left w-full px-4 sm:px-8 md:px-16">
           {current === 0 && (
-            <>
-              <p className="text-gray-500 text-2xl mb-2" style={{ fontFamily: 'Playfair Display' }}>
+            <><div className='justify-center items-center flex'>
+              <p className="text-gray-500 !text-center flex items-center   text-lg sm:text-xl md:text-2xl mb-2" style={{ fontFamily: 'Playfair Display' }}>
                 Natural Cosmetics.
               </p>
-              <div className="text-5xl md:text-6xl font-bold leading-tight" style={{ fontFamily: 'Playfair Display' }}>
-                Hi! It's <span className="text-[#fe9995] font-medium md:text-6xl">beautiful</span><br />
+              </div>
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight" style={{ fontFamily: 'Playfair Display' }}>
+                Hi! It's <span className="text-[#fe9995] font-medium">beautiful</span><br />
                 For you
               </div>
-              <p className="text-gray-600 text-sm mt-2 w-115">
+              <p className="text-gray-600 text-xs sm:text-sm mt-2 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto lg:mx-0">
                 It is a long established fact that a reader will be distracted by the page when looking at its layout.readable content of a
               </p>
               <button
-                className="mt-8 bg-black text-white px-6 py-2 !rounded-full flex items-center gap-2 transition"
+                className="mt-6 sm:mt-8 bg-black text-white px-4 sm:px-6 py-2 !rounded-full flex items-center gap-2 transition text-sm sm:text-base"
                 style={{ fontFamily: 'Playfair Display' }}
               >
                 Discover now !
@@ -107,21 +111,21 @@ const HOME = () => {
           )}
         </div>
 
-        <div className="absolute right-45 top-1/2 items-center justify-center transform -translate-y-1/2 z-20 text-right text-black">
+        <div className="absolute left-1/2 top-60 sm:top-56 md:top-64 lg:right-60 lg:top-1/2 transform -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 z-20 flex flex-col items-center lg:items-end justify-center  md:text-end w-full lg:max-w-[700px] px-4 sm:px-8 md:px-16">
           {current === 1 && (
             <>
-              <p className="text-gray-500 text-2xl mb-2" style={{ fontFamily: 'Playfair Display' }}>
+              <p className="text-gray-500 text-lg sm:text-xl md:text-2xl mb-2" style={{ fontFamily: 'Playfair Display' }}>
                 Natural Cosmetics.
               </p>
-              <div className="text-5xl md:text-6xl font-bold leading-tight" style={{ fontFamily: 'Playfair Display' }}>
-                Relax with <span className="text-[#fe9995] font-medium md:text-6xl">beauty</span><br />
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight" style={{ fontFamily: 'Playfair Display' }}>
+                Relax with <span className="text-[#fe9995] font-medium">beauty</span><br />
                 For women’s
               </div>
-              <p className="text-gray-600 text-sm mt-2 w-120">
+              <p className="text-gray-600 text-xs sm:text-sm mt-2 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl  lg:mx-0">
                 It is a long established fact that a reader will be distracted by when looking the readable content of a page when looking
               </p>
-              <div className="mt-8 flex justify-end">
-                <button className="bg-black text-white px-6 py-2 !rounded-full flex items-center gap-2 transition">
+              <div className="mt-6 sm:mt-8 flex justify-center lg:justify-end w-full">
+                <button className="bg-black text-white px-4 sm:px-6 py-2 rounded-full flex items-center gap-2 transition text-sm sm:text-base">
                   Shopping now !
                   <ion-icon name="arrow-forward-outline"></ion-icon>
                 </button>
@@ -130,17 +134,17 @@ const HOME = () => {
           )}
         </div>
 
-        <div className="absolute right-50 top-120 items-center justify-center transform -translate-y-1/2 z-20 text-left text-black">
+        <div className="absolute left-1/2 top-60 sm:top-72 md:top-80 lg:right-[12rem] lg:top-[30rem] transform -translate-x-1/2 lg:translate-x-0 -translate-y-1/2 z-20 flex flex-col items-center lg:items-start justify-center text-center lg:text-left w-full px-4 sm:px-8 md:px-16">
           {current === 2 && (
             <>
-              <div className="text-5xl md:text-6xl font-bold leading-tight" style={{ fontFamily: 'Playfair Display' }}>
-                Beautiful <span className="text-[#fe9995] font-medium md:text-6xl">products for</span><br />
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight" style={{ fontFamily: 'Playfair Display' }}>
+                Beautiful <span className="text-[#fe9995] font-medium">products for</span><br />
                 beautiful skin.
               </div>
-              <p className="text-gray-600 text-sm mt-2 w-125">
+              <p className="text-gray-600 text-xs sm:text-sm mt-2 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto lg:mx-0">
                 Lorem ipsum dolor sit amet, consectetuerum adipiscing elit, sed diam no nummy nibh euis mod tincidunt magna.
               </p>
-              <button className="mt-8 bg-black text-white px-6 py-2 !rounded-full flex items-center gap-2 transition">
+              <button className="mt-6 sm:mt-8 bg-black text-white px-4 sm:px-6 py-2 rounded-full flex items-center gap-2 transition text-sm sm:text-base">
                 Shopping now !
                 <ion-icon name="arrow-forward-outline"></ion-icon>
               </button>
@@ -381,7 +385,7 @@ const HOME = () => {
       </div>
 
       <div
-  className="relative flex flex-col items-center justify-center py-18 px-16 text-center"
+  className="relative flex flex-col items-center justify-center py-18 lg:px-16 px-10 text-center"
   style={{
     backgroundImage: `url(${bg3})`,
     backgroundSize: 'cover',
@@ -410,9 +414,9 @@ const HOME = () => {
     </h2>
   </div>
 
-  <div className="flex items-center justify-center gap-8  max-w-2xl mx-auto">
+  <div className="flex items-center justify-center gap-8  lg:max-w-2xl mx-auto">
     <div className="flex flex-col items-center justify-center w-full">
-      <div className="flex items-center gap-15 justify-center w-full mb-6">
+      <div className="flex items-center lg:gap-15 gap-10 justify-center w-full mb-6">
         <button
           className="bg-white bg-opacity-80 !rounded-full w-10 h-10 flex items-center justify-center shadow transition duration-200 hover:bg-opacity-100 mr-8"
           onClick={prevTestimonial}
@@ -423,7 +427,7 @@ const HOME = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-        <div className="w-36 h-36 rounded-full border-4 border-white overflow-hidden shadow-xl bg-white flex items-center justify-center">
+        <div className="lg:w-36 lg:h-36 rounded-full border-4 border-white overflow-hidden shadow-xl bg-white flex items-center justify-center">
           <img
             src={testimonials[testimonialIndex].img}
             alt="Client"
@@ -441,7 +445,7 @@ const HOME = () => {
           </svg>
         </button>
       </div>
-      <p className="text-gray-500 text-sm mb-6 w-140 font-medium ">
+      <p className="text-gray-500 text-sm mb-6 lg:w-140 font-medium ">
         {testimonials[testimonialIndex].text}
       </p>
       <p className="text-2xl font-medium text-gray-900 mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
