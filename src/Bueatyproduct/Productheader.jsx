@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../assets/logo-h9.png';
 import Maincart from './Maincart';
+import { Link } from 'react-router-dom';
 
 const Productheader = () => {
   // Search input state
@@ -144,10 +145,10 @@ const Productheader = () => {
   // Demo menu data for dropdown
   const demoMenu = [
     [
-      { label: 'Demo 1 – Beauty Cosmetic', highlight: true },
-      { label: 'Demo 1 – Beauty Cosmetic' },
-      { label: 'Demo 2 – Beauty Organic', highlight: true },
-      { label: 'Demo 2 – Beauty Organic' },
+      { label: 'Demo 1 – Beauty Cosmetic',to: '/HOME', highlight: true },
+      { label: 'Demo 1 – Beauty Cosmetic', to: '/HOME'},
+      { label: 'Demo 2 – Beauty Organic', to: '/Bueatyorganic', highlight: true },
+      { label: 'Demo 2 – Beauty Organic',to: '/Bueatyorganic' },
       { label: 'Demo 3 – Cosmetic', highlight: true },
       { label: 'Demo 3 – Cosmetic' },
       { label: 'Demo 4 – Perfume', highlight: true },
@@ -206,17 +207,32 @@ const Productheader = () => {
               {showDropdown && (
                 <div className="absolute -left-30 top-full  w-[90vw] max-w-4xl bg-white shadow-2xl  z-50 p-3 flex flex-row gap-2" style={{ borderTop: '2px solid #fe9995' }}>
                   {demoMenu.map((col, colIdx) => (
-                    <ul key={colIdx} className="flex-1 flex flex-col gap-2  pr-2 ">
-                      {col.map((item, idx) => (
-                        <li
-                          key={idx}
-                          className={`flex items-center gap-2 text-md font-normal text-gray-500 border-gray-200 border-b py-1 hover:text-[#fe9995] transition`}
-                          
-                        >
-                          {item.label}
-                          {item.highlight && <span className="ml-1 text-xs font-normal bg-gray-100 hover:text-[#fe9995]  px-1">E</span>}
-                        </li>
-                      ))}
+                    <ul key={colIdx} className="flex-1 flex flex-col gap-2 pr-2">
+                      {col.map((item, idx) =>
+                        item.to ? (
+                          <li key={idx} className="border-b border-gray-200">
+                            <Link
+                              to={item.to}
+                              className="flex items-center gap-2 text-md font-normal text-gray-500 py-1 hover:text-[#fe9995] transition"
+                            >
+                              {item.label}
+                              {item.highlight && (
+                                <span className="ml-1 text-xs font-normal bg-gray-100 hover:text-[#fe9995] px-1">E</span>
+                              )}
+                            </Link>
+                          </li>
+                        ) : (
+                          <li
+                            key={idx}
+                            className="flex items-center gap-2 text-md font-normal text-gray-500 border-b border-gray-200 py-1 hover:text-[#fe9995] transition"
+                          >
+                            {item.label}
+                            {item.highlight && (
+                              <span className="ml-1 text-xs font-normal bg-gray-100 hover:text-[#fe9995] px-1">E</span>
+                            )}
+                          </li>
+                        )
+                      )}
                     </ul>
                   ))}
                 </div>
@@ -231,19 +247,29 @@ const Productheader = () => {
               <span className="pb-1 border-b-2 border-transparent group-hover:border-[#fe9995] transition-all duration-200 inline-block">SHOP</span>
 
               {showShopDropdown && (
-                <div className="absolute  top-full -left-40 w-[90vw] max-w-5xl bg-white shadow-2xl  z-50 p-4 flex flex-row gap-4" style={{ borderTop: '2px solid #fe9995' }}>
+                <div className="absolute top-full -left-40 w-[90vw] max-w-5xl bg-white shadow-2xl z-50 p-4 flex flex-row gap-4" style={{ borderTop: '2px solid #fe9995' }}>
                   {shopMenu.map((col, colIdx) => (
-                    <ul key={colIdx} className="flex-1 flex flex-col gap-2  border-gray-200  px-0">
-                      <li className="text-[#fe9995] font-normal  !text-sm mb-2">{col.heading}</li>
-                      {col.items.map((item, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-center gap-2 text-md py-1  mr-2 !font-normal border-b border-gray-200 text-gray-400 hover:text-[#fe9995] transition"
-                          
-                        >
-                          {item}
-                        </li>
-                      ))}
+                    <ul key={colIdx} className="flex-1 flex flex-col gap-2 border-gray-200 px-0">
+                      <li className="text-[#fe9995] font-normal !text-sm mb-2">{col.heading}</li>
+                      {col.items.map((item, idx) =>
+                        typeof item === 'object' && item.to ? (
+                          <li key={idx} className="border-b border-gray-200">
+                            <Link
+                              to={item.to}
+                              className="flex items-center gap-2 text-md font-normal text-gray-400 py-1 hover:text-[#fe9995] transition"
+                            >
+                              {item.label || item}
+                            </Link>
+                          </li>
+                        ) : (
+                          <li
+                            key={idx}
+                            className="flex items-center gap-2 text-md py-1 mr-2 !font-normal border-b border-gray-200 text-gray-400 hover:text-[#fe9995] transition"
+                          >
+                            {typeof item === 'object' ? item.label : item}
+                          </li>
+                        )
+                      )}
                     </ul>
                   ))}
                 </div>

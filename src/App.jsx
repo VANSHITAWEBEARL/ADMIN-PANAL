@@ -31,9 +31,11 @@ import NewMedia from './NewMedia'
 import Imports from './Imports'
 import Dashboardhome from './Dashboardhome.jsx'
 
-import HOME from './bueatyproduct/home.jsx'
-import ProductHeader from './bueatyproduct/Productheader'
+
 import Mobileheader from './bueatyproduct/Mobailheader'
+import Bueatyorganic from './Bueatyproduct/Bueatyorganic'
+import HOME from './bueatyproduct/home.jsx'
+import Productheader from './Bueatyproduct/Productheader.jsx'
 
 
 
@@ -73,9 +75,9 @@ function App() {
         <Route path="/ExportPersonalData" element={<ExportPersonalData />} />
         <Route path="/ErasePersonalData" element={<ErasePersonalData />} />
         <Route path="/NewMedia" element={<NewMedia />} />
-        <Route path="/bueatyproduct/Productheader" element={< ProductHeader/>} />
         <Route path='/Mobileheader' element={<Mobileheader />} />
-       
+       <Route path='/Bueatyorganic' element={<Bueatyorganic />} />
+       <Route path='/productheader' element={<Productheader />} />
       
         {/* Add more routes as needed */}
         </Routes>
