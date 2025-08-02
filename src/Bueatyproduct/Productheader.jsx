@@ -355,7 +355,7 @@ const Productheader = () => {
             </li>
           </ul>
         </div>
-        <div className='flex flex-row justify-between items-center gap-4'>
+        <div className='flex flex-row  items-center gap-4'>
         <div className='flex flex-row justify-between items-center gap-4'>
           <div
             className="relative"
@@ -363,7 +363,7 @@ const Productheader = () => {
             onMouseLeave={() => setShowSearchbar(false)}
           >
             <i
-              className="fa-solid fa-magnifying-glass cursor-pointer text-[#fe9995] text-xl"
+              className="fa-solid fa-magnifying-glass cursor-pointer hover:text-[#fe9995] text-sm"
             ></i>
             {showSearchbar && (
               <div className="absolute right-0  w-64 bg-white border border-gray-200 rounded shadow-lg z-50">
@@ -384,7 +384,7 @@ const Productheader = () => {
             onMouseEnter={() => setShowSearch(true)}
             onMouseLeave={() => setShowSearch(false)}
           >
-            <i className="fa-solid fa-bars text-[#fe9995] text-2xl"></i>
+            <i className="fa-solid fa-bars  hover:text-[#fe9995] text-sm"></i>
             {showSearch && (
               <div className="absolute right-0 top-full mt-2 w-72 bg-white rounded shadow-lg z-50 border-t-2 border-[#fe9995] p-6 flex flex-col gap-3" style={{ minWidth: '250px' }}>
                 <div className="flex items-center gap-2 text-base text-gray-700 mb-2" style={{ fontFamily: 'Playfair Display' }}>

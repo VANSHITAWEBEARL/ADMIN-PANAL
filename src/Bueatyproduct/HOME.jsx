@@ -97,7 +97,7 @@ const HOME = () => {
                 Hi! It's <span className="text-[#fe9995] font-medium">beautiful</span><br />
                 For you
               </div>
-              <p className="text-gray-600 text-xs sm:text-sm mt-2 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto lg:mx-0">
+              <p className="text-gray-600 text-xs sm:text-sm mt-2 max-w-xs sm:max-w-md md:max-w-lg lg:w-120 mx-auto lg:mx-0">
                 It is a long established fact that a reader will be distracted by the page when looking at its layout.readable content of a
               </p>
               <button
@@ -111,7 +111,7 @@ const HOME = () => {
           )}
         </div>
 
-        <div className="absolute left-1/2 top-60 sm:top-56 md:top-64 lg:right-60 lg:top-1/2 transform -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 z-20 flex flex-col items-center lg:items-end justify-center  md:text-end w-full lg:max-w-[700px] px-4 sm:px-8 md:px-16">
+        <div className="absolute left-1/2  top-60 sm:top-56 md:top-64 lg:right-60 lg:top-1/2 transform -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 z-20 flex flex-col items-center lg:items-end justify-center  md:text-end w-full lg:max-w-[560px] px-4 sm:px-8 md:px-16">
           {current === 1 && (
             <>
               <p className="text-gray-500 text-lg sm:text-xl md:text-2xl mb-2" style={{ fontFamily: 'Playfair Display' }}>
@@ -125,7 +125,7 @@ const HOME = () => {
                 It is a long established fact that a reader will be distracted by when looking the readable content of a page when looking
               </p>
               <div className="mt-6 sm:mt-8 flex justify-center lg:justify-end w-full">
-                <button className="bg-black text-white px-4 sm:px-6 py-2 rounded-full flex items-center gap-2 transition text-sm sm:text-base">
+                <button className="bg-black text-white px-4 sm:px-6 py-2 !rounded-full flex items-center gap-2 transition text-sm sm:text-base">
                   Shopping now !
                   <ion-icon name="arrow-forward-outline"></ion-icon>
                 </button>
@@ -134,20 +134,24 @@ const HOME = () => {
           )}
         </div>
 
-        <div className="absolute left-1/2 top-60 sm:top-72 md:top-80 lg:right-[12rem] lg:top-[30rem] transform -translate-x-1/2 lg:translate-x-0 -translate-y-1/2 z-20 flex flex-col items-center lg:items-start justify-center text-center lg:text-left w-full px-4 sm:px-8 md:px-16">
+        <div className="absolute left-1/2 top-60 sm:top-72 md:top-80 lg:right-[15rem] lg:top-[31rem] transform -translate-x-1/2 lg:translate-x-0 -translate-y-1/2 z-20 flex flex-col items-center lg:items-start justify-center text-center lg:text-start w-full px-4 sm:px-8 md:px-12">
           {current === 2 && (
             <>
-              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight" style={{ fontFamily: 'Playfair Display' }}>
-                Beautiful <span className="text-[#fe9995] font-medium">products for</span><br />
-                beautiful skin.
+              <div className="w-full">
+                <div className="text-3xl sm:text-5xl md:text-6xl !font-bold  lg:text-6xl font-bold leading-tight text-left lg:text-left" style={{ fontFamily: 'Playfair Display' }}>
+                  Beautiful <span className="text-[#fe9995] !font-normal">products for</span><br />
+                  beautiful skin.
+                </div>
+                <p className="text-gray-600 text-sm sm:text-base md:text-lg mt-4 max-w-xl text-left lg:text-left" style={{ fontFamily: 'Playfair Display' }}>
+                  Lorem ipsum dolor sit amet, consectetuerum adipiscing elit, sed diam no nummy nibh euis mod tincidunt magna.
+                </p>
+                <div className="mt-8 flex justify-start">
+                  <button className="bg-black text-white px-4 py-2 !rounded-full flex items-center gap-2 transition text-lg font-semibold shadow-lg hover:bg-[#fe9995] hover:text-black" style={{ fontFamily: 'Playfair Display' }}>
+                    Shopping now !
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </button>
+                </div>
               </div>
-              <p className="text-gray-600 text-xs sm:text-sm mt-2 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto lg:mx-0">
-                Lorem ipsum dolor sit amet, consectetuerum adipiscing elit, sed diam no nummy nibh euis mod tincidunt magna.
-              </p>
-              <button className="mt-6 sm:mt-8 bg-black text-white px-4 sm:px-6 py-2 rounded-full flex items-center gap-2 transition text-sm sm:text-base">
-                Shopping now !
-                <ion-icon name="arrow-forward-outline"></ion-icon>
-              </button>
             </>
           )}
         </div>
