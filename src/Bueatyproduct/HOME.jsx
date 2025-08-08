@@ -15,15 +15,15 @@ import Footer1 from './Footer1';
 import rosecreamImage from '../assets/cate3.jpg';
 import skinImage from '../assets/cate4.jpg';
 import flower from '../assets/bgspan-h9.png'; // Ensure the image path is correct
-import flower2 from '../assets/bgspan2-h9.png'; 
+import flower2 from '../assets/bgspan2-h9.png';
 import bg3 from '../assets/back2.jpg'; // Ensure the image path is correct
-import test1 from '../assets/test1.png'; 
-import test2 from '../assets/test2.png'; 
+import test1 from '../assets/test1.png';
+import test2 from '../assets/test2.png';
 import test3 from '../assets/test3.png';
 import Mobileheader from './Mobailheader';
 
 
-const HOME = () => {
+const Home = () => {
   // Testimonial carousel state and data
   const testimonials = [
     {
@@ -69,7 +69,7 @@ const HOME = () => {
   return (
     <div>
       <div className="relative w-full min-h-[120vh] overflow-hidden">
-        
+
         <div
           className="absolute inset-0 bg-auto transition-all duration-700 ease-in-out z-0"
           style={{
@@ -82,8 +82,8 @@ const HOME = () => {
 
         <div className="absolute top-6 left-0 w-full z-30 px-4 sm:px-10">
           <Productheader />
-          <Mobileheader/>
-  
+          <Mobileheader />
+
         </div>
 
         <div className="absolute left-1/2 lg:top-120  top-60 md:top-40 lg:-left-10 transform -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 z-20 flex flex-col items-center lg:items-center justify-center text-center lg:text-left w-full px-4 sm:px-8 md:px-16">
@@ -92,7 +92,7 @@ const HOME = () => {
               <p className="text-gray-500 !text-center flex items-center   text-lg sm:text-xl md:text-2xl mb-2" style={{ fontFamily: 'Playfair Display' }}>
                 Natural Cosmetics.
               </p>
-              </div>
+            </div>
               <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight" style={{ fontFamily: 'Playfair Display' }}>
                 Hi! It's <span className="text-[#fe9995] font-medium">beautiful</span><br />
                 For you
@@ -236,23 +236,23 @@ const HOME = () => {
       >
         {/* Content */}
         <div className="relative z-10"
-         >
-          <div className="relative flex flex-col items-center justify-center mb-4" style={{height: '70px'}}>
-            <img src={flower} alt="background flower" className="absolute left-1/2 top-1/2 w-48 h-20 -translate-x-1/2 -translate-y-1/2 opacity-90 pointer-events-none select-none" style={{zIndex: 0}} />
+        >
+          <div className="relative flex flex-col items-center justify-center mb-4" style={{ height: '70px' }}>
+            <img src={flower} alt="background flower" className="absolute left-1/2 top-1/2 w-48 h-20 -translate-x-1/2 -translate-y-1/2 opacity-90 pointer-events-none select-none" style={{ zIndex: 0 }} />
             <p
               className="text-gray-600 italic mb-2 relative"
               style={{ fontFamily: "Playfair Display, serif", zIndex: 1 }}
             >
               Beauty Natural Cosmetics
             </p>
-             <h2
-            className="text-4xl md:text-5xl font-bold mb-12"
-            style={{ fontFamily: "Playfair Display, serif" }}
-          >
-            New Arrivals
-          </h2>
+            <h2
+              className="text-4xl md:text-5xl font-bold mb-12"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              New Arrivals
+            </h2>
           </div>
-         
+
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 justify-center items-center place-items-center mx-auto">
             {/* Product Card 1 */}
@@ -381,7 +381,7 @@ const HOME = () => {
               className="text-2xl !font-black italic text-gray-900 hover:text-[#f78da7] cursor-pointer"
               style={{ fontFamily: 'Playfair Display' }}
             >
-            Skin Perfector
+              Skin Perfector
             </p>
             <p className="text-sm text-gray-500 italic mt-2">Cosmetics.</p>
           </div>
@@ -389,78 +389,78 @@ const HOME = () => {
       </div>
 
       <div
-  className="relative flex flex-col items-center justify-center py-18 lg:px-16 px-10 text-center"
-  style={{
-    backgroundImage: `url(${bg3})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'left center',
-  }}
->
-  <div className="relative flex flex-col items-center justify-center p-10 mb-4" style={{ height: "70px" }}>
-    <img
-      src={flower2}
-      alt="background flower"
-      className="absolute left-1/2 top-1/2 w-48 h-20 -translate-x-1/2 -translate-y-1/2 opacity-80 pointer-events-none select-none"
-      style={{ zIndex: 0 }}
-    />
-    <p
-      className="text-gray-600 italic mb-2 relative"
-      style={{ fontFamily: "Playfair Display, serif", zIndex: 1 }}
-    >
-      Beauty Natural Cosmetics
-    </p>
-    <h2
-      className="text-4xl md:text-5xl font-bold mb-8 relative"
-      style={{ fontFamily: "Playfair Display, serif", zIndex: 1 }}
-    >
-      What's client say ?
-    </h2>
-  </div>
-
-  <div className="flex items-center justify-center gap-8  lg:max-w-2xl mx-auto">
-    <div className="flex flex-col items-center justify-center w-full">
-      <div className="flex items-center lg:gap-15 gap-10 justify-center w-full mb-6">
-        <button
-          className="bg-white bg-opacity-80 !rounded-full w-10 h-10 flex items-center justify-center shadow transition duration-200 hover:bg-opacity-100 mr-8"
-          onClick={prevTestimonial}
-          aria-label="Previous"
-          style={{ border: 'none' }}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        <div className="lg:w-36 lg:h-36 rounded-full border-4 border-white overflow-hidden shadow-xl bg-white flex items-center justify-center">
+        className="relative flex flex-col items-center justify-center py-18 lg:px-16 px-10 text-center"
+        style={{
+          backgroundImage: `url(${bg3})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'left center',
+        }}
+      >
+        <div className="relative flex flex-col items-center justify-center p-10 mb-4" style={{ height: "70px" }}>
           <img
-            src={testimonials[testimonialIndex].img}
-            alt="Client"
-            className="w-full h-full object-fill"
+            src={flower2}
+            alt="background flower"
+            className="absolute left-1/2 top-1/2 w-48 h-20 -translate-x-1/2 -translate-y-1/2 opacity-80 pointer-events-none select-none"
+            style={{ zIndex: 0 }}
           />
+          <p
+            className="text-gray-600 italic mb-2 relative"
+            style={{ fontFamily: "Playfair Display, serif", zIndex: 1 }}
+          >
+            Beauty Natural Cosmetics
+          </p>
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-8 relative"
+            style={{ fontFamily: "Playfair Display, serif", zIndex: 1 }}
+          >
+            What's client say ?
+          </h2>
         </div>
-        <button
-          className="bg-white bg-opacity-80 !rounded-full w-10 h-10 flex items-center justify-center shadow transition duration-200 hover:bg-opacity-100 ml-8"
-          onClick={nextTestimonial}
-          aria-label="Next"
-          style={{ border: 'none' }}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+
+        <div className="flex items-center justify-center gap-8  lg:max-w-2xl mx-auto">
+          <div className="flex flex-col items-center justify-center w-full">
+            <div className="flex items-center lg:gap-15 gap-10 justify-center w-full mb-6">
+              <button
+                className="bg-white bg-opacity-80 !rounded-full w-10 h-10 flex items-center justify-center shadow transition duration-200 hover:bg-opacity-100 mr-8"
+                onClick={prevTestimonial}
+                aria-label="Previous"
+                style={{ border: 'none' }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <div className="lg:w-36 lg:h-36 rounded-full border-4 border-white overflow-hidden shadow-xl bg-white flex items-center justify-center">
+                <img
+                  src={testimonials[testimonialIndex].img}
+                  alt="Client"
+                  className="w-full h-full object-fill"
+                />
+              </div>
+              <button
+                className="bg-white bg-opacity-80 !rounded-full w-10 h-10 flex items-center justify-center shadow transition duration-200 hover:bg-opacity-100 ml-8"
+                onClick={nextTestimonial}
+                aria-label="Next"
+                style={{ border: 'none' }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+            <p className="text-gray-500 text-sm mb-6 lg:w-140 font-medium ">
+              {testimonials[testimonialIndex].text}
+            </p>
+            <p className="text-2xl font-medium text-gray-900 mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
+              {testimonials[testimonialIndex].name}
+            </p>
+            <p className="italic text-gray-500 text-sm mb-2" style={{ fontFamily: 'Playfair Display  , italic' }}>
+              {testimonials[testimonialIndex].title}
+            </p>
+          </div>
+        </div>
       </div>
-      <p className="text-gray-500 text-sm mb-6 lg:w-140 font-medium ">
-        {testimonials[testimonialIndex].text}
-      </p>
-      <p className="text-2xl font-medium text-gray-900 mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
-        {testimonials[testimonialIndex].name}
-      </p>
-      <p className="italic text-gray-500 text-sm mb-2" style={{ fontFamily: 'Playfair Display  , italic' }}>
-        {testimonials[testimonialIndex].title}
-      </p>
-    </div>
-  </div>
-</div>
 
       <div className="w-auto bg-white px-6 md:p-0 grid grid-cols-1 md:grid-cols-2">
         <div className="flex flex-col text-left transition-all duration-[2600ms] ease-in-out hover:shadow-lg items-center justify-center">
@@ -474,7 +474,7 @@ const HOME = () => {
               className="text-2xl !font-black italic text-gray-900 hover:text-[#f78da7] cursor-pointer"
               style={{ fontFamily: 'Playfair Display' }}
             >
-Cream Contour            </p>
+              Cream Contour            </p>
             <p className="text-sm text-gray-500 italic mt-2">Cosmetics.</p>
           </div>
         </div>
@@ -490,7 +490,7 @@ Cream Contour            </p>
               className="text-2xl !font-black italic text-gray-900 hover:text-[#f78da7] cursor-pointer"
               style={{ fontFamily: 'Playfair Display' }}
             >
-BB Cream            </p>
+              BB Cream            </p>
             <p className="text-sm text-gray-500 italic mt-2">Cosmetics.</p>
           </div>
         </div>
@@ -502,4 +502,4 @@ BB Cream            </p>
   );
 };
 
-export default HOME;
+export default Home;

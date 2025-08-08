@@ -34,8 +34,12 @@ import Dashboardhome from './Dashboardhome.jsx'
 
 import Mobileheader from './bueatyproduct/Mobailheader'
 import Bueatyorganic from './Bueatyproduct/Bueatyorganic'
-import HOME from './bueatyproduct/home.jsx'
 import Productheader from './Bueatyproduct/Productheader.jsx'
+import Home from './Bueatyproduct/Home.jsx'
+import Cosmetic from './Bueatyproduct/Cosmetic.jsx'
+import Perfume from './Bueatyproduct/Perfume.jsx'
+import Demo6 from './Bueatyproduct/Demo6.jsx'
+import Demo6header from './Bueatyproduct/Demo6header.jsx'
 
 
 
@@ -44,7 +48,7 @@ function App() {
     <div>
       <Routes>
       
-        <Route path="/" element={<HOME/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path='/Dashboardhome' element={<Dashboardhome/>} />
         <Route path="/GeneralSettings" element={<GeneralSettings />} />
@@ -78,11 +82,16 @@ function App() {
         <Route path='/Mobileheader' element={<Mobileheader />} />
        <Route path='/Bueatyorganic' element={<Bueatyorganic />} />
        <Route path='/productheader' element={<Productheader />} />
-      
+         <Route path="/Home" element={<Home/>} />
+        <Route path="/Cosmetic" element={<Cosmetic />} />
+        <Route path="/Perfume" element={<Perfume />} />
+        <Route path='Demo6' element={<Demo6 />}/>
+        <Route path='Demo6header' element={<Demo6header/>}/>
         {/* Add more routes as needed */}
         </Routes>
     </div>
   )
 }
+
 
 export default App

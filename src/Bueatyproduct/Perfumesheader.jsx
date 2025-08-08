@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo7.png'; // Replace with your logo path
+import logo from '../assets/logo11.png'; // Replace with your logo path
+import nave from '../assets/header-nav11.png'; // Replace with your background image path
+import Loginmodal from './Loginmodal';
 
-const Productheader2 = () => {
-    // Search input state
-    const [showSearch, setShowSearch] = React.useState(false);
+
+const Perfumeheader = () => {
+ 
+     // Search input state
     const [showSearchbar, setShowSearchbar] = React.useState(false);
     const [searchValue, setSearchValue] = React.useState("");
     // Elements menu data for dropdown
@@ -150,13 +153,13 @@ const Productheader2 = () => {
             { label: 'Demo 2 – Beauty Organic', to: '/Bueatyorganic' },
             { label: 'Demo 3 – Cosmetic', to:'/Cosmetic', highlight: true },
             { label: 'Demo 3 – Cosmetic',to:'/Cosmetic', },
-            { label: 'Demo 4 – Perfume', highlight: true },
-            { label: 'Demo 4 – Perfume' },
+            { label: 'Demo 4 – Perfume',to:'/Perfume', highlight: true },
+            { label: 'Demo 4 – Perfume', to:'/Perfume' },
             { label: 'Demo 5 – Spa & Beauty', highlight: true },
             { label: 'Demo 5 – Spa & Beauty' },
         ],
         [
-            { label: 'Demo 6 – Flower Store', to:'/Demo6' },
+            { label: 'Demo 6 – Flower Store', to:'/demo6' },
             { label: 'Demo 7 – Fresh Organic' },
             { label: 'Demo 8 – Full Slider' },
             { label: 'Demo 9 – Green Organic' },
@@ -182,13 +185,112 @@ const Productheader2 = () => {
         ],
     ];
 
+
+  const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const [selectedCurrency, setSelectedCurrency] = useState('USD');
+  const [selectedLanguage, setSelectedLanguage] = useState('English');
+
+  const currencies = ['USD', 'EUR', 'AUD'];
+  const languages = ['English', 'French', 'German'];
+
+  const handleCurrencyChange = (currency) => {
+    setSelectedCurrency(currency);
+    setIsCurrencyOpen(false);
+  };
+
+  const handleLanguageChange = (language) => {
+    setSelectedLanguage(language);
+    setIsLanguageOpen(false);
+  };
+
     // Dropdown state
     const [showDropdown, setShowDropdown] = React.useState(false);
 
 
     return (
-        <header className="w-full  border-b border-gray-100 bg-white">
-            <div className="mx-15 flex items-center justify-between py-2 px-4">
+        <header className="w-full border-b z-70 !sticky border-gray-100 bg-white">
+      <nav className="text-white py-2" style={{ backgroundImage: `url(${nave})`,}}>
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        {/* Left Navigation */}
+        <div className="flex items-center space-x-6">
+          {/* Currency Switcher */}
+         <div className="relative group">
+  <div className="flex items-center  font-semibold text-[#7A7A7A] hover:text-[#f75c6c] cursor-pointer">
+    <span>Currency: {selectedCurrency}</span>
+    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+
+  {/* Dropdown (visible on hover using Tailwind) */}
+  <ul className="absolute z-10 mt-1 p-0 text-center w-30 border-t border-[#f75c6c] bg-white text-gray-800 shadow-lg hidden group-hover:block">
+    {currencies.map((currency) => (
+      <li
+        key={currency}
+        onClick={() => handleCurrencyChange(currency)}
+        className="text-[#7A7A7A]  py-2 hover:text-[#f75c6c] cursor-pointer"
+      >
+        {currency}
+      </li>
+    ))}
+  </ul>
+</div>
+
+          {/* Language Selector */}
+      <div className="relative group">
+  {/* Hoverable Trigger */}
+  <div className="flex items-center font-semibold text-[#7A7A7A] space-x-1 hover:text-[#f75c6c] cursor-pointer">
+    <span>{selectedLanguage}</span>
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+
+  {/* Dropdown Menu */}
+  <ul className="absolute z-10 mt-1 w-32 p-0 text-center border-t border-[#f75c6c] bg-white text-[#7A7A7A]  shadow-lg hidden group-hover:block">
+    {languages.map((language) => (
+      <li
+        key={language}
+        onClick={() => handleLanguageChange(language)}
+        className="px-4 py-2 text-[#7A7A7A]  hover:text-[#f75c6c] cursor-pointer"
+      >
+        {language}
+      </li>
+    ))}
+  </ul>
+</div>
+
+        </div>
+
+        {/* Right Navigation */}
+        <div className="flex items-center space-x-6">
+          {/* Account Links */}
+          <div className="flex items-center space-x-2">
+           <Loginmodal/>
+           <span className='text-gray-400'>/</span>
+            <button
+              className="text-[#7A7A7A]  hover:text-[#f75c6c] !no-underline"
+            >
+              Register
+            </button>
+          </div>
+
+          {/* Shopping Cart */}
+          <div className="flex items-center">
+           
+              <i className="fa-solid fa-basket-shopping text-sm text-[#7A7A7A] !no-underline hover:text-[#f75c6c]"></i>
+              <div>
+                
+                <span className="ml-1 text-[#7A7A7A] !no-underline hover:text-[#f75c6c]">$0.00</span>
+              </div>
+           
+          </div>
+        </div>
+      </div>
+    </nav>
+
+            <div className="mx-15 flex items-center justify-around py-2 px-4">
                 {/* Logo */}
                 <div className="flex items-center">
                     <img src={logo} alt="Beauty Organic" className="h-20 w-auto mr-2" />
@@ -197,38 +299,39 @@ const Productheader2 = () => {
                 <div className='flex mt-4'>
                     <ul className='flex flex-row justify-between items-center gap-5'>
                         <li
-                            style={{ fontFamily: 'Playfair Display', color: showDropdown ? '#7ad03a' : undefined, fontWeight: showDropdown ? 'bold' : undefined }}
+                            style={{ fontFamily: 'Playfair Display', color: showDropdown ? '#fe9995' : undefined, fontWeight: showDropdown ? 'bold' : undefined }}
                             className="relative cursor-pointer group"
                             onMouseEnter={() => setShowDropdown(true)}
                             onMouseLeave={() => setShowDropdown(false)}
                         >
-                            <span className="pb-1 border-b-2 border-transparent group-hover:border-[#7ad03a] transition-all duration-200 inline-block">HOME</span>
+                            <span className="pb-1 border-b-2 border-transparent group-hover:border-[#fe9995] transition-all duration-200 inline-block">HOME</span>
 
                             {showDropdown && (
-                                <div className="absolute -left-30 top-full  w-[90vw] max-w-4xl bg-white shadow-2xl  z-50 p-3 flex flex-row gap-2" style={{ borderTop: '2px solid #7ad03a' }}>
+                                <div className="absolute -left-30 top-full  w-[90vw] max-w-4xl bg-white shadow-2xl  z-50 p-3 flex flex-row gap-2" style={{ borderTop: '2px solid #fe9995' }}>
                                     {demoMenu.map((col, colIdx) => (
                                         <ul key={colIdx} className="flex-1 flex flex-col gap-2 pr-2">
                                             {col.map((item, idx) =>
                                                 item.to ? (
-                                                    <li key={idx} className="border-b border-gray-200">
-                                                        <Link
-                                                            to={item.to}
-                                                            className="flex items-center gap-2 text-md font-normal text-gray-500 py-1 hover:text-[#7ad03a] transition"
-                                                        >
-                                                            {item.label}
-                                                            {item.highlight && (
-                                                                <span className="ml-1 text-xs font-normal bg-gray-100 hover:text-[#7ad03a] px-1">E</span>
-                                                            )}
-                                                        </Link>
-                                                    </li>
-                                                ) : (
+                                                   <Link  to={item.to} className="flex items-center gap-2 text-md font-normal no-underline !text-gray-500 py-1 transition group"style={{ textDecoration: 'none' }}>
+                                                    <span className= "hover:text-[#fe9995] transition-colors">{item.label}</span>
+                                                    {item.highlight && (
+                                                   <span
+                                                   className="ml-1 text-xs font-normal bg-gray-100 px-1 transition-colors hover:text-[#fe9995]"
+                                                    style={{ transition: 'color 0.3s ease' }}
+                                                    >
+                                                    E
+                                                 </span>
+                                                 )}
+                                                 </Link>
+
+                                                 ) : (
                                                     <li
                                                         key={idx}
-                                                        className="flex items-center gap-2 text-md font-normal text-gray-500 border-b border-gray-200 py-1 hover:text-[#7ad03a] transition"
+                                                        className="flex items-center gap-2 text-md font-normal text-gray-500 border-b border-gray-200 py-1 hover:text-[#fe9995] transition"
                                                     >
                                                         {item.label}
                                                         {item.highlight && (
-                                                            <span className="ml-1 text-xs font-normal bg-gray-100 hover:text-[#7ad03a] px-1">E</span>
+                                                            <span className="ml-1 text-xs font-normal bg-gray-100 hover:text-[#fe9995] px-1">E</span>
                                                         )}
                                                     </li>
                                                 )
@@ -239,24 +342,24 @@ const Productheader2 = () => {
                             )}
                         </li>
                         <li
-                            style={{ fontFamily: 'Playfair Display', color: showShopDropdown ? '#7ad03a' : undefined, fontWeight: showShopDropdown ? 'bold' : undefined }}
+                            style={{ fontFamily: 'Playfair Display', color: showShopDropdown ? '#fe9995' : undefined, fontWeight: showShopDropdown ? 'bold' : undefined }}
                             className="relative cursor-pointer group"
                             onMouseEnter={() => setShowShopDropdown(true)}
                             onMouseLeave={() => setShowShopDropdown(false)}
                         >
-                            <span className="pb-1 border-b-2 border-transparent group-hover:border-[#7ad03a] transition-all duration-200 inline-block">SHOP</span>
+                            <span className="pb-1 border-b-2 border-transparent group-hover:border-[#fe9995] transition-all duration-200 inline-block">SHOP</span>
 
                             {showShopDropdown && (
-                                <div className="absolute top-full -left-40 w-[90vw] max-w-5xl bg-white shadow-2xl z-50 p-4 flex flex-row gap-4" style={{ borderTop: '2px solid #7ad03a' }}>
+                                <div className="absolute top-full -left-40 w-[90vw] max-w-5xl bg-white shadow-2xl z-50 p-4 flex flex-row gap-4" style={{ borderTop: '2px solid #fe9995' }}>
                                     {shopMenu.map((col, colIdx) => (
                                         <ul key={colIdx} className="flex-1 flex flex-col gap-2 border-gray-200 px-0">
-                                            <li className="text-[#7ad03a] font-normal !text-sm mb-2">{col.heading}</li>
+                                            <li className="text-[#fe9995] font-normal !text-sm mb-2">{col.heading}</li>
                                             {col.items.map((item, idx) =>
                                                 typeof item === 'object' && item.to ? (
                                                     <li key={idx} className="border-b border-gray-200">
                                                         <Link
                                                             to={item.to}
-                                                            className="flex items-center gap-2 text-md font-normal text-gray-400 py-1 hover:text-[#7ad03a] transition"
+                                                            className="flex items-center gap-2 text-md font-normal text-gray-400 py-1 hover:text-[#fe9995] transition"
                                                         >
                                                             {item.label || item}
                                                         </Link>
@@ -264,7 +367,7 @@ const Productheader2 = () => {
                                                 ) : (
                                                     <li
                                                         key={idx}
-                                                        className="flex items-center gap-2 text-md py-1 mr-2 !font-normal border-b border-gray-200 text-gray-400 hover:text-[#7ad03a] transition"
+                                                        className="flex items-center gap-2 text-md py-1 mr-2 !font-normal border-b border-gray-200 text-gray-400 hover:text-[#fe9995] transition"
                                                     >
                                                         {typeof item === 'object' ? item.label : item}
                                                     </li>
@@ -276,22 +379,22 @@ const Productheader2 = () => {
                             )}
                         </li>
                         <li
-                            style={{ fontFamily: 'Playfair Display', color: showBlogDropdown ? '#7ad03a' : undefined, fontWeight: showBlogDropdown ? 'bold' : undefined }}
+                            style={{ fontFamily: 'Playfair Display', color: showBlogDropdown ? '#fe9995' : undefined, fontWeight: showBlogDropdown ? 'bold' : undefined }}
                             className="relative cursor-pointer group"
                             onMouseEnter={() => setShowBlogDropdown(true)}
                             onMouseLeave={() => setShowBlogDropdown(false)}
                         >
-                            <span className="pb-1 border-b-2 border-transparent group-hover:border-[#7ad03a] transition-all duration-200 inline-block">BLOG</span>
+                            <span className="pb-1 border-b-2 border-transparent group-hover:border-[#fe9995] transition-all duration-200 inline-block">BLOG</span>
 
                             {showBlogDropdown && (
-                                <div className="absolute  top-full -left-40 w-[90vw] max-w-3xl bg-white shadow-2xl  z-50 p-8 flex flex-row gap-8" style={{ borderTop: '2px solid #7ad03a' }}>
+                                <div className="absolute  top-full -left-40 w-[90vw] max-w-3xl bg-white shadow-2xl  z-50 p-8 flex flex-row gap-8" style={{ borderTop: '2px solid #fe9995' }}>
                                     {blogMenu.map((col, colIdx) => (
                                         <ul key={colIdx} className="flex-1 flex flex-col gap-2 border-r last:border-r-0 border-gray-200 pr-8 last:pr-0">
-                                            <li className="text-[#7ad03a] font-bold text-lg mb-2" style={{ fontFamily: 'Playfair Display' }}>{col.heading}</li>
+                                            <li className="text-[#fe9995] font-bold text-lg mb-2" style={{ fontFamily: 'Playfair Display' }}>{col.heading}</li>
                                             {col.items.map((item, idx) => (
                                                 <li
                                                     key={idx}
-                                                    className="flex items-center gap-2 text-base py-1 text-gray-700 hover:text-[#7ad03a] transition"
+                                                    className="flex items-center gap-2 text-base py-1 text-gray-700 hover:text-[#fe9995] transition"
                                                     style={{ fontFamily: 'Playfair Display' }}
                                                 >
                                                     {item}
@@ -303,22 +406,22 @@ const Productheader2 = () => {
                             )}
                         </li>
                         <li
-                            style={{ fontFamily: 'Playfair Display', color: showPagesDropdown ? '#7ad03a' : undefined, fontWeight: showPagesDropdown ? 'bold' : undefined }}
+                            style={{ fontFamily: 'Playfair Display', color: showPagesDropdown ? '#fe9995' : undefined, fontWeight: showPagesDropdown ? 'bold' : undefined }}
                             className="relative cursor-pointer group"
                             onMouseEnter={() => setShowPagesDropdown(true)}
                             onMouseLeave={() => setShowPagesDropdown(false)}
                         >
-                            <span className="pb-1 border-b-2 border-transparent group-hover:border-[#7ad03a] transition-all duration-200 inline-block">PAGES</span>
+                            <span className="pb-1 border-b-2 border-transparent group-hover:border-[#fe9995] transition-all duration-200 inline-block">PAGES</span>
 
                             {showPagesDropdown && (
-                                <div className="absolute  top-full -right-50 max-w-3xl bg-white shadow-2xl  z-50 p-8 flex flex-row gap-8" style={{ borderTop: '2px solid #7ad03a' }}>
+                                <div className="absolute  top-full -right-50 max-w-3xl bg-white shadow-2xl  z-50 p-8 flex flex-row gap-8" style={{ borderTop: '2px solid #fe9995' }}>
                                     {pagesMenu.map((col, colIdx) => (
                                         <ul key={colIdx} className="flex-1 flex flex-col gap-2 border-r last:border-r-0 border-gray-200 pr-8 last:pr-0">
-                                            <li className="text-[#7ad03a] font-bold text-lg mb-2" style={{ fontFamily: 'Playfair Display' }}>{col.heading}</li>
+                                            <li className="text-[#fe9995] font-bold text-lg mb-2" style={{ fontFamily: 'Playfair Display' }}>{col.heading}</li>
                                             {col.items.map((item, idx) => (
                                                 <li
                                                     key={idx}
-                                                    className="flex items-center gap-2 text-base py-1 text-gray-700 hover:text-[#7ad03a] transition"
+                                                    className="flex items-center gap-2 text-base py-1 text-gray-700 hover:text-[#fe9995] transition"
                                                     style={{ fontFamily: 'Playfair Display' }}
                                                 >
                                                     {item}
@@ -330,19 +433,19 @@ const Productheader2 = () => {
                             )}
                         </li>
                         <li
-                            style={{ fontFamily: 'Playfair Display', color: showPortfoliosDropdown ? '#7ad03a' : undefined, fontWeight: showPortfoliosDropdown ? 'bold' : undefined }}
+                            style={{ fontFamily: 'Playfair Display', color: showPortfoliosDropdown ? '#fe9995' : undefined, fontWeight: showPortfoliosDropdown ? 'bold' : undefined }}
                             className="relative cursor-pointer group"
                             onMouseEnter={() => setShowPortfoliosDropdown(true)}
                             onMouseLeave={() => setShowPortfoliosDropdown(false)}
                         >
-                            <span className="pb-1 border-b-2 border-transparent group-hover:border-[#7ad03a] transition-all duration-200 inline-block">PORTFOLIOS</span>
+                            <span className="pb-1 border-b-2 border-transparent group-hover:border-[#fe9995] transition-all duration-200 inline-block">PORTFOLIOS</span>
 
                             {showPortfoliosDropdown && (
-                                <div className="absolute top-full  w-72 bg-white shadow-2xl  z-50 p-4 flex flex-col gap-2" style={{ borderTop: '2px solid #7ad03a' }}>
+                                <div className="absolute top-full  w-72 bg-white shadow-2xl  z-50 p-4 flex flex-col gap-2" style={{ borderTop: '2px solid #fe9995' }}>
                                     {portfoliosMenu.map((item, idx) => (
                                         <div
                                             key={idx}
-                                            className="flex items-center gap-2 text-base py-2 text-gray-700 hover:text-[#7ad03a] transition border-b last:border-b-0 border-gray-200"
+                                            className="flex items-center gap-2 text-base py-2 text-gray-700 hover:text-[#fe9995] transition border-b last:border-b-0 border-gray-200"
                                             style={{ fontFamily: 'Playfair Display' }}
                                         >
                                             {item}
@@ -352,22 +455,22 @@ const Productheader2 = () => {
                             )}
                         </li>
                         <li
-                            style={{ fontFamily: 'Playfair Display', color: showElementsDropdown ? '#7ad03a' : undefined, fontWeight: showElementsDropdown ? 'bold' : undefined }}
+                            style={{ fontFamily: 'Playfair Display', color: showElementsDropdown ? '#fe9995' : undefined, fontWeight: showElementsDropdown ? 'bold' : undefined }}
                             className="relative cursor-pointer group"
                             onMouseEnter={() => setShowElementsDropdown(true)}
                             onMouseLeave={() => setShowElementsDropdown(false)}
                         >
-                            <span className="pb-1 border-b-2 border-transparent group-hover:border-[#7ad03a] transition-all duration-200 inline-block">ELEMENTS</span>
+                            <span className="pb-1 border-b-2 border-transparent group-hover:border-[#fe9995] transition-all duration-200 inline-block">ELEMENTS</span>
 
                             {showElementsDropdown && (
-                                <div className="absolute  top-full -right-3  w-[90vw] max-w-5xl bg-white shadow-2xl  z-50 p-8 flex flex-row gap-8" style={{ borderTop: '2px solid #7ad03a' }}>
+                                <div className="absolute  top-full -right-3  w-[90vw] max-w-5xl bg-white shadow-2xl  z-50 p-8 flex flex-row gap-8" style={{ borderTop: '2px solid #fe9995' }}>
                                     {elementsMenu.map((col, colIdx) => (
                                         <ul key={colIdx} className="flex-1 flex flex-col gap-2 border-r last:border-r-0 border-gray-200 pr-8 last:pr-0">
-                                            <li className="text-[#7ad03a] font-bold text-lg mb-2" style={{ fontFamily: 'Playfair Display' }}>{col.heading}</li>
+                                            <li className="text-[#fe9995] font-bold text-lg mb-2" style={{ fontFamily: 'Playfair Display' }}>{col.heading}</li>
                                             {col.items.map((item, idx) => (
                                                 <li
                                                     key={idx}
-                                                    className="flex items-center gap-2 text-base py-1 text-gray-700 hover:text-[#7ad03a] transition"
+                                                    className="flex items-center gap-2 text-base py-1 text-gray-700 hover:text-[#fe9995] transition"
                                                     style={{ fontFamily: 'Playfair Display' }}
                                                 >
                                                     {item}
@@ -382,17 +485,14 @@ const Productheader2 = () => {
                 </div>
                 <div className='flex flex-row  items-center gap-4'>
                     <div className='flex flex-row justify-between items-center gap-4'>
-                        <div className="relative inline-block hover:text-[#7ad03a]">
-                            <i className="fa-solid fa-basket-shopping text-xl hover:text-[#7ad03a] "></i>
-                            <span className="absolute -top-4 -right-2 bg-black hover:text-[#7ad03a] text-white rounded-full w-4 h-4 flex items-center justify-center !font-normal !text-xs z-10">0</span>
-                        </div>
+                        
                         <div
                             className="relative"
                             onMouseEnter={() => setShowSearchbar(true)}
                             onMouseLeave={() => setShowSearchbar(false)}
                         >
                             <i
-                                className="fa-solid fa-magnifying-glass cursor-pointer hover:text-[#7ad03a] text-xl"
+                                className="fa-solid fa-magnifying-glass cursor-pointer hover:text-[#fe9995] text-xl"
                             ></i>
                             {showSearchbar && (
                                 <div className="absolute right-0  w-64 bg-white border border-gray-200 rounded shadow-lg z-50">
@@ -408,37 +508,16 @@ const Productheader2 = () => {
                             )}
                         </div>
                     </div>
-                    <div
-                        className="relative flex items-center gap-2"
-                        onMouseEnter={() => setShowSearch(true)}
-                        onMouseLeave={() => setShowSearch(false)}
-                    >
-                        <i className="fa-solid fa-bars  hover:text-[#7ad03a] text-xl"></i>
-                        {showSearch && (
-                            <div className="absolute right-0 top-full mt-2 w-72 bg-white rounded shadow-lg z-50 border-t-2 border-[#7ad03a] p-6 flex flex-col gap-3" style={{ minWidth: '250px' }}>
-                                <div className="flex items-center gap-2 text-base text-gray-700 mb-2" style={{ fontFamily: 'Playfair Display' }}>
-                                    <i className="fa fa-heart text-[#222] text-lg"></i>
-                                    <span>Wishlist (0)</span>
-                                </div>
-                                <div className="text-base text-gray-700 mb-2" style={{ fontFamily: 'Playfair Display' }}>
-                                    <span>Login <span className="text-[#7ad03a]">/</span> Register</span>
-                                </div>
-                                <div className="flex items-center justify-between text-base text-gray-700 mb-2" style={{ fontFamily: 'Playfair Display' }}>
-                                    <span>Currency: USD</span>
-                                    <i className="fa fa-chevron-down text-xs ml-2"></i>
-                                </div>
-                                <div className="flex items-center justify-between text-base text-gray-700 mb-3" style={{ fontFamily: 'Playfair Display' }}>
-                                    <span>English</span>
-                                    <i className="fa fa-chevron-down text-xs ml-2"></i>
-                                </div>
-                            </div>
-                        )}
-                    </div>
+
+                 
+
+                   
                 </div>
             </div>
 
         </header>
-    )
-}
 
-export default Productheader2
+  );
+};
+
+export default Perfumeheader;

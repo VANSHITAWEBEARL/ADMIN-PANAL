@@ -145,19 +145,19 @@ const Productheader = () => {
   // Demo menu data for dropdown
   const demoMenu = [
     [
-      { label: 'Demo 1 – Beauty Cosmetic',to: '/HOME', highlight: true },
-      { label: 'Demo 1 – Beauty Cosmetic', to: '/HOME'},
+      { label: 'Demo 1 – Beauty Cosmetic', to: '/HOME', highlight: true },
+      { label: 'Demo 1 – Beauty Cosmetic', to: '/HOME' },
       { label: 'Demo 2 – Beauty Organic', to: '/Bueatyorganic', highlight: true },
-      { label: 'Demo 2 – Beauty Organic',to: '/Bueatyorganic' },
-      { label: 'Demo 3 – Cosmetic', highlight: true },
-      { label: 'Demo 3 – Cosmetic' },
+      { label: 'Demo 2 – Beauty Organic', to: '/Bueatyorganic' },
+      { label: 'Demo 3 – Cosmetic', to: '/Cosmetic', highlight: true },
+      { label: 'Demo 3 – Cosmetic', to: '/Cosmetic', },
       { label: 'Demo 4 – Perfume', highlight: true },
       { label: 'Demo 4 – Perfume' },
       { label: 'Demo 5 – Spa & Beauty', highlight: true },
       { label: 'Demo 5 – Spa & Beauty' },
     ],
     [
-      { label: 'Demo 6 – Flower Store' },
+      { label: 'Demo 6 – Flower Store', to: '/Demo6' },
       { label: 'Demo 7 – Fresh Organic' },
       { label: 'Demo 8 – Full Slider' },
       { label: 'Demo 9 – Green Organic' },
@@ -211,13 +211,15 @@ const Productheader = () => {
                       {col.map((item, idx) =>
                         item.to ? (
                           <li key={idx} className="border-b border-gray-200">
-                            <Link
-                              to={item.to}
-                              className="flex items-center gap-2 text-md font-normal text-gray-500 py-1 hover:text-[#fe9995] transition"
-                            >
-                              {item.label}
+                            <Link to={item.to} className="flex items-center gap-2 text-md font-normal no-underline !text-gray-500 py-1 transition group" style={{ textDecoration: 'none' }}>
+                              <span className="hover:text-[#fe9995] transition-colors">{item.label}</span>
                               {item.highlight && (
-                                <span className="ml-1 text-xs font-normal bg-gray-100 hover:text-[#fe9995] px-1">E</span>
+                                <span
+                                  className="ml-1 text-xs font-normal bg-gray-100 px-1 transition-colors hover:text-[#fe9995]"
+                                  style={{ transition: 'color 0.3s ease' }}
+                                >
+                                  E
+                                </span>
                               )}
                             </Link>
                           </li>
@@ -382,29 +384,29 @@ const Productheader = () => {
           </ul>
         </div>
         <div className='flex flex-row  items-center gap-4'>
-        <div className='flex flex-row justify-between items-center gap-4'>
-          <div
-            className="relative"
-            onMouseEnter={() => setShowSearchbar(true)}
-            onMouseLeave={() => setShowSearchbar(false)}
-          >
-            <i
-              className="fa-solid fa-magnifying-glass cursor-pointer hover:text-[#fe9995] text-sm"
-            ></i>
-            {showSearchbar && (
-              <div className="absolute right-0  w-64 bg-white border border-gray-200 rounded shadow-lg z-50">
-                <input
-                  type="text"
-                  className="w-full px-4 py-2 text-gray-700 text-base outline-none border-none rounded"
-                  placeholder="Search ..."
-                  value={searchValue}
-                  onChange={e => setSearchValue(e.target.value)}
-                  style={{ fontFamily: 'Playfair Display' }}
-                />
-              </div>
-            )}
+          <div className='flex flex-row justify-between items-center gap-4'>
+            <div
+              className="relative"
+              onMouseEnter={() => setShowSearchbar(true)}
+              onMouseLeave={() => setShowSearchbar(false)}
+            >
+              <i
+                className="fa-solid fa-magnifying-glass cursor-pointer hover:text-[#fe9995] text-sm"
+              ></i>
+              {showSearchbar && (
+                <div className="absolute right-0  w-64 bg-white border border-gray-200 rounded shadow-lg z-50">
+                  <input
+                    type="text"
+                    className="w-full px-4 py-2 text-gray-700 text-base outline-none border-none rounded"
+                    placeholder="Search ..."
+                    value={searchValue}
+                    onChange={e => setSearchValue(e.target.value)}
+                    style={{ fontFamily: 'Playfair Display' }}
+                  />
+                </div>
+              )}
+            </div>
           </div>
-        </div>
           <div
             className="relative flex items-center gap-2"
             onMouseEnter={() => setShowSearch(true)}
@@ -431,10 +433,10 @@ const Productheader = () => {
               </div>
             )}
           </div>
-          </div>
         </div>
       </div>
-      );
+    </div>
+  );
 }
 
-      export default Productheader
+export default Productheader
