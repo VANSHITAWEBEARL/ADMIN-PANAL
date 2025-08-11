@@ -818,12 +818,12 @@ const Perfume = () => {
 
 
 
-            <footer class=" text-gray-800 pt-10 mt-10" style={{
+            <footer class=" text-gray-800  pt-10 mt-10" style={{
                     backgroundImage: `url(${fotterbg})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                 }}>
-                <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8">
+                <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-10">
                     {/* <!-- Contact Us --> */}
                     <div>
                         <h2 class="!text-base font-bold capitalize" style={{ fontFamily: 'Playfair Display' }}>CONTACT US</h2>
@@ -835,8 +835,8 @@ const Perfume = () => {
 
                     {/* <!-- Information --> */}
                     <div>
-                        <h2 class="!text-base font-bold capitalize" style={{ fontFamily: 'Playfair Display' }}>INFORMATION</h2>
-                        <ul class="space-y-2">
+                        <h2 class="!text-base ps-5 font-bold capitalize" style={{ fontFamily: 'Playfair Display' }}>INFORMATION</h2>
+                        <ul class="space-y-2 ps-5 ">
                             <li><a href="#" class="hover:text-pink-600 text-black !no-underline">About Us</a></li>
                             <li><a href="#" class="hover:text-pink-600 text-black !no-underline">Stores</a></li>
                             <li><a href="#" class="hover:text-pink-600 text-black !no-underline">Privacy Policy</a></li>
@@ -849,8 +849,8 @@ const Perfume = () => {
 
                     {/* <!-- Customer Services --> */}
                     <div>
-                        <h2 class="!text-base font-bold capitalize" style={{ fontFamily: 'Playfair Display' }}>CUSTOMER SERVICES</h2>
-                        <ul class="space-y-2">
+                        <h2 class="!text-base ps-3 font-bold capitalize" style={{ fontFamily: 'Playfair Display' }}>CUSTOMER SERVICES</h2>
+                        <ul class="space-y-2 ps-3">
                             <li><a href="#" class="hover:text-pink-600 text-black !no-underline">Delivery Information</a></li>
                             <li><a href="#" class="hover:text-pink-600 text-black !no-underline">Shipping</a></li>
                             <li><a href="#" class="hover:text-pink-600 text-black !no-underline">Product Returns</a></li>
@@ -864,7 +864,7 @@ const Perfume = () => {
                     {/* <!-- My Account --> */}
                     <div>
                         <h2 class="!text-base font-bold mb-4 capitalize" style={{ fontFamily: 'Playfair Display' }}>MY ACCOUNT</h2>
-                        <ul class="space-y-2">
+                        <ul class="space-y-2 p-0">
                             <li><a href="#" class="hover:text-pink-600 text-black !no-underline ">My account</a></li>
                             <li><a href="#" class="hover:text-pink-600 text-black !no-underline">Order History</a></li>
                             <li><a href="#" class="hover:text-pink-600 text-black !no-underline">Downloads</a></li>
