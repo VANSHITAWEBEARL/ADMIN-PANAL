@@ -39,7 +39,8 @@ import Cosmetic from './Bueatyproduct/Cosmetic.jsx'
 import Perfume from './Bueatyproduct/Perfume.jsx'
 import Demo6 from './Bueatyproduct/Demo6.jsx'
 import Demo6header from './Bueatyproduct/Demo6header.jsx'
-import Mobailheader from './bueatyproduct/Mobailheader.jsx'
+import Shopepage from './shope/Shopepage.jsx'
+
 
 
 
@@ -79,7 +80,6 @@ function App() {
         <Route path="/ExportPersonalData" element={<ExportPersonalData />} />
         <Route path="/ErasePersonalData" element={<ErasePersonalData />} />
         <Route path="/NewMedia" element={<NewMedia />} />
-        <Route path='/Mobailheader' element={<Mobailheader />} />
        <Route path='/Bueatyorganic' element={<Bueatyorganic />} />
        <Route path='/productheader' element={<Productheader />} />
         <Route path="/Home" element={<Home/>} />
@@ -87,6 +87,8 @@ function App() {
         <Route path="/Perfume" element={<Perfume />} />
         <Route path='Demo6' element={<Demo6 />}/>
         <Route path='Demo6header' element={<Demo6header/>}/>
+        <Route path='Shopepage' element={<Shopepage />}/>
+        
         {/* Add more routes as needed */}
         </Routes>
     </div>

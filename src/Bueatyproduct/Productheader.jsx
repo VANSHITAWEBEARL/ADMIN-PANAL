@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../assets/logo-h9.png';
 import Maincart from './Maincart';
 import { Link } from 'react-router-dom';
+import { LiaCalendarCheckSolid } from 'react-icons/lia';
 
 const Productheader = () => {
   // Search input state
@@ -112,33 +113,78 @@ const Productheader = () => {
     {
       heading: 'SHOP LAYOUT',
       items: [
-        'Full Width', 'Sidebar Left', 'Sidebar Right', 'Categories', 'Filter Top', 'Infinite Scroll', 'Off-Canvas Filter', 'Shop Categories', 'Small Categories', 'Cookies Notice'
-      ]
+        { label: 'Full Width', to: '/Shopepage' },
+        { label: 'Sidebar Left', to: '/shop/sidebar-left' },
+        { label: 'Sidebar Right', to: '/shop/sidebar-right' },
+        { label: 'Categories', to: '/shop/categories' },
+        { label: 'Filter Top', to: '/shop/filter-top' },
+        { label: 'Infinite Scroll', to: '/shop/infinite-scroll' },
+        { label: 'Off-Canvas Filter', to: '/shop/off-canvas-filter' },
+        { label: 'Shop Categories', to: '/shop/shop-categories' },
+        { label: 'Small Categories', to: '/shop/small-categories' },
+        { label: 'Cookies Notice', to: '/shop/cookies-notice' },
+      ],
     },
     {
       heading: 'SHOP PAGE',
       items: [
-        'Variation Shop', 'Gallery On Products', 'Catalog Mode', 'Load More', 'Shop Masonry', 'Animation Shop', 'Lazyload Product', 'Shop Carousel', 'Advanced Filter', 'Without Background'
-      ]
+        { label: 'Variation Shop', to: '/shop/variation-shop' },
+        { label: 'Gallery On Products', to: '/shop/gallery-on-products' },
+        { label: 'Catalog Mode', to: '/shop/catalog-mode' },
+        { label: 'Load More', to: '/shop/load-more' },
+        { label: 'Shop Masonry', to: '/shop/masonry' },
+        { label: 'Animation Shop', to: '/shop/animation-shop' },
+        { label: 'Lazyload Product', to: '/shop/lazyload-product' },
+        { label: 'Shop Carousel', to: '/shop/carousel' },
+        { label: 'Advanced Filter', to: '/shop/advanced-filter' },
+        { label: 'Without Background', to: '/shop/without-background' },
+      ],
     },
     {
       heading: 'SHOP PAGES',
       items: [
-        'Shopping Cart', 'My Account', 'Checkout', 'Wishlist', 'Shop Banner', 'Product Image Ver2', 'Product Hover Ver2', 'Product Hover Ver3', 'Grid View', 'List View'
-      ]
+        { label: 'Shopping Cart', to: '/cart' },
+        { label: 'My Account', to: '/account' },
+        { label: 'Checkout', to: '/checkout' },
+        { label: 'Wishlist', to: '/wishlist' },
+        { label: 'Shop Banner', to: '/shop/banner' },
+        { label: 'Product Image Ver2', to: '/product/image-ver2' },
+        { label: 'Product Hover Ver2', to: '/product/hover-ver2' },
+        { label: 'Product Hover Ver3', to: '/product/hover-ver3' },
+        { label: 'Grid View', to: '/shop/grid-view' },
+        { label: 'List View', to: '/shop/list-view' },
+      ],
     },
     {
       heading: 'PRODUCT STYLE',
       items: [
-        'Simple Product', 'Variation Swatches', 'Grouped Product', 'Downloadable', 'External Product', 'Video Product', '360° Product Viewer', 'Arcodion Tabs', 'Vertical Gallery', 'AI Review Summary'
-      ]
+        { label: 'Simple Product', to: '/product/simple' },
+        { label: 'Variation Swatches', to: '/product/variation-swatches' },
+        { label: 'Grouped Product', to: '/product/grouped' },
+        { label: 'Downloadable', to: '/product/downloadable' },
+        { label: 'External Product', to: '/product/external' },
+        { label: 'Video Product', to: '/product/video' },
+        { label: '360° Product Viewer', to: '/product/360-viewer' },
+        { label: 'Accordion Tabs', to: '/product/accordion-tabs' },
+        { label: 'Vertical Gallery', to: '/product/vertical-gallery' },
+        { label: 'AI Review Summary', to: '/product/ai-review-summary' },
+      ],
     },
     {
       heading: 'VENDOR',
       items: [
-        'Dokan Dashboard', 'Dokan List', 'Dokan Store', 'WC Vendor', 'WCFM List', 'WCFM Store', 'Grid Gallery', 'Sticky Add To Cart', 'Up-Sell Product', 'Cross-Sell Product'
-      ]
-    }
+        { label: 'Dokan Dashboard', to: '/vendor/dokan-dashboard' },
+        { label: 'Dokan List', to: '/vendor/dokan-list' },
+        { label: 'Dokan Store', to: '/vendor/dokan-store' },
+        { label: 'WC Vendor', to: '/vendor/wc-vendor' },
+        { label: 'WCFM List', to: '/vendor/wcfm-list' },
+        { label: 'WCFM Store', to: '/vendor/wcfm-store' },
+        { label: 'Grid Gallery', to: '/vendor/grid-gallery' },
+        { label: 'Sticky Add To Cart', to: '/product/sticky-add-to-cart' },
+        { label: 'Up-Sell Product', to: '/product/up-sell' },
+        { label: 'Cross-Sell Product', to: '/product/cross-sell' },
+      ],
+    },
   ];
 
   const [showShopDropdown, setShowShopDropdown] = React.useState(false);
@@ -151,8 +197,8 @@ const Productheader = () => {
       { label: 'Demo 2 – Beauty Organic', to: '/Bueatyorganic' },
       { label: 'Demo 3 – Cosmetic', to: '/Cosmetic', highlight: true },
       { label: 'Demo 3 – Cosmetic', to: '/Cosmetic', },
-      { label: 'Demo 4 – Perfume', highlight: true },
-      { label: 'Demo 4 – Perfume' },
+      { label: 'Demo 4 – Perfume', to: '/perfume', highlight: true },
+      { label: 'Demo 4 – Perfume', to: '/perfume' },
       { label: 'Demo 5 – Spa & Beauty', highlight: true },
       { label: 'Demo 5 – Spa & Beauty' },
     ],
@@ -202,7 +248,7 @@ const Productheader = () => {
               onMouseEnter={() => setShowDropdown(true)}
               onMouseLeave={() => setShowDropdown(false)}
             >
-              <span className="pb-1 border-b-2 border-transparent group-hover:border-[#fe9995] transition-all duration-200 inline-block">HOME</span>
+              <Link to='/HOME' className="pb-1 !text-[#fe9995] !no-underline border-b-2 border-transparent  group-hover:border-[#fe9995] transition-all duration-200 inline-block">HOME</Link>
 
               {showDropdown && (
                 <div className="absolute -left-30 top-full  w-[90vw] max-w-4xl bg-white shadow-2xl  z-50 p-3 flex flex-row gap-2" style={{ borderTop: '2px solid #fe9995' }}>
@@ -246,36 +292,33 @@ const Productheader = () => {
               onMouseEnter={() => setShowShopDropdown(true)}
               onMouseLeave={() => setShowShopDropdown(false)}
             >
-              <span className="pb-1 border-b-2 border-transparent group-hover:border-[#fe9995] transition-all duration-200 inline-block">SHOP</span>
+              <span className="pb-1 border-b-2 border-transparent hover:text-[#Fe9995] hover:border-[#fe9995] transition-all duration-200 inline-block">SHOP</span>
 
-              {showShopDropdown && (
-                <div className="absolute top-full -left-40 w-[90vw] max-w-5xl bg-white shadow-2xl z-50 p-4 flex flex-row gap-4" style={{ borderTop: '2px solid #fe9995' }}>
-                  {shopMenu.map((col, colIdx) => (
-                    <ul key={colIdx} className="flex-1 flex flex-col gap-2 border-gray-200 px-0">
-                      <li className="text-[#fe9995] font-normal !text-sm mb-2">{col.heading}</li>
-                      {col.items.map((item, idx) =>
-                        typeof item === 'object' && item.to ? (
-                          <li key={idx} className="border-b border-gray-200">
-                            <Link
-                              to={item.to}
-                              className="flex items-center gap-2 text-md font-normal text-gray-400 py-1 hover:text-[#fe9995] transition"
-                            >
-                              {item.label || item}
-                            </Link>
-                          </li>
-                        ) : (
-                          <li
-                            key={idx}
-                            className="flex items-center gap-2 text-md py-1 mr-2 !font-normal border-b border-gray-200 text-gray-400 hover:text-[#fe9995] transition"
-                          >
-                            {typeof item === 'object' ? item.label : item}
-                          </li>
-                        )
-                      )}
-                    </ul>
-                  ))}
-                </div>
-              )}
+              
+                  {showShopDropdown && (
+                    <div className="absolute top-full -left-30 max-w-7xl w-220 bg-white shadow-2xl z-50 p-4 flex flex-row gap-5" style={{ borderTop: '2px solid #fe9995' }}>
+                      {shopMenu.map((menu, i) => (
+                        <div key={i}>
+                          <h4 className="font-medium !text-base">{menu.heading}</h4>
+                          <ul className='p-0 flex gap-3 flex-col'>
+                            {menu.items.map((item, idx) => (
+                              <li key={idx}>
+                                <Link
+                                  to={item.to}
+                                  className="!text-gray-500 font-normal gap-2 flex border-b border-gray-100 !hover:text-[#fe9995] font p-0 !no-underline transition"
+                                >
+                                  {item.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+
+                    </div>
+                  )}
+              
+             
             </li>
             <li
               style={{ fontFamily: 'Playfair Display', color: showBlogDropdown ? '#fe9995' : undefined, fontWeight: showBlogDropdown ? 'bold' : undefined }}

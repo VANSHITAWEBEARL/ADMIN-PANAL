@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo11.png'; // Replace with your logo path
-import nave from '../assets/header-nav11.png'; // Replace with your background image path
-import Loginmodal from './Loginmodal';
+import logo from '../assets/logo.png'; // Replace with your logo path
+import nave from '../assets/header.png'; // Replace with your background image path
+import Loginmodal from '../Bueatyproduct/Loginmodal';
 
 
-const Perfumeheader = () => {
+
+const Shopeheader = () => {
  
      // Search input state
     const [showSearchbar, setShowSearchbar] = React.useState(false);
@@ -257,19 +258,19 @@ const Perfumeheader = () => {
         <header className="w-full border-b z-70 !sticky border-gray-100 bg-white">
       <nav className="text-white py-2" style={{ backgroundImage: `url(${nave})`,}}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Left Navigation */}
-        <div className="flex items-center space-x-6">
+        {/* Left Navigation */} 
+        <div className="flex items-center ms-10 space-x-6">
           {/* Currency Switcher */}
          <div className="relative group">
-  <div className="flex items-center  font-semibold text-[#7A7A7A] hover:text-[#f75c6c] cursor-pointer">
+  <div className="flex items-center  font-normal text-[#7A7A7A] hover:text-[#f75c6c] cursor-pointer">
     <span>Currency: {selectedCurrency}</span>
-    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg className="w-4 h-4 ml-1 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
     </svg>
   </div>
 
   {/* Dropdown (visible on hover using Tailwind) */}
-  <ul className="absolute z-10 mt-1 p-0 text-center w-30 border-t border-[#f75c6c] bg-white text-gray-800 shadow-lg hidden group-hover:block">
+  <ul className="absolute z-10 mt-1 font-normal p-0 text-center w-30 border-t border-[#f75c6c] bg-white text-gray-800 shadow-lg hidden group-hover:block">
     {currencies.map((currency) => (
       <li
         key={currency}
@@ -285,7 +286,7 @@ const Perfumeheader = () => {
           {/* Language Selector */}
       <div className="relative group">
   {/* Hoverable Trigger */}
-  <div className="flex items-center font-semibold text-[#7A7A7A] space-x-1 hover:text-[#f75c6c] cursor-pointer">
+  <div className="flex items-center font-font-normal text-[#7A7A7A] space-x-1 hover:text-[#f75c6c] cursor-pointer">
     <span>{selectedLanguage}</span>
     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -309,13 +310,13 @@ const Perfumeheader = () => {
         </div>
 
         {/* Right Navigation */}
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center me-15 space-x-6">
           {/* Account Links */}
           <div className="flex items-center space-x-2">
            <Loginmodal/>
-           <span className='text-gray-400'>/</span>
+           <span className='text-gray-500'>/</span>
             <button
-              className="text-[#7A7A7A]  hover:text-[#f75c6c] !no-underline"
+              className="text-gray-500  hover:text-[#f75c6c] !no-underline"
             >
               Register
             </button>
@@ -335,14 +336,11 @@ const Perfumeheader = () => {
       </div>
     </nav>
 
-            <div className="mx-15 flex items-center justify-around py-2 px-3">
-                {/* Logo */}
-                <div className="flex items-center">
-                    <img src={logo} alt="Beauty Organic" className="h-20 w-auto " />
-                </div>
+            <div className="mx-15 flex items-center justify-center py-1 px-3">
+
                 {/* Menu */}
                 <div className='flex mt-4'>
-                    <ul className='flex flex-row justify-between items-center gap-5'>
+                    <ul className='flex flex-row justify-between items-center gap-15'>
                         <li
                             style={{ fontFamily: 'Playfair Display', color: showDropdown ? '#fe9995' : undefined, fontWeight: showDropdown ? 'bold' : undefined }}
                             className="relative cursor-pointer group"
@@ -395,7 +393,7 @@ const Perfumeheader = () => {
                             <span className="pb-1 border-b-2 border-transparent group-hover:border-[#fe9995] transition-all duration-200 inline-block">SHOP</span>
 
                              {showShopDropdown && (
-                                                                      <div className="absolute top-full -left-60 max-w-7xl w-220 bg-white shadow-2xl z-50 p-4 flex flex-row gap-5" style={{ borderTop: '2px solid #fe9995' }}>
+                                                                      <div className="absolute top-full -left-25 max-w-7xl w-220 bg-white shadow-2xl z-50 p-4 flex flex-row gap-5" style={{ borderTop: '2px solid #fe9995' }}>
                                                                         {shopMenu.map((menu, i) => (
                                                                           <div key={i}>
                                                                             <h4 className="font-medium !text-base">{menu.heading}</h4>
@@ -445,6 +443,10 @@ const Perfumeheader = () => {
                                 </div>
                             )}
                         </li>
+                                        {/* Logo */}
+                <div className="flex items-center">
+                    <img src={logo} alt="Beauty Organic" className="h-20 w-auto " />
+                </div>
                         <li
                             style={{ fontFamily: 'Playfair Display', color: showPagesDropdown ? '#fe9995' : undefined, fontWeight: showPagesDropdown ? 'bold' : undefined }}
                             className="relative cursor-pointer group"
@@ -527,12 +529,12 @@ const Perfumeheader = () => {
                     <div className='flex flex-row justify-between items-center gap-4'>
                         
                         <div
-                            className="relative"
+                            className="relative -right-20"
                             onMouseEnter={() => setShowSearchbar(true)}
                             onMouseLeave={() => setShowSearchbar(false)}
                         >
                             <i
-                                className="fa-solid fa-magnifying-glass cursor-pointer hover:text-[#fe9995] text-xl"
+                                className="fa-solid fa-magnifying-glass cursor-pointer text-gray-400  hover:text-[#fe9995] text-base"
                             ></i>
                             {showSearchbar && (
                                 <div className="absolute right-0  w-64 bg-white border border-gray-200 rounded shadow-lg z-50">
@@ -560,4 +562,4 @@ const Perfumeheader = () => {
   );
 };
 
-export default Perfumeheader;
+export default Shopeheader;
