@@ -34,6 +34,7 @@ import fotter6 from '../assets/11-6.jpg'
 import fotterbg from '../assets/back-footer1.png'
 import payment from '../assets/payment.png'
 import copy from '../assets/back-f2.png'
+import BackToTopButton from './BacktoTopbutton'
 const Perfume = () => {
     const allCategories = [
         // First set of cards
@@ -929,7 +930,7 @@ const Perfume = () => {
 
             </footer>
 
-
+<BackToTopButton/>
         </div >
     )
 }

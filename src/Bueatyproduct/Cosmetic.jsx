@@ -33,6 +33,7 @@ import bg4 from '../assets/b4.png'
 import bg5 from '../assets/b5.png'
 import payment from '../assets/payment.png'
 import logo from '../assets/logo10e.png';
+import BackToTopButton from './BacktoTopbutton'
 const testimonials = [
     {
         name: 'Ms. Adela',
@@ -681,7 +682,7 @@ const Cosmetic = () => {
   </div>
 </footer>
 
-
+  <BackToTopButton/>
         </div>
     )
 }

@@ -26,7 +26,7 @@ const menuLinks = [
   // ...add more as needed
 ];
 
-const Mobileheader = () => {
+const Mobailheader = () => {
   const [canvasOpen, setCanvasOpen] = useState(false);
 
   return (
@@ -116,4 +116,4 @@ const Mobileheader = () => {
   );
 };
 
-export default Mobileheader;
+export default Mobailheader;

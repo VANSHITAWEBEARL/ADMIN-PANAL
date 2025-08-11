@@ -18,6 +18,7 @@ import image3 from '../assets/blog1.jpg';
 import image4 from '../assets/blog2.jpg';
 import banner1 from '../assets/banner4.png';
 import banner2 from '../assets/banner5.png';
+import BackToTopButton from './BacktoTopbutton';
 
 
 
@@ -344,6 +345,7 @@ const Bueatyorganic = () => {
       </main>
 
       <Footer1 />
+      <BackToTopButton/>
     </div>
   );
 };

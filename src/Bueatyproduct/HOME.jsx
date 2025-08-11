@@ -20,8 +20,8 @@ import bg3 from '../assets/back2.jpg'; // Ensure the image path is correct
 import test1 from '../assets/test1.png';
 import test2 from '../assets/test2.png';
 import test3 from '../assets/test3.png';
-import Mobileheader from './Mobailheader';
-
+import BackToTopButton from './BacktoTopbutton';
+import Mobailheader from './Mobailheader';
 
 const Home = () => {
   // Testimonial carousel state and data
@@ -82,7 +82,7 @@ const Home = () => {
 
         <div className="absolute top-6 left-0 w-full z-30 px-4 sm:px-10">
           <Productheader />
-          <Mobileheader />
+          <Mobailheader/>
 
         </div>
 
@@ -497,6 +497,7 @@ const Home = () => {
       </div>
 
       <Footer1 />
+      <BackToTopButton/>
 
     </div>
   );

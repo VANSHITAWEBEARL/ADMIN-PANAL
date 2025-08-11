@@ -32,7 +32,6 @@ import Imports from './Imports'
 import Dashboardhome from './Dashboardhome.jsx'
 
 
-import Mobileheader from './bueatyproduct/Mobailheader'
 import Bueatyorganic from './Bueatyproduct/Bueatyorganic'
 import Productheader from './Bueatyproduct/Productheader.jsx'
 import Home from './Bueatyproduct/Home.jsx'
@@ -40,6 +39,7 @@ import Cosmetic from './Bueatyproduct/Cosmetic.jsx'
 import Perfume from './Bueatyproduct/Perfume.jsx'
 import Demo6 from './Bueatyproduct/Demo6.jsx'
 import Demo6header from './Bueatyproduct/Demo6header.jsx'
+import Mobailheader from './bueatyproduct/Mobailheader.jsx'
 
 
 
@@ -79,10 +79,10 @@ function App() {
         <Route path="/ExportPersonalData" element={<ExportPersonalData />} />
         <Route path="/ErasePersonalData" element={<ErasePersonalData />} />
         <Route path="/NewMedia" element={<NewMedia />} />
-        <Route path='/Mobileheader' element={<Mobileheader />} />
+        <Route path='/Mobailheader' element={<Mobailheader />} />
        <Route path='/Bueatyorganic' element={<Bueatyorganic />} />
        <Route path='/productheader' element={<Productheader />} />
-         <Route path="/Home" element={<Home/>} />
+        <Route path="/Home" element={<Home/>} />
         <Route path="/Cosmetic" element={<Cosmetic />} />
         <Route path="/Perfume" element={<Perfume />} />
         <Route path='Demo6' element={<Demo6 />}/>
