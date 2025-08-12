@@ -126,7 +126,7 @@ const Productheader2 = () => {
     {
       heading: 'SHOP PAGE',
       items: [
-        { label: 'Variation Shop', to: '/shop/variation-shop' },
+        { label: 'Variation Shop', to: '/Variationshop' },
         { label: 'Gallery On Products', to: '/shop/gallery-on-products' },
         { label: 'Catalog Mode', to: '/shop/catalog-mode' },
         { label: 'Load More', to: '/shop/load-more' },

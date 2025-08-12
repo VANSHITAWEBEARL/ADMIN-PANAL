@@ -40,6 +40,7 @@ import Perfume from './Bueatyproduct/Perfume.jsx'
 import Demo6 from './Bueatyproduct/Demo6.jsx'
 import Demo6header from './Bueatyproduct/Demo6header.jsx'
 import Shopepage from './shope/Shopepage.jsx'
+import Variationshop from './shope/Variationshop.jsx'
 
 
 
@@ -85,10 +86,10 @@ function App() {
         <Route path="/Home" element={<Home/>} />
         <Route path="/Cosmetic" element={<Cosmetic />} />
         <Route path="/Perfume" element={<Perfume />} />
-        <Route path='Demo6' element={<Demo6 />}/>
-        <Route path='Demo6header' element={<Demo6header/>}/>
-        <Route path='Shopepage' element={<Shopepage />}/>
-        
+        <Route path='/Demo6' element={<Demo6 />}/>
+        <Route path='/Demo6header' element={<Demo6header/>}/>
+        <Route path='/Shopepage' element={<Shopepage />}/> 
+        <Route path='/Variationshop' element={<Variationshop />}/>
         {/* Add more routes as needed */}
         </Routes>
     </div>

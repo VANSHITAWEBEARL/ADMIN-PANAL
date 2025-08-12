@@ -23,7 +23,7 @@ import { FaPlus } from "react-icons/fa";
 import Footer1 from "../Bueatyproduct/Footer1";
 
 
-const Shopepage = () => {
+const Variationshop = () => {
   const [viewMode, setViewMode] = useState('grid3');
 
   const categories = [
@@ -60,11 +60,11 @@ const Shopepage = () => {
 
   <div class="relative z-10 text-center text-white max-w-5xl mx-auto">
     {/* <!-- Title & Breadcrumb --> */}
-    <h1 class="!text-3xl font-bold capitalize" style={{ fontFamily: 'Playfair Display' }}>Shop</h1>
+    <h1 class="!text-3xl font-bold capitalize" style={{ fontFamily: 'Playfair Display' }}>Variation</h1>
     <div class="mt-2 text-lg">
      <Link to='/Home' className="!no-underline !text-white "><span class="font-semibold text-2xl hover:text-[#fe9995] capitalize" style={{ fontFamily: 'Playfair Display' }}>Home</span></Link>
       <span class="mx-1 text-gray-300">/</span>
-      <span class="text-[#fe9995] text-2xl font-semibold capitalize" style={{ fontFamily: 'Playfair Display' }}>Shop</span>
+      <span class="text-[#fe9995] text-2xl font-semibold capitalize" style={{ fontFamily: 'Playfair Display' }}>Variation</span>
     </div>
 
     {/* <!-- Categories --> */}
@@ -101,29 +101,39 @@ const Shopepage = () => {
         {/* Sidebar */}
         <aside className="w-64 space-y-8">
           {/* Categories */}
-          <div className="border border-gray-200 w-full max-w-xs bg-white">
-            {/* Header */}
-            <div className="border-b border-gray-200 px-4 py-3">
-              <h3 className="!text-lg !font-bold uppercase text-gray-800 uppercase" style={{ fontFamily: 'Playfair Display' }}>
-                Categories
-              </h3>
-            </div>
+         <div className="border border-gray-200 w-full max-w-xs bg-white">
+  {/* Header */}
+  <div className="border-b border-gray-200 px-4 py-3">
+    <h3 className="!text-lg !font-bold uppercase text-gray-800" style={{ fontFamily: 'Playfair Display' }}>
+      CATEGORIES
+    </h3>
+  </div>
 
-            {/* List */}
-            <ul className="p-0">
-              {categories.map((cat, index) => (
-                <li
-                  key={index}
-                  className="flex justify-between items-center p-3 py-3 border-b border-gray-200 last:border-b-0 text-gray-500  !text-sm hover:text-[#fe9995] cursor-pointer capitalize" style={{ fontFamily: 'Playfair Display , italic' }}
-                >
-                  <span className="font-bold uppercase" style={{ fontFamily: 'Playfair Display , italic' }}>
-                    {cat.name} ({cat.count})
-                  </span>
-                  <FaPlus className="text-xs text-gray-500" />
-                </li>
-              ))}
-            </ul>
-          </div>
+  {/* List */}
+  <ul className="px-3">
+    {[
+      { name: 'ACCESSORIES', count: 22 },
+      { name: 'BEAUTY', count: 10 },
+      { name: 'BEAUTY ORGANIC', count: 7, noIcon: true },  // Item 3 - no icon
+      { name: 'CUCUMBER ORGANIE', count: 19 },
+      { name: 'NATURAL', count: 9, noIcon: true },        // Item 5 - no icon
+      { name: 'NATURAL BEAUTY', count: 8, noIcon: true }, // Item 6 - no icon
+      { name: 'NATURE', count: 9 },
+      { name: 'OTHER PRODUCTS', count: 46 }
+    ].map((cat, index) => (
+      <li
+        key={index}
+        className="flex justify-between items-center p-3 py-3 border-b border-gray-200 last:border-b-0 text-gray-500 !text-sm hover:text-[#fe9995] cursor-pointer"
+        style={{ fontFamily: 'Playfair Display, italic' }}
+      >
+        <span className="font-bold uppercase" style={{ fontFamily: 'Playfair Display, italic' }}>
+          {cat.name} ({cat.count})
+        </span>
+        {!cat.noIcon && <FaPlus className="text-xs text-gray-500" />}
+      </li>
+    ))}
+  </ul>
+</div>
 
           {/* List */}
          
@@ -380,7 +390,7 @@ const Shopepage = () => {
       {[1, 2, 3, "...", 15, "Next"].map((pg, idx) => (
         <button
           key={idx}
-          className={`px-3 py-1 border rounded ${pg === 1 ? "bg-[#fe9995] text-white hover:bg-[#fe9995" : "bg-white hover:bg-[#fe9995]"}`}
+          className={`px-3 py-1 border rounded ${pg === 1 ? "bg-[#fe9995] text-white hover:bg-[#fe9995]" : "bg-white hover:bg-[#fe9995]"}`}
         >
           {pg}
         </button>
@@ -393,4 +403,4 @@ const Shopepage = () => {
   );
 };
 
-export default Shopepage;
+export default Variationshop;

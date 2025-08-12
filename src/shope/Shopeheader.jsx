@@ -130,7 +130,7 @@ const Shopeheader = () => {
     {
       heading: 'SHOP PAGE',
       items: [
-        { label: 'Variation Shop', to: '/shop/variation-shop' },
+        { label: 'Variation Shop', to: '/Variationshop' },
         { label: 'Gallery On Products', to: '/shop/gallery-on-products' },
         { label: 'Catalog Mode', to: '/shop/catalog-mode' },
         { label: 'Load More', to: '/shop/load-more' },
@@ -339,7 +339,7 @@ const Shopeheader = () => {
             <div className="mx-15 flex items-center justify-center py-1 px-3">
 
                 {/* Menu */}
-                <div className='flex mt-4'>
+                <div className='flex mb-0'>
                     <ul className='flex flex-row justify-between items-center gap-15'>
                         <li
                             style={{ fontFamily: 'Playfair Display', color: showDropdown ? '#fe9995' : undefined, fontWeight: showDropdown ? 'bold' : undefined }}
@@ -445,7 +445,7 @@ const Shopeheader = () => {
                         </li>
                                         {/* Logo */}
                 <div className="flex items-center">
-                    <img src={logo} alt="Beauty Organic" className="h-20 w-auto " />
+                    <img src={logo} alt="Beauty Organic" className="h-20 w-auto -mt-8 " />
                 </div>
                         <li
                             style={{ fontFamily: 'Playfair Display', color: showPagesDropdown ? '#fe9995' : undefined, fontWeight: showPagesDropdown ? 'bold' : undefined }}
