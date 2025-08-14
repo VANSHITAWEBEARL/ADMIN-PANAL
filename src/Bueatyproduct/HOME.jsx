@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import slide1 from '../assets/slider91.jpg';
 import slide2 from '../assets/slider92.jpg';
 import slide3 from '../assets/slider93.jpg';
-import Productheader from './Productheader';
 import concealerImage from '../assets/cate1.jpg';
 import creamImage from '../assets/cate2-1.jpg';
 import bg2 from '../assets/bg1-h9.jpg';
@@ -11,7 +10,6 @@ import cart01 from '../assets/7-1.jpg'; // Ensure the image path is correct
 import cart2 from '../assets/17.jpg';
 import cart3 from '../assets/18.jpg';
 import cart4 from '../assets/9.jpg'; // Ensure the image path is correct
-import Footer1 from './Footer1';
 import rosecreamImage from '../assets/cate3.jpg';
 import skinImage from '../assets/cate4.jpg';
 import flower from '../assets/bgspan-h9.png'; // Ensure the image path is correct
@@ -20,8 +18,9 @@ import bg3 from '../assets/back2.jpg'; // Ensure the image path is correct
 import test1 from '../assets/test1.png';
 import test2 from '../assets/test2.png';
 import test3 from '../assets/test3.png';
-import BackToTopButton from './BacktoTopbutton';
 import Mobailheader from './Mobailheader';
+import Productheader from './Productheader';
+import Footer1 from './Footer1';
 
 const Home = () => {
   // Testimonial carousel state and data
@@ -81,8 +80,8 @@ const Home = () => {
         />
 
         <div className="absolute top-6 left-0 w-full z-30 px-4 sm:px-10">
-          <Productheader />
-          <Mobailheader/>
+        <Productheader/>
+        <Mobailheader />
 
         </div>
 

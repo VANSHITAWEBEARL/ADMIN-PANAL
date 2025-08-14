@@ -2,7 +2,6 @@ import React from 'react'
 import logo from '../assets/logo-h9.png';
 import Maincart from './Maincart';
 import { Link } from 'react-router-dom';
-import { LiaCalendarCheckSolid } from 'react-icons/lia';
 
 const Productheader = () => {
   // Search input state
@@ -482,4 +481,4 @@ const Productheader = () => {
   );
 }
 
-export default Productheader
+export default Productheader;

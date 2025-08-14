@@ -19,8 +19,9 @@ import list1 from "../assets/makeup.png"
 import list2 from "../assets/lotion.png"
 import list3 from "../assets/make-up.png"
 import list4 from "../assets/sapling.png"
-import { FaPlus } from "react-icons/fa";
+
 import Footer1 from "../Bueatyproduct/Footer1";
+import { FaPlus } from "react-icons/fa";
 
 
 const Shopepage = () => {

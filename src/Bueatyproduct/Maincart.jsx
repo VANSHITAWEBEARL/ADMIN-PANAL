@@ -7,7 +7,7 @@ const Maincart = () => {
   if (!showModal) return null;
 
   return (
-    <div className="fixed inset-0 overflow-y-auto bg-black bg-opacity-50 flex items-center justify-center z-50 hidden lg:flex">
+    <div className="fixed inset-0 overflow-y-auto  bg-opacity-50 flex items-center justify-center z-50 hidden lg:flex">
       <div className="bg-white rounded-lg shadow-lg max-w-lg w-full relative">
         {/* Image Section with Close Button */}
         <div className="relative w-full">

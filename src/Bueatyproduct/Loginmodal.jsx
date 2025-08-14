@@ -7,9 +7,9 @@ const Loginmodal = () => {
   const closeModal = () => setIsOpen(false);
 
   return (
-    <div className="relative">
+    <div className="relative w-full">
       {/* Trigger Link */}
-      <div className="flex items-center space-x-6">
+      <div className="flex items-center w-full">
         <div className="flex items-center space-x-2">
           <button
             onClick={openModal}
@@ -24,7 +24,7 @@ const Loginmodal = () => {
 
       {/* Modal */}
       {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50">
+        <div className="fixed inset-0 w-full flex items-center justify-center  bg-opacity-60 z-50">
           <div className="bg-white p-8 rounded-md shadow-lg w-full max-w-md relative">
             {/* Close Button */}
             <button
