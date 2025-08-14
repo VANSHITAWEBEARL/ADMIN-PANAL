@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function BackToTopButton() {
+ function BackToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   // Show button when page is scrolled down
@@ -37,3 +37,4 @@ export default function BackToTopButton() {
     )
   );
 }
+export default BackToTopButton;

@@ -115,7 +115,7 @@ const Shopeheader = () => {
     {
       heading: 'SHOP LAYOUT',
       items: [
-        { label: 'Full Width', to: '/Shopepage' },
+        { label: 'Full Width', to: '/Fullwidth' },
         { label: 'Sidebar Left', to: '/Leftsidebar' },
         { label: 'Sidebar Right', to: '/shop/sidebar-right' },
         { label: 'Categories', to: '/shop/categories' },
@@ -384,37 +384,51 @@ const Shopeheader = () => {
                                 </div>
                             )}
                         </li>
-                        <li
-                            style={{ fontFamily: 'Playfair Display', color: showShopDropdown ? '#fe9995' : undefined, fontWeight: showShopDropdown ? 'bold' : undefined }}
-                            className="relative cursor-pointer group"
-                            onMouseEnter={() => setShowShopDropdown(true)}
-                            onMouseLeave={() => setShowShopDropdown(false)}
-                        >
-                            <span className="pb-1 border-b-2 border-transparent group-hover:border-[#fe9995] transition-all duration-200 inline-block">SHOP</span>
+                       <li
+  style={{
+    fontFamily: 'Playfair Display',
+    color: showShopDropdown ? '#fe9995' : undefined,
+    fontWeight: showShopDropdown ? 'bold' : undefined
+  }}
+  className="relative cursor-pointer"
+  onMouseEnter={() => setShowShopDropdown(true)}
+  onMouseLeave={() => setShowShopDropdown(false)}
+>
+  <Link
+    to="/Shopepage"
+    className="group !no-underline text-black hover:text-[#fe9995] transition-colors duration-200"
+  >
+    <span className="pb-1 border-b-2 border-transparent group-hover:border-[#fe9995] transition-all duration-200 inline-block">
+      SHOP
+    </span>
+  </Link>
 
-                             {showShopDropdown && (
-                                                                      <div className="absolute top-full -left-25 max-w-7xl w-220 bg-white shadow-2xl z-50 p-4 flex flex-row gap-5" style={{ borderTop: '2px solid #fe9995' }}>
-                                                                        {shopMenu.map((menu, i) => (
-                                                                          <div key={i}>
-                                                                            <h4 className="font-medium !text-base">{menu.heading}</h4>
-                                                                            <ul className='p-0 flex gap-3 flex-col'>
-                                                                              {menu.items.map((item, idx) => (
-                                                                                <li key={idx}>
-                                                                                  <Link
-                                                                                    to={item.to}
-                                                                                    className="!text-gray-500 font-normal gap-2 flex border-b border-gray-100 !hover:text-[#fe9995] font p-0 !no-underline transition"
-                                                                                  >
-                                                                                    {item.label}
-                                                                                  </Link>
-                                                                                </li>
-                                                                              ))}
-                                                                            </ul>
-                                                                          </div>
-                                                                        ))}
-                                                      
-                                                                      </div>
-                                                                    )}
-                                                    </li>
+  {showShopDropdown && (
+    <div
+      className="absolute top-full -left-25 max-w-7xl w-220 bg-white shadow-2xl z-50 p-4 flex flex-row gap-5"
+      style={{ borderTop: '2px solid #fe9995' }}
+    >
+      {shopMenu.map((menu, i) => (
+        <div key={i}>
+          <h4 className="font-medium !text-base">{menu.heading}</h4>
+          <ul className="p-0 flex gap-3 flex-col">
+            {menu.items.map((item, idx) => (
+              <li key={idx}>
+                <Link
+                  to={item.to}
+                  className="!text-gray-500 font-normal gap-2 flex border-b border-gray-100 hover:text-[#fe9995] font p-0 !no-underline transition"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  )}
+</li>
+
                      
                         <li
                             style={{ fontFamily: 'Playfair Display', color: showBlogDropdown ? '#fe9995' : undefined, fontWeight: showBlogDropdown ? 'bold' : undefined }}

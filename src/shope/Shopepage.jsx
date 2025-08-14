@@ -98,7 +98,7 @@ const Shopepage = () => {
 </div>
 
 
-      <div className="flex max-w-7xl mx-auto py-10 px-4 gap-8">
+      <div className="flex max-w-7xl mx-auto py-10  gap-2">
         {/* Sidebar */}
         <aside className="w-64 space-y-8">
           {/* Categories */}
@@ -238,7 +238,7 @@ const Shopepage = () => {
 
         {/* Product Grid */ }
   <main className="flex flex-col gap-3">
-    <div className="w-full border p-3 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div className="w-255 border p-2 flex flex-col md:flex-row items-center justify-between gap-4">
       {/* Left Side - View Icons */}
       <div className="flex items-center gap-4 text-gray-700">
         {/* Grid 3x3 */}

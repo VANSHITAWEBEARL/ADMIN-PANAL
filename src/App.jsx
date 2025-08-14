@@ -40,6 +40,7 @@ import Shopepage from './shope/Shopepage.jsx'
 import Variationshop from './shope/Variationshop.jsx'
 import Home from './bueatyproduct/home.jsx'
 import Leftsidebar from './shope/Leftsidebar.jsx'
+import Fullwidth from './shope/Fullwidth.jsx'
 
 
 
@@ -90,6 +91,7 @@ function App() {
         <Route path='/Shopepage' element={<Shopepage />}/> 
         <Route path='/Variationshop' element={<Variationshop />}/>
           <Route path='/Leftsidebar' element={< Leftsidebar/>}/>
+          <Route path='/Fullwidth' element={<Fullwidth />}/>
          </Routes>
     </div>
   )

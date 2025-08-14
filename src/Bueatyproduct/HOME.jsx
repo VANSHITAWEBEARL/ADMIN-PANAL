@@ -21,6 +21,7 @@ import test3 from '../assets/test3.png';
 import Mobailheader from './Mobailheader';
 import Productheader from './Productheader';
 import Footer1 from './Footer1';
+import BackToTopButton from './BackToTopButton';
 
 const Home = () => {
   // Testimonial carousel state and data
