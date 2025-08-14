@@ -116,7 +116,7 @@ const Shopeheader = () => {
       heading: 'SHOP LAYOUT',
       items: [
         { label: 'Full Width', to: '/Shopepage' },
-        { label: 'Sidebar Left', to: '/Sidebarleft' },
+        { label: 'Sidebar Left', to: '/Leftsidebar' },
         { label: 'Sidebar Right', to: '/shop/sidebar-right' },
         { label: 'Categories', to: '/shop/categories' },
         { label: 'Filter Top', to: '/shop/filter-top' },

@@ -39,7 +39,7 @@ import Demo6header from './Bueatyproduct/Demo6header.jsx'
 import Shopepage from './shope/Shopepage.jsx'
 import Variationshop from './shope/Variationshop.jsx'
 import Home from './bueatyproduct/home.jsx'
-import Sidebarleft from './shope/Sidebarleft.jsx'
+import Leftsidebar from './shope/Leftsidebar.jsx'
 
 
 
@@ -89,8 +89,8 @@ function App() {
         <Route path='/Demo6header' element={<Demo6header/>}/>
         <Route path='/Shopepage' element={<Shopepage />}/> 
         <Route path='/Variationshop' element={<Variationshop />}/>
-        <Route path='/Sidebarleft' element={<Sidebarleft />}/>
-        </Routes>
+          <Route path='/Leftsidebar' element={< Leftsidebar/>}/>
+         </Routes>
     </div>
   )
 }
