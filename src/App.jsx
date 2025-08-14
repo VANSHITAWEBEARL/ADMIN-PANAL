@@ -40,10 +40,8 @@ import Shopepage from './shope/Shopepage.jsx'
 import Variationshop from './shope/Variationshop.jsx'
 import Home from './bueatyproduct/home.jsx'
 import Leftsidebar from './shope/Leftsidebar.jsx'
-<<<<<<< HEAD
 import Fullwidth from './shope/Fullwidth.jsx'
-=======
->>>>>>> 076d8f9 (....)
+
 
 
 

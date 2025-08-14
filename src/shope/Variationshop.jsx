@@ -27,9 +27,10 @@ import list3 from "../assets/make-up.png";
 import list4 from "../assets/sapling.png";
 
 import Footer1 from "../Bueatyproduct/Footer1";
+import { FaPlus } from "react-icons/fa";
 
 const Variationshop = () => {
-  const [viewMode, setViewMode] = useState("grid3");
+  const [viewMode, setViewMode] = useState('grid3');
 
   // Products with color variations
   const products = [
@@ -112,7 +113,17 @@ const [selectedImages, setSelectedImages] = useState(
     { name: "Pink", hex: "#E48E8E" },
     { name: "Red", hex: "#E53935" },
   ];
-
+ const categories = [
+    { name: "Accessories", count: 22 },
+    { name: "Beauty", count: 10 },
+    { name: "Beauty Organic", count: 7 },
+    { name: "Cucumber Organic", count: 19 },
+    { name: "Natural", count: 9 },
+    { name: "Natural Beauty", count: 8 },
+    { name: "Nature", count: 9 },
+    { name: "Other Products", count: 46 },
+  ];
+  
   return (
     <div>
       <Shopeheader />
@@ -191,9 +202,47 @@ const [selectedImages, setSelectedImages] = useState(
       {/* Main Layout */}
       <div className="flex max-w-7xl mx-auto py-10 px-4 gap-8">
         {/* Sidebar */}
-        <aside className="w-64 space-y-8">
-          {/* Filter Selection */}
-          <div className="border border-gray-300  w-full max-w-xs bg-white">
+        
+            <aside className="w-64 space-y-8">
+                      {/* Categories */}
+                      <div className="border border-gray-200 w-full max-w-xs bg-white">
+                        {/* Header */}
+                        <div className="border-b border-gray-200 px-4 py-3">
+                          <h3 className="!text-lg !font-bold uppercase text-gray-800 uppercase" style={{ fontFamily: 'Playfair Display' }}>
+                            Categories
+                          </h3>
+                        </div>
+            
+                        {/* List */}
+                        <ul className="p-0">
+                          {categories.map((cat, index) => (
+                            <li
+                              key={index}
+                              className="flex justify-between items-center p-3 py-3 border-b border-gray-200 last:border-b-0 text-gray-500  !text-sm hover:text-[#fe9995] cursor-pointer capitalize" style={{ fontFamily: 'Playfair Display , italic' }}
+                            >
+                              <span className="font-bold uppercase" style={{ fontFamily: 'Playfair Display , italic' }}>
+                                {cat.name} ({cat.count})
+                              </span>
+                              <FaPlus className="text-xs text-gray-500" />
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+            
+                      {/* List */}
+                     
+                      
+                  
+            
+                  {/* Filter Selection */}
+                <div className="border border-gray-300  w-full max-w-xs bg-white">
+                  {/* Heading */}
+                  <h3 className="!font-bold uppercase !text-lg border-b p-3 border-gray-300  mb-4 tracking-wide uppercase"style={{ fontFamily: 'Playfair Display' }}>
+                    Filter Selection
+                  </h3>
+            
+                  {/* Color Section */}
+                  <div className="border border-gray-300  w-full max-w-xs bg-white">
             <h3
               className="!font-bold uppercase !text-lg border-b p-3 border-gray-300  mb-4 tracking-wide uppercase"
               style={{ fontFamily: "Playfair Display" }}
@@ -220,33 +269,173 @@ const [selectedImages, setSelectedImages] = useState(
               </div>
             </div>
           </div>
-        </aside>
-
+                </div>
+            
+            
+                <div className="space-y-6">
+                  {/* Categories */}
+                  <div className="border border-gray-300 p-4 w-full max-w-xs">
+                    <h3 className="font-serif !font-bold uppercase !text-lg mb-3 tracking-wide uppercase"style={{ fontFamily: 'Playfair Display' }}>
+                      Categories
+                    </h3>
+                    <div className="grid grid-cols-2 gap-y-2">
+                      <label className="flex items-center space-x-2">
+                        <input type="checkbox" className="form-checkbox text-black" />
+                        <span className="text-gray-800 text-sm">Food</span>
+                      </label>
+                      <label className="flex items-center space-x-2">
+                        <input type="checkbox" className="form-checkbox text-black" />
+                        <span className="text-gray-800 text-sm">Fruits</span>
+                      </label>
+                      <label className="flex items-center space-x-2">
+                        <input type="checkbox" className="form-checkbox text-black" />
+                        <span className="text-gray-800 text-sm">Juices</span>
+                      </label>
+                      <label className="flex items-center space-x-2">
+                        <input type="checkbox" className="form-checkbox text-black" />
+                        <span className="text-gray-800 text-sm">Vegetables</span>
+                      </label>
+                    </div>
+                  </div>
+            
+                  {/* Size */}
+                  <div className="border border-gray-300 p-4 w-full max-w-xs">
+                    <h3 className="font-serif !font-bold uppercase !text-lg mb-3 tracking-wide"style={{ fontFamily: 'Playfair Display' }}>
+                      Size
+                    </h3>
+                    <div className="grid grid-cols-2 gap-y-2">
+                      <label className="flex items-center space-x-2">
+                        <input type="checkbox" className="form-checkbox text-black" />
+                        <span className="text-gray-800 text-sm">L</span>
+                      </label>
+                      <label className="flex items-center space-x-2">
+                        <input type="checkbox" className="form-checkbox text-black" />
+                        <span className="text-gray-800 text-sm">M</span>
+                      </label>
+                      <label className="flex items-center space-x-2">
+                        <input type="checkbox" className="form-checkbox text-black" />
+                        <span className="text-gray-800 text-sm">S</span>
+                      </label>
+                      <label className="flex items-center space-x-2">
+                        <input type="checkbox" className="form-checkbox text-black" />
+                        <span className="text-gray-800 text-sm">XL</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+            
+                  <div className="space-y-6">
+                    {/* Price Filter */}
+                    <div className="border p-4">
+                      <h3 className="uppercase !text-lg !font-bold mb-4 uppercase"style={{ fontFamily: 'Playfair Display' }}>Price</h3>
+                      <div className="flex items-center space-x-2">
+                     
+            <input type="range" class="form-range" id="customRange1"/>
+                       
+                      </div>
+                      <button className="w-full mt-4 border border-gray-300 text-blue-700 uppercase py-1 text-sm hover:bg-blue-600 hover:text-white transition-all">
+                        Filter
+                      </button>
+                      <p className="text-sm mt-2 text-gray-600">Price: $10 — $420</p>
+                    </div>
+            
+                    {/* Cosmetic Big Sale */}
+                    <div className="relative">
+                      <img
+                        src={baner2}
+                        alt="Cosmetic Sale"
+                        className="w-full object-cover"
+                      />
+            
+                    </div>
+                  </div>
+                </aside>
+            
         {/* Products Section */}
         <main className="flex flex-col gap-3">
           {/* View Mode Selector */}
-          <div className="w-full border p-3 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4 text-gray-700">
-              <button
-                onClick={() => setViewMode("grid3")}
-                className={`p-1 ${viewMode === "grid3" ? "text-[#fe9995]" : ""}`}
-              >
-                Grid 3
-              </button>
-              <button
-                onClick={() => setViewMode("grid4")}
-                className={`p-1 ${viewMode === "grid4" ? "text-[#fe9995]" : ""}`}
-              >
-                Grid 4
-              </button>
-              <button
-                onClick={() => setViewMode("list")}
-                className={`p-1 ${viewMode === "list" ? "text-[#fe9995]" : ""}`}
-              >
-                List
-              </button>
-            </div>
-          </div>
+         <div className="w-255 border p-2 flex flex-col md:flex-row items-center justify-between gap-4">
+      {/* Left Side - View Icons */}
+      <div className="flex items-center gap-4 text-gray-700">
+        {/* Grid 3x3 */}
+        <button
+          onClick={() => setViewMode('grid3')}
+          title="Grid-3-columns"
+          className={`p-1 transition-colors duration-200 ${viewMode === 'grid3' ? 'text-[#fe9995]' : 'hover:text-[#fe9995]'}`}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="currentColor">
+            <rect width="5" height="5" />
+            <rect x="7" width="5" height="5" />
+            <rect x="14" width="5" height="5" />
+            <rect y="7" width="5" height="5" />
+            <rect x="7" y="7" width="5" height="5" />
+            <rect x="14" y="7" width="5" height="5" />
+            <rect y="14" width="5" height="5" />
+            <rect x="7" y="14" width="5" height="5" />
+            <rect x="14" y="14" width="5" height="5" />
+          </svg>
+        </button>
+
+        {/* Grid 4x4 */}
+        <button
+          onClick={() => setViewMode('grid4')}
+          title="Grid-4-columns"
+          className={`p-1 transition-colors duration-200 ${viewMode === 'grid4' ? 'text-[#fe9995]' : 'hover:text-[#fe9995]'}`}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="currentColor">
+            <rect width="4" height="4" />
+            <rect x="5" width="4" height="4" />
+            <rect x="10" width="4" height="4" />
+            <rect x="15" width="4" height="4" />
+            <rect y="5" width="4" height="4" />
+            <rect x="5" y="5" width="4" height="4" />
+            <rect x="10" y="5" width="4" height="4" />
+            <rect x="15" y="5" width="4" height="4" />
+            <rect y="10" width="4" height="4" />
+            <rect x="5" y="10" width="4" height="4" />
+            <rect x="10" y="10" width="4" height="4" />
+            <rect x="15" y="10" width="4" height="4" />
+            <rect y="15" width="4" height="4" />
+            <rect x="5" y="15" width="4" height="4" />
+            <rect x="10" y="15" width="4" height="4" />
+            <rect x="15" y="15" width="4" height="4" />
+          </svg>
+        </button>
+
+        {/* List View */}
+        <button
+          onClick={() => setViewMode('list')}
+          title="List-view"
+          className={`p-1 transition-colors duration-200 ${viewMode === 'list' ? 'text-[#fe9995]' : 'hover:text-[#fe9995]'}`}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 18 18" fill="currentColor">
+            <rect x="0" width="3" height="2" />
+            <rect x="5" width="18" height="2" />
+            <rect x="0" y="8" width="3" height="2" />
+            <rect x="5" y="8" width="18" height="2" />
+            <rect x="0" y="16" width="3" height="2" />
+            <rect x="5" y="16" width="18" height="2" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Center - Results Text */}
+      <div className="text-sm font-normal text-gray-700">
+        Showing 1–12 of 181 results
+      </div>
+
+      {/* Right Side - Sort Dropdown */}
+      <div className="flex items-center gap-2">
+        <span className="text-sm text-gray-700">Sort by:</span>
+        <select className="border px-3 py-1 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-pink-400">
+          <option>Default sorting</option>
+          <option>Sort by popularity</option>
+          <option>Sort by latest</option>
+          <option>Sort by price: low to high</option>
+          <option>Sort by price: high to low</option>
+        </select>
+      </div>
+    </div>
 
           {/* Product Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
