@@ -41,6 +41,10 @@ import Variationshop from './shope/Variationshop.jsx'
 import Home from './bueatyproduct/home.jsx'
 import Leftsidebar from './shope/Leftsidebar.jsx'
 import Fullwidth from './shope/Fullwidth.jsx'
+import Rightsidebar from './shope/Rightsidebar.jsx'
+import Shopcategories from './shope/Shopcategories.jsx'
+import Filtertop from './shope/Filtertop.jsx'
+import Infinitescroll from './shope/Infinitescroll.jsx'
 
 
 
@@ -93,8 +97,11 @@ function App() {
         <Route path='/Variationshop' element={<Variationshop />}/>
           <Route path='/Leftsidebar' element={< Leftsidebar/>}/>
           <Route path='/Fullwidth' element={<Fullwidth />}/>
-
-         </Routes>
+          <Route path='/Rightsidebar' element={< Rightsidebar/>}/>
+                <Route path='/Shopcategories' element={< Shopcategories/>}/>
+                <Route path='/Filtertop' element={< Filtertop/>}/>
+                <Route path='/Infinitescroll'  element={< Infinitescroll/>}/>
+          </Routes>
     </div>
   )
 }
