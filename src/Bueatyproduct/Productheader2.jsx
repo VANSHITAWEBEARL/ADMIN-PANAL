@@ -119,15 +119,15 @@ const Productheader2 = () => {
         { label: 'Infinite Scroll', to: '/Infinitescroll' },
         { label: 'Off-Canvas Filter', to: '/Offcanvasfilter' },
         { label: 'Shop Categories', to: '/Category' },
-        { label: 'Small Categories', to: '/shop/small-categories' },
-        { label: 'Cookies Notice', to: '/shop/cookies-notice' },
+        { label: 'Small Categories', to: '/Smallcategories' },
+        { label: 'Cookies Notice', to: '/Cookiesnotice' },
       ],
     },
     {
       heading: 'SHOP PAGE',
       items: [
         { label: 'Variation Shop', to: '/Variationshop' },
-        { label: 'Gallery On Products', to: '/shop/gallery-on-products' },
+        { label: 'Gallery On Products', to: '/Galleryonproduct' },
         { label: 'Catalog Mode', to: '/shop/catalog-mode' },
         { label: 'Load More', to: '/shop/load-more' },
         { label: 'Shop Masonry', to: '/shop/masonry' },

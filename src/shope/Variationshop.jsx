@@ -117,33 +117,45 @@ const Variationshop = () => {
       <Shopeheader />
 
       {/* Banner Section */}
-      <div
-        className="relative bg-cover bg-position-[center_left_-15rem] h-95 py-20"
-        style={{ backgroundImage: `url(${bg1})` }}
-      >
-        <div className="relative z-10 text-center text-white max-w-5xl mx-auto">
-          <h1
-            className="!text-3xl font-bold capitalize"
-            style={{ fontFamily: "Playfair Display" }}
-          >
-            Variation
-          </h1>
-          <div className="mt-2 text-lg">
-            <Link to="/Home" className="!no-underline !text-white ">
-              <span
-                className="font-semibold text-2xl hover:text-[#fe9995] capitalize"
-                style={{ fontFamily: "Playfair Display" }}
-              >
-                Home
-              </span>
-            </Link>
-            <span className="mx-1 text-gray-300">/</span>
-            <span
-              className="text-[#fe9995] text-2xl font-semibold capitalize"
-              style={{ fontFamily: "Playfair Display" }}
-            >
-              Variation
-            </span>
+      <div className="relative -z-12 bg-cover bg-position-[center_left_-15rem] h-95 flex justify-center items-center" 
+           style={{ backgroundImage: `url(${bg1})` }}>
+        {/* <!-- Overlay --> */}
+        <div class="absolute"></div>
+      
+        <div class="relative z-10 text-center text-white max-w-5xl mx-auto">
+          {/* <!-- Title & Breadcrumb --> */}
+          <h1 class="!text-3xl font-bold capitalize" style={{ fontFamily: 'Playfair Display' }}>Variation</h1>
+          <div class="mt-2 text-lg">
+           <Link to='/Home' className="!no-underline !text-white "><span class="font-semibold text-2xl hover:text-[#fe9995] capitalize" style={{ fontFamily: 'Playfair Display' }}>Home</span></Link>
+            <span class="mx-1 text-gray-300">/</span>
+            <span class="text-[#fe9995] text-2xl font-semibold capitalize" style={{ fontFamily: 'Playfair Display' }}>Variation</span>
+          </div>
+      
+          {/* <!-- Categories --> */}
+          <div class="mt-6 flex flex-wrap justify-center gap-4">
+            {/* <!-- Item --> */}
+            <div class="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
+              <img src={list1} class="w-10 h-10" alt="Beauty Organic" />
+              <span>Beauty Organic (7)</span>
+            </div>
+            <span class="text-gray-300">|</span>
+      
+            <div class="flex items-center gap-2"style={{ fontFamily: 'Playfair Display' }}>
+              <img src={list2} class="w-10 h-10" alt="Natural" />
+              <span>Natural (9)</span>
+            </div>
+            <span class="text-gray-300">|</span>
+      
+            <div class="flex items-center gap-2"style={{ fontFamily: 'Playfair Display' }}>
+              <img src={list3} class="w-10 h-10" alt="Natural Beauty" />
+              <span>Natural Beauty (8)</span>
+            </div>
+            <span class="text-gray-300">|</span>
+      
+            <div class="flex items-center gap-2"style={{ fontFamily: 'Playfair Display' }}>
+              <img src={list4}class="w-10 h-10" alt="Perfume" />
+              <span>Perfume (16)</span>
+            </div>
           </div>
         </div>
       </div>

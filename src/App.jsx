@@ -47,6 +47,9 @@ import Filtertop from './shope/Filtertop.jsx'
 import Infinitescroll from './shope/Infinitescroll.jsx'
 import Offcanvasfilter from './shope/Offcanvasfilter.jsx'
 import Category from './shope/Category.jsx'
+import Smallcategories from './shope/Smallcategories.jsx'
+import Cookiesnotice from './shope/Cookiesnotice.jsx'
+import Galleryonproduct from './shope/Galleryonproduct.jsx'
 
 
 
@@ -105,6 +108,10 @@ function App() {
                 <Route path='/Infinitescroll'  element={< Infinitescroll/>}/>
                 <Route path='/Offcanvasfilter'  element={< Offcanvasfilter/>}/>
                       <Route path='/Category'  element={< Category/>}/>
+                          <Route path='/Smallcategories'  element={< Smallcategories/>}/>
+                             <Route path='/Cookiesnotice'  element={< Cookiesnotice/>}/>
+                               <Route path='/Galleryonproduct'  element={<Galleryonproduct/>}/>
+                          
           </Routes>
     </div>
   )

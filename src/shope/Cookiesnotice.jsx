@@ -24,7 +24,7 @@ import Footer1 from "../Bueatyproduct/Footer1";
 import { FaPlus } from "react-icons/fa";
 
 
-const Shopepage = () => {
+const Cookiesnotice = () => {
   const [viewMode, setViewMode] = useState('grid3');
 
   const categories = [
@@ -54,7 +54,7 @@ const Shopepage = () => {
     <div>
       <Shopeheader />
 
-     <div className="relative -z-12 bg-cover bg-position-[center_left_-15rem] h-95 flex justify-center items-center" 
+     <div className="relative -z-12 bg-cover bg-position-[center_left_-15rem] h-95 items-center justify-center flex" 
      style={{ backgroundImage: `url(${bg1})` }}>
   {/* <!-- Overlay --> */}
   <div class="absolute"></div>
@@ -394,4 +394,4 @@ const Shopepage = () => {
   );
 };
 
-export default Shopepage;
+export default Cookiesnotice;

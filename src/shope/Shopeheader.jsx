@@ -5,7 +5,6 @@ import nave from '../assets/header.png'; // Replace with your background image p
 import Loginmodal from '../Bueatyproduct/Loginmodal';
 
 
-
 const Shopeheader = () => {
  
      // Search input state
@@ -118,7 +117,7 @@ const Shopeheader = () => {
 
         { label: 'Full Width', to: '/Fullwidth' },
 
-        { label: 'Full Width', to: '/Shopepage' },
+        
         { label: 'Sidebar Left', to: '/Leftsidebar' },
         { label: 'Sidebar Right', to: '/Rightsidebar' },
         { label: 'Categories', to: '/Shopcategories' },
@@ -126,15 +125,15 @@ const Shopeheader = () => {
         { label: 'Infinite Scroll', to: '/Infinitescroll' },
         { label: 'Off-Canvas Filter', to: '/Offcanvasfilter' },
         { label: 'Shop Categories', to: '/Category' },
-        { label: 'Small Categories', to: '/shop/small-categories' },
-        { label: 'Cookies Notice', to: '/shop/cookies-notice' },
+        { label: 'Small Categories', to: '/Smallcategories' },
+        { label: 'Cookies Notice', to: '/Cookiesnotice' },
       ],
     },
     {
       heading: 'SHOP PAGE',
       items: [
         { label: 'Variation Shop', to: '/Variationshop' },
-        { label: 'Gallery On Products', to: '/shop/gallery-on-products' },
+        { label: 'Gallery On Products', to: '/Galleryonproduct' },
         { label: 'Catalog Mode', to: '/shop/catalog-mode' },
         { label: 'Load More', to: '/shop/load-more' },
         { label: 'Shop Masonry', to: '/shop/masonry' },

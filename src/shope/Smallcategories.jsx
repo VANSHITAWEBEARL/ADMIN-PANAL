@@ -24,7 +24,7 @@ import Footer1 from "../Bueatyproduct/Footer1";
 import { FaPlus } from "react-icons/fa";
 
 
-const Shopepage = () => {
+const Smallcategories = () => {
   const [viewMode, setViewMode] = useState('grid3');
 
   const categories = [
@@ -54,51 +54,51 @@ const Shopepage = () => {
     <div>
       <Shopeheader />
 
-     <div className="relative -z-12 bg-cover bg-position-[center_left_-15rem] h-95 flex justify-center items-center" 
-     style={{ backgroundImage: `url(${bg1})` }}>
-  {/* <!-- Overlay --> */}
-  <div class="absolute"></div>
 
-  <div class="relative z-10 text-center text-white max-w-5xl mx-auto">
+    
+  {/* <!-- Overlay --> */}
+  
+
+  <div class=" z-10 text-center text-white items-center flex  py-15 flex-col ">
     {/* <!-- Title & Breadcrumb --> */}
     <h1 class="!text-3xl font-bold capitalize" style={{ fontFamily: 'Playfair Display' }}>Shop</h1>
     <div class="mt-2 text-lg">
-     <Link to='/Home' className="!no-underline !text-white "><span class="font-semibold text-2xl hover:text-[#fe9995] capitalize" style={{ fontFamily: 'Playfair Display' }}>Home</span></Link>
-      <span class="mx-1 text-gray-300">/</span>
+     <Link to='/Home' className="!no-underline text-black "><span class="font-semibold text-2xl hover:text-[#fe9995] capitalize" style={{ fontFamily: 'Playfair Display' }}>Home</span></Link>
+      <span class="mx-1 text-black">/</span>
       <span class="text-[#fe9995] text-2xl font-semibold capitalize" style={{ fontFamily: 'Playfair Display' }}>Shop</span>
     </div>
 
     {/* <!-- Categories --> */}
-    <div class="mt-6 flex flex-wrap justify-center gap-4">
+    <div class=" flex bg-[#fe9995] p-3 px-10 justify-center w-290 gap-4 ">
       {/* <!-- Item --> */}
-      <div class="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
-        <img src={list1} class="w-10 h-10" alt="Beauty Organic" />
-        <span>Beauty Organic (7)</span>
+      <div class="flex items-center gap-2 hover:text-black  " style={{ fontFamily: 'Playfair Display' }}>
+        <img src={list1} class="w-10 h-10  " alt="Beauty Organic" />
+        <span className="hover:border-b">Beauty Organic (7)</span>
       </div>
       <span class="text-gray-300">|</span>
 
-      <div class="flex items-center gap-2"style={{ fontFamily: 'Playfair Display' }}>
+      <div class="flex items-center gap-2 hover:text-black"style={{ fontFamily: 'Playfair Display' }}>
         <img src={list2} class="w-10 h-10" alt="Natural" />
-        <span>Natural (9)</span>
+        <span className="hover:border-b ">Natural (9)</span>
       </div>
       <span class="text-gray-300">|</span>
 
-      <div class="flex items-center gap-2"style={{ fontFamily: 'Playfair Display' }}>
+      <div class="flex items-center gap-2 hover:text-black"style={{ fontFamily: 'Playfair Display' }}>
         <img src={list3} class="w-10 h-10" alt="Natural Beauty" />
-        <span>Natural Beauty (8)</span>
+        <span  className="hover:border-b">Natural Beauty (8)</span>
       </div>
       <span class="text-gray-300">|</span>
 
-      <div class="flex items-center gap-2"style={{ fontFamily: 'Playfair Display' }}>
+      <div class="flex items-center gap-2 hover:text-black"style={{ fontFamily: 'Playfair Display' }}>
         <img src={list4}class="w-10 h-10" alt="Perfume" />
-        <span>Perfume (16)</span>
+        <span  className="hover:border-b">Perfume (16)</span>
       </div>
     </div>
   </div>
-</div>
 
 
-      <div className="flex max-w-7xl mx-auto py-10  gap-2">
+
+      <div className="flex max-w-7xl mx-auto py-10 justify-center  gap-2">
         {/* Sidebar */}
         <aside className="w-64 space-y-8">
           {/* Categories */}
@@ -237,8 +237,8 @@ const Shopepage = () => {
 
 
         {/* Product Grid */ }
-  <main className="flex flex-col gap-3">
-    <div className="w-255 border p-2 flex flex-col md:flex-row items-center justify-between gap-4">
+  <main className="flex flex-col w-220 gap-3">
+    <div className=" border p-2 flex flex-col md:flex-row items-center justify-between gap-4">
       {/* Left Side - View Icons */}
       <div className="flex items-center gap-4 text-gray-700">
         {/* Grid 3x3 */}
@@ -364,7 +364,7 @@ const Shopepage = () => {
                     </span>
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 items-start w-90 text-sm">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nibh ligula,
                   faucibus sit amet aliquet ac, molestie a massa. Fusce vitae feugiat enim,
                   id fermentum magna.
@@ -394,4 +394,4 @@ const Shopepage = () => {
   );
 };
 
-export default Shopepage;
+export default Smallcategories;

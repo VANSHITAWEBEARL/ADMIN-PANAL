@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import footerimage from '../assets/footer.png'; // Ensure the image path is correct
 import footerbg from '../assets/back-footer.png'; // Ensure the image path is correct
-
+import recent1 from '../assets/fotter1.1.jpg'; 
+import recent2 from '../assets/fotter1.2.jpg'; 
+import recent3 from '../assets/fotter1.3.jpg'; 
+import footer1 from '../assets/blog1-FILEminimizer.jpg'; 
+import footer2 from '../assets/blog2-FILEminimizer.jpg'; 
+import footer3 from '../assets/blog4-FILEminimizer.jpg'; 
 export default function Footer1() {
   const [email, setEmail] = useState('');
   const handleSubscribe = () => {
@@ -33,7 +38,7 @@ export default function Footer1() {
             
               <div className="flex items-center  pb-2">
                 <img
-                  src="https://demo.themeftc.com/ordo/wp-content/uploads/2018/11/blog4-FILEminimizer.jpg"
+                  src={footer1}
                   alt="Brand Whitening"
                   className="w-16 h-12 object-cover rounded mr-3 transition-all duration-300 ease-in-out hover:scale-105 hover:opacity-50 hover:shadow-lg"
                 />
@@ -43,14 +48,14 @@ export default function Footer1() {
                 </div>
               </div>
               <div className="flex items-center pb-2">
-                <img src="https://demo.themeftc.com/ordo/wp-content/uploads/2018/11/blog1-FILEminimizer.jpg" alt="Dolor sit amet" className="w-16 h-12 object-cover rounded mr-3  transition-all duration-300 ease-in-out hover:scale-105 hover:opacity-50 hover:shadow-lg" />
+                <img src={footer2} alt="Dolor sit amet" className="w-16 h-12 object-cover rounded mr-3  transition-all duration-300 ease-in-out hover:scale-105 hover:opacity-50 hover:shadow-lg" />
                 <div>
                   <p className="text-[#999] text-sm mb-0 hover:text-[#FE9995]" style={{ fontFamily: 'Playfair Display, serif' }}>Dolor sit amet</p>
                   <span className="text-white">January 6, 2025</span>
                 </div>
               </div>
               <div className="flex items-center  pb-2 ">
-                <img src="https://demo.themeftc.com/ordo/wp-content/uploads/2018/11/blog2-FILEminimizer.jpg" alt="Lorem ipsum dolor" className="w-16 h-12 object-cover rounded mr-3  transition-all duration-300 ease-in-out hover:scale-105 hover:opacity-50 hover:shadow-lg" />
+                <img src={footer3} alt="Lorem ipsum dolor" className="w-16 h-12 object-cover rounded mr-3  transition-all duration-300 ease-in-out hover:scale-105 hover:opacity-50 hover:shadow-lg" />
                 <div>
                   <p className="text-[#999] text-sm mb-0 hover:text-[#FE9995] " style={{ fontFamily: 'Playfair Display, serif' }}>Lorem ipsum dolor</p>
                   <span className="text-white">January 6, 2025</span>
@@ -72,9 +77,9 @@ export default function Footer1() {
             <h4 className="!uppercase !text-base font-bold mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Photo Instagram</h4>
             <p className="text-gray-300 text-sm mb-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam</p>
             <div className="grid grid-cols-3 gap-2">
-              <a href="https://instagram.com/instagram" target="_blank" rel="noopener noreferrer"><img src="https://demo.themeftc.com/ordo/wp-content/uploads/2020/01/11-2-150x150.jpg" alt="instagram" className="rounded-lg w-20 h-20" /></a>
-              <a href="https://instagram.com/instagram" target="_blank" rel="noopener noreferrer"><img src="https://demo.themeftc.com/ordo/wp-content/uploads/2020/01/11-4-150x150.jpg" alt="instagram" className="rounded-lg w-20 h-20" /></a>
-              <a href="https://instagram.com/instagram" target="_blank" rel="noopener noreferrer"><img src="https://demo.themeftc.com/ordo/wp-content/uploads/2020/01/11-6.jpg" alt="instagram" className="rounded-lg w-20 h-20" /></a>
+              <a href="https://instagram.com/instagram" target="_blank" rel="noopener noreferrer"><img src={recent1} alt="instagram" className="rounded-lg w-20 h-20" /></a>
+              <a href="https://instagram.com/instagram" target="_blank" rel="noopener noreferrer"><img src={recent2} alt="instagram" className="rounded-lg w-20 h-20" /></a>
+              <a href="https://instagram.com/instagram" target="_blank" rel="noopener noreferrer"><img src={recent3} alt="instagram" className="rounded-lg w-20 h-20" /></a>
             </div>
           </div>
         </div>
