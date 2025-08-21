@@ -131,7 +131,7 @@ const Perfumeheader = () => {
       items: [
         { label: 'Variation Shop', to: '/Variationshop' },
         { label: 'Gallery On Products', to: '/Galleryonproduct' },
-        { label: 'Catalog Mode', to: '/shop/catalog-mode' },
+        { label: 'Catalog Mode', to: '/Catalogpage' },
         { label: 'Load More', to: '/shop/load-more' },
         { label: 'Shop Masonry', to: '/shop/masonry' },
         { label: 'Animation Shop', to: '/shop/animation-shop' },

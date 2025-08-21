@@ -50,6 +50,7 @@ import Category from './shope/Category.jsx'
 import Smallcategories from './shope/Smallcategories.jsx'
 import Cookiesnotice from './shope/Cookiesnotice.jsx'
 import Galleryonproduct from './shope/Galleryonproduct.jsx'
+import Catalogpage from './shope/Catalogpage.jsx'
 
 
 
@@ -111,7 +112,7 @@ function App() {
                           <Route path='/Smallcategories'  element={< Smallcategories/>}/>
                              <Route path='/Cookiesnotice'  element={< Cookiesnotice/>}/>
                                <Route path='/Galleryonproduct'  element={<Galleryonproduct/>}/>
-                          
+                          <Route path='/Catalogpage'  element={<Catalogpage/>}/>
           </Routes>
     </div>
   )
