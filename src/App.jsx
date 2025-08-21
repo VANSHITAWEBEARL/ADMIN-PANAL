@@ -45,6 +45,8 @@ import Rightsidebar from './shope/Rightsidebar.jsx'
 import Shopcategories from './shope/Shopcategories.jsx'
 import Filtertop from './shope/Filtertop.jsx'
 import Infinitescroll from './shope/Infinitescroll.jsx'
+import Offcanvasfilter from './shope/Offcanvasfilter.jsx'
+import Category from './shope/Category.jsx'
 
 
 
@@ -101,6 +103,8 @@ function App() {
                 <Route path='/Shopcategories' element={< Shopcategories/>}/>
                 <Route path='/Filtertop' element={< Filtertop/>}/>
                 <Route path='/Infinitescroll'  element={< Infinitescroll/>}/>
+                <Route path='/Offcanvasfilter'  element={< Offcanvasfilter/>}/>
+                      <Route path='/Category'  element={< Category/>}/>
           </Routes>
     </div>
   )

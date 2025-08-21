@@ -22,56 +22,63 @@ import list4 from "../assets/sapling.png"
 import Footer1 from "../Bueatyproduct/Footer1";
 
 
-const Fullwidth = () => {
-
+const Offcanvasfilter = () => {
     const [viewMode, setViewMode] = useState("grid3");
     const [showFilter, setShowFilter] = useState(false);
-
-
-
-
+    const [showOffCanvas, setShowOffCanvas] = useState(false);
+     const colors = [
+        { name: "Beige", hex: "#E6D8C3" },
+        { name: "Black", hex: "#000000" },
+        { name: "Blue", hex: "#1E73BE" },
+        { name: "Brown", hex: "#4B2E1E" },
+        { name: "Gray", hex: "#B0B0B0" },
+        { name: "Green", hex: "#8CE22E" },
+        { name: "Orange", hex: "#E3962E" },
+        { name: "Pink", hex: "#E48E8E" },
+        { name: "Red", hex: "#E53935" },
+        { name: "Taupe", hex: "#7B5B42" },
+    ];
 
     return (
-        <div>
+        <div className={`relative ${showOffCanvas ? 'overflow-hidden' : ''}`}>
             <Shopeheader />
 
-            <div className="relative -z-12 bg-cover bg-position-[center_left_-15rem] h-95 py-20"
+            <div className="relative  -z-12  bg-cover bg-position-[center_left_-15rem] h-110 flex items-center"
                 style={{ backgroundImage: `url(${bg1})` }}>
-                {/* <!-- Overlay --> */}
-                <div class="absolute"></div>
+                {/* Overlay */}
 
-                <div class="relative z-10 text-center text-white max-w-5xl mx-auto">
-                    {/* <!-- Title & Breadcrumb --> */}
-                    <h1 class="!text-3xl font-bold capitalize" style={{ fontFamily: 'Playfair Display' }}>Shop</h1>
-                    <div class="mt-2 text-lg">
-                        <Link to='/Home' className="!no-underline !text-white "><span class="font-semibold text-2xl hover:text-[#fe9995] capitalize" style={{ fontFamily: 'Playfair Display' }}>Home</span></Link>
-                        <span class="mx-1 text-gray-300">/</span>
-                        <span class="text-[#fe9995] text-2xl font-semibold capitalize" style={{ fontFamily: 'Playfair Display' }}>Shop</span>
+                <div className="relative  text-center text-white max-w-5xl mx-auto">
+                    {/* Title & Breadcrumb */}
+                    <h1 className="!text-3xl font-bold capitalize" style={{ fontFamily: 'Playfair Display' }}>Shop</h1>
+                    <div className="mt-2 text-lg">
+                        <Link to='/Home' className="!no-underline !text-white "><span className="font-semibold text-2xl hover:text-[#fe9995] capitalize" style={{ fontFamily: 'Playfair Display' }}>Home</span></Link>
+                        <span className="mx-1 text-gray-300">/</span>
+                        <span className="text-[#fe9995] text-2xl font-semibold capitalize" style={{ fontFamily: 'Playfair Display' }}>Shop</span>
                     </div>
 
-                    {/* <!-- Categories --> */}
-                    <div class="mt-6 flex flex-wrap justify-center gap-4">
-                        {/* <!-- Item --> */}
-                        <div class="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
-                            <img src={list1} class="w-10 h-10" alt="Beauty Organic" />
+                    {/* Categories */}
+                    <div className="mt-6 flex flex-wrap justify-center gap-4">
+                        {/* Item */}
+                        <div className="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
+                            <img src={list1} className="w-10 h-10" alt="Beauty Organic" />
                             <span>Beauty Organic (7)</span>
                         </div>
-                        <span class="text-gray-300">|</span>
+                        <span className="text-gray-300">|</span>
 
-                        <div class="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
-                            <img src={list2} class="w-10 h-10" alt="Natural" />
+                        <div className="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
+                            <img src={list2} className="w-10 h-10" alt="Natural" />
                             <span>Natural (9)</span>
                         </div>
-                        <span class="text-gray-300">|</span>
+                        <span className="text-gray-300">|</span>
 
-                        <div class="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
-                            <img src={list3} class="w-10 h-10" alt="Natural Beauty" />
+                        <div className="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
+                            <img src={list3} className="w-10 h-10" alt="Natural Beauty" />
                             <span>Natural Beauty (8)</span>
                         </div>
-                        <span class="text-gray-300">|</span>
+                        <span className="text-gray-300">/</span>
 
-                        <div class="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
-                            <img src={list4} class="w-10 h-10" alt="Perfume" />
+                        <div className="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
+                            <img src={list4} className="w-10 h-10" alt="Perfume" />
                             <span>Perfume (16)</span>
                         </div>
                     </div>
@@ -82,11 +89,9 @@ const Fullwidth = () => {
             <div className="flex mx-auto justify-center items-center ">
                 {/* Sidebar */}
 
-
-
                 {/* Product Grid */}
-                <main className="flex justify-center items-center flex-col mt-10 gap-3">
-                    <div className="w-300 border m-0 p-2 flex flex-col md:flex-row items-center justify-between gap-4 relative">
+                <main className={`flex justify-center  items-center flex-col mt-10 gap-3 transition-all duration-300 ${showOffCanvas ? 'md:ml-80 w-190' : 'ml-0'}`}>
+                    <div className={`  border m-0 p-2 flex flex-col md:flex-row items-center justify-between gap-4 relative ${showOffCanvas ? 'w-190' : 'w-260'}`}>
                         {/* Left Side - View Icons */}
                         <div className="flex gap-4 text-gray-700">
                             {/* Grid 3x3 */}
@@ -150,24 +155,18 @@ const Fullwidth = () => {
                                 </svg>
                             </button>
                         </div>
+                        
+                        {/* Filter Button for Off-Canvas */}
                         <button
-                            onClick={() => setShowFilter(!showFilter)}
-                            className="flex items-center gap-1 text-sm font-medium hover:text-[#fe9995] transition"
+                            onClick={() => setShowOffCanvas(true)}
+                            className="flex items-center gap-1 text-white bg-black  text-sm p-2 !rounded-lg font-medium hover:text-[#fe9995] transition"style={{ fontFamily: 'Playfair Display' }}
                         >
-                            Filter
-                            <svg
-                                className={`w-4 h-4 transition-transform duration-200 ${showFilter ? "rotate-180" : ""
-                                    }`}
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                viewBox="0 0 24 24"
-                            >
-                                <path d="M19 9l-7 7-7-7" />
-                            </svg>
+                          off-canvas Filter
+                           
                         </button>
-                        {/* Center - Results Text */}
-                        <div className="text-sm font-normal text-gray-700">
+                        
+                        {/* Center - Results Text - Hidden when off-canvas is open */}
+                        <div className={`text-sm font-normal text-gray-700 transition-opacity duration-300 ${showOffCanvas ? 'hidden' : 'flex'}`}>
                             Showing 1–12 of 181 results
                         </div>
 
@@ -182,95 +181,110 @@ const Fullwidth = () => {
                                 <option>Sort by price: high to low</option>
                             </select>
                         </div>
+                    </div>
 
-                        {/* Filter Dropdown Content */}
-                       {showFilter && (
-  <div
-    className={`absolute top-full left-0 w-full bg-white z-50 p-6 grid md:grid-cols-4 gap-8 border transition-all duration-500 ease-in-out transform origin-top
-      ${showFilter ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'}
-    `}
-    style={{
-      transformOrigin: "top",
-    }}
-  >
-    {/* Price */}
-    <div className="border p-4">
-      <h4 className="!font-bold uppercase !text-lg mb-3 border-b  tracking-wide uppercase"style={{ fontFamily: 'Playfair Display' }}>PRICE</h4>
-      <input
-        type="range"
-        min="10"
-        max="420"
-        className="w-full accent-gray-400"
-      />
-      <button className="mt-4 w-full border py-2 text-sm font-bold text-gray-700 hover:bg-gray-100">
-        FILTER
-      </button>
-      <p className="text-sm mt-3">
-        <span className="font-bold">Price:</span> $10 — $420
-      </p>
-    </div>
-
-    {/* Color */}
-    <div className="border  p-4">
-      <p className="font-bold uppercase !text-lg mb-3 border-b  tracking-wide uppercase"style={{ fontFamily: 'Playfair Display' }}>Color</p>
-      <ul className="grid grid-cols-2 p-0 gap-y-2 text-sm">
-        {[
-          { name: "Beige", hex: "#e6dbc9" },
-          { name: "Blue", hex: "#1e73be" },
-          { name: "Gray", hex: "#bfbfbf" },
-          { name: "Orange", hex: "#e8983f" },
-          { name: "Red", hex: "#e74c3c" },
-          { name: "Black", hex: "#000000" },
-          { name: "Brown", hex: "#5a381e" },
-          { name: "Green", hex: "#8bc34a" },
-          { name: "Pink", hex: "#f78da7" },
-          { name: "Taupe", hex: "#a58a7c" },
-        ].map((color) => (
-          <li key={color.name} className="flex items-center gap-2">
-            <span
-              className="w-3.5 h-3.5 rounded-full border border-gray-300"
-              style={{ backgroundColor: color.hex }}
-            ></span>
-            {color.name}
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    {/* Size */}
-    <div className="border p-4">
-      <h4 className="!font-bold uppercase !text-lg mb-3 border-b  tracking-wide uppercase"style={{ fontFamily: 'Playfair Display' }}>SIZE</h4>
-      <div className="grid grid-cols-2 gap-y-2 text-sm">
-        {["S", "M", "L", "XL"].map((size) => (
-          <label key={size} className="flex items-center gap-2">
-            <input type="checkbox" className="accent-gray-500" />
-            {size}
-          </label>
-        ))}
-      </div>
-    </div>
-
-    {/* Brand */}
-    <div className="border p-4">
-      <h4 className="!font-bold uppercase !text-lg mb-3 border-b  tracking-wide uppercase"style={{ fontFamily: 'Playfair Display' }}>BRAND</h4>
-      <div className="flex flex-col gap-2 text-sm">
-        {[
-          "Arizona Fruit",
-          "FreshPoint Company",
-          "Gebbers Farms",
-          "Matson Fruit",
-        ].map((brand) => (
-          <label key={brand} className="flex items-center gap-2">
-            <input type="checkbox" className="accent-gray-500" />
-            {brand}
-          </label>
-        ))}
-      </div>
-    </div>
-  </div>
-)}
-
-
+                    {/* Off-Canvas Filter */}
+                    <div className={`fixed inset-0 z-50 transition-opacity duration-300 ${showOffCanvas ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                        {/* Backdrop - Full screen */}
+                        <div 
+                            className="absolute inset-0 bg-black bg-opacity-50"
+                            onClick={() => setShowOffCanvas(false)}
+                        ></div>
+                        
+                        {/* Filter Panel - Full height */}
+                        <div className={`absolute top-0 left-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ${showOffCanvas ? 'translate-x-0' : '-translate-x-full'}`}>
+                            <div className="h-full overflow-y-auto p-4">
+                                {/* Header */}
+                                <div className="flex justify-between items-center mb-6 pb-4 border-b">
+                                    <h2 className="text-xl font-bold" style={{ fontFamily: 'Playfair Display' }}>FILTER SELECTION</h2>
+                                    <button 
+                                        onClick={() => setShowOffCanvas(false)}
+                                        className="text-gray-500 hover:text-[#fe9995]"
+                                    >
+                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                                {/* Color Filter */}
+                                <div className="mb-6">
+                                    <h3 className="font-bold text-lg mb-3" style={{ fontFamily: 'Playfair Display' }}>COLOR</h3>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        {colors.map((color) => (
+                                            <div key={color.name} className="flex items-center space-x-2">
+                                                <span
+                                                    className="w-4 h-4 rounded-full border border-gray-400"
+                                                    style={{ backgroundColor: color.hex }}
+                                                ></span>
+                                                <span className="text-sm text-gray-800">{color.name}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                
+                                {/* Categories Filter */}
+                                <div className="mb-6">
+                                    <h3 className="font-bold text-lg mb-3" style={{ fontFamily: 'Playfair Display' }}>CATEGORIES</h3>
+                                    <div className="space-y-2">
+                                        {['Upload', 'Clusters'].map(category => (
+                                            <label key={category} className="flex items-center">
+                                                <input type="checkbox" className="mr-2 accent-[#fe9995]" />
+                                                <span>{category}</span>
+                                            </label>
+                                        ))}
+                                    </div>
+                                </div>
+                                
+                                {/* Navigation Links */}
+                                <div className="mb-6">
+                                    <h3 className="font-bold text-lg mb-3" style={{ fontFamily: 'Playfair Display' }}>ENGLISH</h3>
+                                    <div className="space-y-2">
+                                        {['HOME', 'SHOP', 'BLOG'].map(item => (
+                                            <div key={item} className="py-1">
+                                                <span className="text-gray-700 font-medium">{item}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                
+                                {/* Beauty Links */}
+                                <div className="mb-6">
+                                    <h3 className="font-bold text-lg mb-3" style={{ fontFamily: 'Playfair Display' }}>BEAUTY</h3>
+                                    <div className="space-y-2">
+                                        {['PAGES', 'PORTFOLIOS', 'ELEMENTS'].map(item => (
+                                            <div key={item} className="py-1">
+                                                <span className="text-gray-700 font-medium">{item}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                
+                                {/* Shop Links */}
+                                <div className="mb-6">
+                                    <h3 className="font-bold text-lg mb-3" style={{ fontFamily: 'Playfair Display' }}>SHOP</h3>
+                                    <div className="space-y-2">
+                                        <div className="py-1">
+                                            <span className="text-gray-700">Home / Shop</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                {/* Category Counts */}
+                                <div className="space-y-2">
+                                    {[
+                                        'Beauty Organic (7)',
+                                        'Natural (9)',
+                                        'Natural Beauty (8)',
+                                        'Perfume (16)'
+                                    ].map(item => (
+                                        <div key={item} className="py-1">
+                                            <span className="text-gray-700">{item}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Product Grid - Dynamic based on view mode */}
@@ -292,8 +306,8 @@ const Fullwidth = () => {
                                     src={img}
                                     alt="Product"
                                     className={`${viewMode === 'list'
-                                        ? 'h-55   object-contain'
-                                        : "w-70"
+                                        ? 'h-55 object-contain'
+                                        : "w-full object-cover h-64"
                                         }`}
                                 />
 
@@ -305,7 +319,7 @@ const Fullwidth = () => {
                                 )}
 
                                 {/* Product Details */}
-                                <div className={`${viewMode === 'list' ? 'text-left flex-1' : 'text-center'}`}>
+                                <div className={`${viewMode === 'list' ? 'text-left flex-1' : 'text-center mt-4'}`}>
                                     <p
                                         className="text-gray-900 text-lg font-bold mb-1"
                                         style={{ fontFamily: 'Playfair Display, serif' }}
@@ -352,11 +366,11 @@ const Fullwidth = () => {
                     </div>
 
                     {/* Pagination */}
-                    <div className="flex justify-center mt-6 gap-2">
+                    <div className="flex justify-center mt-6 gap-2 mb-10">
                         {[1, 2, 3, "...", 15, "Next"].map((pg, idx) => (
                             <button
                                 key={idx}
-                                className={`px-3 py-1 border rounded ${pg === 1 ? "bg-[#fe9995] text-white hover:bg-[#fe9995" : "bg-white hover:bg-[#fe9995]"}`}
+                                className={`px-3 py-1 border rounded ${pg === 1 ? "bg-[#fe9995] text-white hover:bg-[#fe9995]" : "bg-white hover:bg-[#fe9995] hover:text-white"}`}
                             >
                                 {pg}
                             </button>
@@ -369,4 +383,4 @@ const Fullwidth = () => {
     );
 };
 
-export default Fullwidth;
+export default Offcanvasfilter;

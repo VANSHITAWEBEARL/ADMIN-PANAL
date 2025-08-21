@@ -21,15 +21,34 @@ import list3 from "../assets/make-up.png"
 import list4 from "../assets/sapling.png"
 import Footer1 from "../Bueatyproduct/Footer1";
 
-
 const Infinitescroll = () => {
-
     const [viewMode, setViewMode] = useState("grid3");
     const [showFilter, setShowFilter] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [products, setProducts] = useState([img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12]);
+    const [hasMore, setHasMore] = useState(true);
 
-
-
-
+    // Function to load more products
+    const loadMoreProducts = () => {
+        setIsLoading(true);
+        
+        // Simulate API call with timeout
+        setTimeout(() => {
+            // In a real app, you would fetch data from an API
+            const newProducts = [
+                img1, img2, img3, img4, img5, img6, 
+                img7, img8, img9, img10, img11, img12
+            ];
+            
+            setProducts(prevProducts => [...prevProducts, ...newProducts]);
+            setIsLoading(false);
+            
+            // For demo purposes, we'll stop after loading 3 batches
+            if (products.length >= 36) {
+                setHasMore(false);
+            }
+        }, 1500);
+    };
 
     return (
         <div>
@@ -37,41 +56,41 @@ const Infinitescroll = () => {
 
             <div className="relative bg-cover bg-position-[center_left_-15rem] h-95 py-20"
                 style={{ backgroundImage: `url(${bg1})` }}>
-                {/* <!-- Overlay --> */}
-                <div class="absolute"></div>
+                {/* Overlay */}
+                <div className="absolute"></div>
 
-                <div class="relative z-10 text-center text-white max-w-5xl mx-auto">
-                    {/* <!-- Title & Breadcrumb --> */}
-                    <h1 class="!text-3xl font-bold capitalize" style={{ fontFamily: 'Playfair Display' }}>Shop</h1>
-                    <div class="mt-2 text-lg">
-                        <Link to='/Home' className="!no-underline !text-white "><span class="font-semibold text-2xl hover:text-[#fe9995] capitalize" style={{ fontFamily: 'Playfair Display' }}>Home</span></Link>
-                        <span class="mx-1 text-gray-300">/</span>
-                        <span class="text-[#fe9995] text-2xl font-semibold capitalize" style={{ fontFamily: 'Playfair Display' }}>Shop</span>
+                <div className="relative z-10 text-center text-white max-w-5xl mx-auto">
+                    {/* Title & Breadcrumb */}
+                    <h1 className="!text-3xl font-bold capitalize" style={{ fontFamily: 'Playfair Display' }}>Shop</h1>
+                    <div className="mt-2 text-lg">
+                        <Link to='/Home' className="!no-underline !text-white "><span className="font-semibold text-2xl hover:text-[#fe9995] capitalize" style={{ fontFamily: 'Playfair Display' }}>Home</span></Link>
+                        <span className="mx-1 text-gray-300">/</span>
+                        <span className="text-[#fe9995] text-2xl font-semibold capitalize" style={{ fontFamily: 'Playfair Display' }}>Shop</span>
                     </div>
 
-                    {/* <!-- Categories --> */}
-                    <div class="mt-6 flex flex-wrap justify-center gap-4">
-                        {/* <!-- Item --> */}
-                        <div class="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
-                            <img src={list1} class="w-10 h-10" alt="Beauty Organic" />
+                    {/* Categories */}
+                    <div className="mt-6 flex flex-wrap justify-center gap-4">
+                        {/* Item */}
+                        <div className="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
+                            <img src={list1} className="w-10 h-10" alt="Beauty Organic" />
                             <span>Beauty Organic (7)</span>
                         </div>
-                        <span class="text-gray-300">|</span>
+                        <span className="text-gray-300">|</span>
 
-                        <div class="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
-                            <img src={list2} class="w-10 h-10" alt="Natural" />
+                        <div className="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
+                            <img src={list2} className="w-10 h-10" alt="Natural" />
                             <span>Natural (9)</span>
                         </div>
-                        <span class="text-gray-300">|</span>
+                        <span className="text-gray-300">|</span>
 
-                        <div class="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
-                            <img src={list3} class="w-10 h-10" alt="Natural Beauty" />
+                        <div className="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
+                            <img src={list3} className="w-10 h-10" alt="Natural Beauty" />
                             <span>Natural Beauty (8)</span>
                         </div>
-                        <span class="text-gray-300">|</span>
+                        <span className="text-gray-300">|</span>
 
-                        <div class="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
-                            <img src={list4} class="w-10 h-10" alt="Perfume" />
+                        <div className="flex items-center gap-2" style={{ fontFamily: 'Playfair Display' }}>
+                            <img src={list4} className="w-10 h-10" alt="Perfume" />
                             <span>Perfume (16)</span>
                         </div>
                     </div>
@@ -81,8 +100,6 @@ const Infinitescroll = () => {
 
             <div className="flex mx-auto justify-center items-center ">
                 {/* Sidebar */}
-
-
 
                 {/* Product Grid */}
                 <main className="flex justify-center items-center flex-col mt-10 gap-3">
@@ -168,7 +185,7 @@ const Infinitescroll = () => {
                         </button>
                         {/* Center - Results Text */}
                         <div className="text-sm font-normal text-gray-700">
-                            Showing 1–12 of 181 results
+                            Showing 1–{products.length} of {hasMore ? "100+" : products.length} results
                         </div>
 
                         {/* Right Side - Sort Dropdown */}
@@ -279,7 +296,7 @@ const Infinitescroll = () => {
                             'flex flex-col gap-6'
                         } `}>
                         {/* Product cards */}
-                        {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12].map((img, index) => (
+                        {products.map((img, index) => (
                             <div
                                 key={index}
                                 className={`relative ${viewMode === 'list'
@@ -298,7 +315,7 @@ const Infinitescroll = () => {
                                 />
 
                                 {/* Sale on 5th and 9th card */}
-                                {(index === 4 || index === 8) && (
+                                {(index === 4 || index === 8 || index === 20 || index === 32) && (
                                     <span className="absolute top-2 right-2 bg-[#fe9995] text-white text-xs px-2 py-2.5 rounded-full">
                                         Sale
                                     </span>
@@ -351,7 +368,29 @@ const Infinitescroll = () => {
                         ))}
                     </div>
 
-             
+                    {/* Loading Button */}
+                    {hasMore && (
+                        <div className="mt-10 mb-10 flex justify-center">
+                            <button
+                                onClick={loadMoreProducts}
+                                disabled={isLoading}
+                                className="flex items-center justify-center bg-[#fe9995] text-white px-8 py-3 rounded-md hover:bg-[#fd8884] transition-colors duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                                style={{ fontFamily: 'Playfair Display, serif' }}
+                            >
+                                {isLoading ? (
+                                    <>
+                                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                        Loading...
+                                    </>
+                                ) : (
+                                    "Load More Products"
+                                )}
+                            </button>
+                        </div>
+                    )}
                  
                 </main>
             </div >

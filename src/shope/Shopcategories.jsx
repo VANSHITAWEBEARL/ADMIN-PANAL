@@ -55,7 +55,7 @@ const Shopcategories = () => {
         <div>
             <Shopeheader />
 
-            <div className="relative bg-cover bg-position-[center_left_-15rem] h-95 py-20"
+            <div className="relative -z-12 bg-cover bg-position-[center_left_-15rem] h-95 py-20"
                 style={{ backgroundImage: `url(${bg1})` }}>
                 {/* <!-- Overlay --> */}
                 <div class="absolute"></div>

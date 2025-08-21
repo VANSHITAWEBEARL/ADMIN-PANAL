@@ -19,12 +19,17 @@ import list1 from "../assets/makeup.png"
 import list2 from "../assets/lotion.png"
 import list3 from "../assets/make-up.png"
 import list4 from "../assets/sapling.png"
-
+import card1 from '../assets/blog1.jpg'
+import card2 from '../assets/blog2.jpg'
+import card3 from '../assets/19-111.jpg'
+import card4 from '../assets/test.jpg'
+import card5 from '../assets/test3.png'
+import card6 from '../assets/cat3.jpg'
 import Footer1 from "../Bueatyproduct/Footer1";
 import { FaPlus } from "react-icons/fa";
 
 
-const Shopepage = () => {
+const Category = () => {
   const [viewMode, setViewMode] = useState('grid3');
 
   const categories = [
@@ -98,7 +103,7 @@ const Shopepage = () => {
 </div>
 
 
-      <div className="flex max-w-7xl mx-auto py-10  gap-2">
+      <div className="flex max-w-7xl mx-auto py-10  gap-8">
         {/* Sidebar */}
         <aside className="w-64 space-y-8">
           {/* Categories */}
@@ -238,7 +243,123 @@ const Shopepage = () => {
 
         {/* Product Grid */ }
   <main className="flex flex-col gap-3">
-    <div className="w-255 border p-2 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  items-center  justify-center gap-4 ">
+  {/* <!-- Card 1 --> */}
+  <div class="w-70 bg-white rounded-2xl shadow p-6 text-center border border-gray-100 hover:shadow-lg ">
+    <div class="bg-[#fe9995] -mx-6 -mt-6 rounded-t-2xl p-3 pb-5">
+      <h2 class="text-white font-medium !text-xl mb-4">Beauty Organic</h2>
+    </div>
+    <div class="flex justify-center -mt-12">
+      <img src={card1} alt="Beauty Organic" class="w-24 h-24 rounded-full border-4 border-white shadow-md"/>
+    </div>
+    <p class="text-[#fe9995] text-sm italic mt-2">7 Products</p>
+    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+      Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+    </p>
+    <div class="mt-6  flex flex-col items-center">
+      <button class="flex items-center gap-2 px-3 py-2 !rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition">
+        View all products <i className="fa-solid fa-right-long bg-[#666] text-white rounded-full p-1 "></i>
+      </button>
+    </div>
+  </div>
+
+  {/* <!-- Card 2 --> */}
+  <div class="w-70 bg-white rounded-2xl shadow p-6 text-center border border-gray-100 hover:shadow-lg ">
+    <div class="bg-[#fe9995] -mx-6 -mt-6 rounded-t-2xl p-3 pb-5">
+      <h2 class="text-white font-medium !text-xl mb-4">Beauty</h2>
+    </div>
+    <div class="flex justify-center -mt-12">
+      <img src={card2} alt="Beauty" class="w-24 h-24 rounded-full border-4 border-white shadow-md"/>
+    </div>
+    <p class="text-[#fe9995] text-sm italic mt-2">10 Products</p>
+    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+      Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+    </p>
+    <div class="mt-6  flex flex-col items-center">
+      <button class="flex items-center gap-2 px-3 py-2 !rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition">
+        View all products <i className="fa-solid fa-right-long bg-[#666] text-white rounded-full p-1 "></i>
+      </button>
+    </div>
+  </div>
+
+  {/* <!-- Card 3 --> */}
+  <div class="w-70 bg-white rounded-2xl shadow p-6 text-center border border-gray-100 hover:shadow-lg ">
+    <div class="bg-[#fe9995] -mx-6 -mt-6 rounded-t-2xl p-3 pb-5">
+      <h2 class="text-white font-medium !text-xl mb-4">Perfume</h2>
+    </div>
+    <div class="flex justify-center -mt-12">
+      <img src={card3} alt="Perfume" class="w-24 h-24 rounded-full border-4 border-white shadow-md"/>
+    </div>
+    <p class="text-[#fe9995] text-sm italic mt-2">16 Products</p>
+    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+      Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+    </p>
+    <div class="mt-6  flex flex-col items-center">
+      <button class="flex items-center gap-2 px-3 py-2 !rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition">
+        View all products <i className="fa-solid fa-right-long bg-[#666] text-white rounded-full p-1 "></i>
+      </button>
+    </div>
+  </div>
+
+  {/* <!-- Card 4 --> */}
+  <div class="w-70 bg-white rounded-2xl shadow p-6 text-center border border-gray-100 hover:shadow-lg ">
+    <div class="bg-[#fe9995] -mx-6 -mt-6 rounded-t-2xl p-3 pb-5">
+      <h2 class="text-white font-medium !text-xl mb-4">Skin Care</h2>
+    </div>
+    <div class="flex justify-center -mt-12">
+      <img src={card4} alt="Skin Care" class="w-24 h-24 rounded-full border-4 border-white shadow-md"/>
+    </div>
+    <p class="text-[#fe9995] text-sm italic mt-2">12 Products</p>
+    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+      Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+    </p>
+    <div class="mt-6  flex flex-col items-center">
+      <button class="flex items-center gap-2 px-3 py-2 !rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition">
+        View all products <i className="fa-solid fa-right-long bg-[#666] text-white rounded-full p-1 "></i>
+      </button>
+    </div>
+  </div>
+
+  {/* <!-- Card 5 --> */}
+  <div class="w-70 bg-white rounded-2xl shadow p-6 text-center border border-gray-100 hover:shadow-lg ">
+    <div class="bg-[#fe9995] -mx-6 -mt-6 rounded-t-2xl p-3 pb-5">
+      <h2 class="text-white font-medium !text-xl mb-4">Makeup</h2>
+    </div>
+    <div class="flex justify-center -mt-12">
+      <img src={card5} alt="Makeup" class="w-24 h-24 rounded-full border-4 border-white shadow-md"/>
+    </div>
+    <p class="text-[#fe9995] text-sm italic mt-2">8 Products</p>
+    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+      Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+    </p>
+    <div class="mt-6  flex flex-col items-center">
+      <button class="flex items-center gap-2 px-3 py-2 !rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition">
+        View all products <i className="fa-solid fa-right-long bg-[#666] text-white rounded-full p-1 "></i>
+      </button>
+    </div>
+  </div>
+
+  {/* <!-- Card 6 --> */}
+  <div class="w-70 bg-white rounded-2xl shadow p-6 text-center border border-gray-100 hover:shadow-lg ">
+    <div class="bg-[#fe9995] -mx-6 -mt-6 rounded-t-2xl px-3 pt-3 pb-5">
+      <h2 class="text-white font-medium !text-xl mb-4">Hair Care</h2>
+    </div>
+    <div class="flex justify-center -mt-12">
+      <img src={card6} alt="Hair Care" class="w-24 h-24 rounded-full border-4 border-white shadow-md"/>
+    </div>
+    <p class="text-[#fe9995] text-sm italic mt-2">14 Products</p>
+    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+      Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+    </p>
+    <div class="mt-6  flex flex-col items-center">
+      <button class="flex items-center gap-2 px-3 py-2 !rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition">
+        View all products <i className="fa-solid fa-right-long bg-[#666] text-white rounded-full p-1 "></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+    <div className="w-230 border p-2 flex flex-col md:flex-row items-center justify-between gap-4">
       {/* Left Side - View Icons */}
       <div className="flex items-center gap-4 text-gray-700">
         {/* Grid 3x3 */}
@@ -325,7 +446,7 @@ const Shopepage = () => {
     <div className={`${viewMode === 'grid3' ? 'grid grid-cols-1 md:grid-cols-3 gap-10' :
         viewMode === 'grid4' ? 'grid grid-cols-1 md:grid-cols-4 gap-8' :
           'flex flex-col gap-6'
-      } justify-center items-center place-items-center mx-auto`}>
+      } justify-center items-center place-items-center mx-auto w-230`}>
       {/* Product cards */}
       {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12].map((img, index) => (
         <div key={index} className={`${viewMode === 'list' ?
@@ -394,4 +515,4 @@ const Shopepage = () => {
   );
 };
 
-export default Shopepage;
+export default Category;

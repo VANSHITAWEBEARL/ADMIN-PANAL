@@ -124,8 +124,8 @@ const Shopeheader = () => {
         { label: 'Categories', to: '/Shopcategories' },
         { label: 'Filter Top', to: '/Filtertop' },
         { label: 'Infinite Scroll', to: '/Infinitescroll' },
-        { label: 'Off-Canvas Filter', to: '/shop/off-canvas-filter' },
-        { label: 'Shop Categories', to: '/shop/shop-categories' },
+        { label: 'Off-Canvas Filter', to: '/Offcanvasfilter' },
+        { label: 'Shop Categories', to: '/Category' },
         { label: 'Small Categories', to: '/shop/small-categories' },
         { label: 'Cookies Notice', to: '/shop/cookies-notice' },
       ],
@@ -258,7 +258,7 @@ const Shopeheader = () => {
 
 
     return (
-        <header className="w-full border-b z-70 !sticky border-gray-100 bg-white">
+        <header className="w-full border-b  !sticky border-gray-100 bg-white">
       <nav className="text-white py-2" style={{ backgroundImage: `url(${nave})`,}}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Left Navigation */} 
