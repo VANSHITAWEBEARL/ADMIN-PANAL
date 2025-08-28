@@ -51,6 +51,8 @@ import Smallcategories from './shope/Smallcategories.jsx'
 import Cookiesnotice from './shope/Cookiesnotice.jsx'
 import Galleryonproduct from './shope/Galleryonproduct.jsx'
 import Catalogpage from './shope/Catalogpage.jsx'
+import Loadmore from './shope/Loadmore.jsx'
+import Masonryshop from './shope/Masonryshop.jsx'
 
 
 
@@ -113,6 +115,10 @@ function App() {
                              <Route path='/Cookiesnotice'  element={< Cookiesnotice/>}/>
                                <Route path='/Galleryonproduct'  element={<Galleryonproduct/>}/>
                           <Route path='/Catalogpage'  element={<Catalogpage/>}/>
+                              <Route path='/Loadmore'  element={<Loadmore/>}/>
+                              <Route path='/Masonryshop'  element={<Masonryshop/>}/>
+                              
+
           </Routes>
     </div>
   )

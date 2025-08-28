@@ -66,7 +66,7 @@ const Variationshop = () => {
       images: [
         { color: "#1e73be", src: img12 },
         { color: "#dd6161", src: img11 },
-        { color: "#dd3333", src: img12 },
+        { color: "#dd3333", src: img10 },
       ],
     },
     {
